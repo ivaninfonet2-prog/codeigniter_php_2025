@@ -1,11 +1,15 @@
 
-</main>
+<footer class="main-footer bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+        <p class="mb-2">&copy; <?php echo date('Y'); ?> UNLa Tienda. Todos los derechos reservados.</p>
 
-<footer class="bg-dark text-white text-center py-3 mt-auto">
-    <p class="mb-0">&copy; <?= date('Y'); ?> UNLa Tienda. Todos los derechos reservados.</p>
+        <ul class="footer-links list-inline mb-3">
+            <li class="list-inline-item"><a href="<?= base_url('acerca'); ?>" class="footer-link">Acerca de</a></li>
+            <li class="list-inline-item"><a href="<?= base_url('contacto'); ?>" class="footer-link">Contacto</a></li>
+            <li class="list-inline-item"><a href="<?= base_url('politicas'); ?>" class="footer-link">Políticas</a></li>
+            <li class="list-inline-item"><a href="<?= base_url('ayuda'); ?>" class="footer-link">Ayuda</a></li>
+        </ul>
+    </div>
 </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<link rel="stylesheet" href="<?= base_url('activos/css/footer.css'); ?>">

@@ -1,0 +1,110 @@
+
+/* ================================
+   Estilos generales de Inicio
+   ================================ */
+
+.inicio-body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100vw;        /* 🔹 ocupa todo el ancho del viewport */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.inicio-container {
+    min-height: 100vh;
+    width: 100%;         /* 🔹 ocupa todo el ancho */
+    color: #fff;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Clase extra para full-width */
+.full-width {
+    width: 100vw;        /* 🔹 fuerza ancho completo */
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================
+   Animaciones y decoraciones
+   ================================ */
+.mensaje-bienvenida {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.mensaje-sub {
+    font-size: 1.3rem;
+    color: #f0f0f0;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* ================================
+   Estilos para espectáculos
+   ================================ */
+.espectaculos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 30px;
+    width: 100%;          /* 🔹 ocupa todo el ancho */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.espectaculo-card {
+    flex: 1 1 calc(25% - 20px); /* 🔹 4 columnas en pantallas grandes */
+    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 25px;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    min-width: 250px;
+}
+
+.espectaculo-card:hover {
+    transform: scale(1.07);
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 1200px) {
+    .espectaculo-card {
+        flex: 1 1 calc(33.3% - 20px); /* 🔹 3 columnas */
+    }
+}
+
+@media (max-width: 992px) {
+    .espectaculo-card {
+        flex: 1 1 calc(50% - 20px); /* 🔹 2 columnas */
+    }
+}
+
+@media (max-width: 576px) {
+    .espectaculo-card {
+        flex: 1 1 100%; /* 🔹 1 columna */
+    }
+
+    .mensaje-bienvenida {
+        font-size: 2rem;
+    }
+
+    .mensaje-sub {
+        font-size: 1.1rem;
+    }
+}

@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -14,31 +15,33 @@ class Registrar extends CI_Controller
 
     public function index()
     {
-        $this->load->view('header');
+        // Header y footer comunes
+        $this->load->view('templates/header');
         $this->load->view('formularios/formulario_registro');
-        $this->load->view('footer');
+        $this->load->view('templates/footer');
     }
 
     public function registrar_usuario()
     {
         if ($this->validar_usuario()) 
-		{
+        {
             // Si las validaciones son correctas se toma el email y dni
             $email = $this->input->post('nombre_usuario');
             $dni = $this->input->post('dni');
 
-            // se pregunta si son iguales a alguno existente
+            // Se pregunta si son iguales a alguno existente
             if ($this->Usuario_modelo->verificar_usuario_existente($email, $dni))
-			{
+            {
                 $data['error'] = 'El usuario con este email o DNI ya está registrado.';
 
+                $this->load->view('templates/header');
                 $this->load->view('formularios/formulario_registro', $data);
+                $this->load->view('templates/footer');
             }
-			else
-			{
-                // Si no son iguales, se guarda el resto de la info, se incluye el previo email y dni
-                $data = array
-                (
+            else
+            {
+                // Si no son iguales, se guarda el resto de la info
+                $data = array(
                     'nombre' => $this->input->post('nombre'),
                     'apellido' => $this->input->post('apellido'),
                     'dni' => $dni,
@@ -48,18 +51,19 @@ class Registrar extends CI_Controller
                     'rol_id' => 1,
                 );
 
-                // Registro exitoso, redirigir a la página de bienvenida
+                // Registro exitoso
                 $this->Usuario_modelo->registrar_usuario($data);
 
-                $this->load->view('header');
+                $this->load->view('templates/header');
                 $this->load->view('post_registro');
-                $this->load->view('footer');
+                $this->load->view('templates/footer');
             } 
         }
         else
         {
-            printf('faltan datos a completar');
+            $this->load->view('templates/header');
             $this->load->view('formularios/formulario_registro');
+            $this->load->view('templates/footer');
         }
     }
     
@@ -77,5 +81,3 @@ class Registrar extends CI_Controller
         return $this->form_validation->run();
     }
 }
-
-?>

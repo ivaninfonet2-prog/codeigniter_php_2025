@@ -1,0 +1,110 @@
+/* ================================
+   Hero Section
+   ================================ */
+.hero-section {
+    background: linear-gradient(135deg, #f9f9f9, #e0e0e0); /* 🔹 fondo claro */
+    background-size: 200% 200%;
+    color: #222222; /* 🔹 texto oscuro */
+    padding: 30px 12px;   /* 🔹 menos padding interno */
+    border-radius: 12px;
+    margin: 60px auto 20px auto; /* 🔹 más separación superior respecto al header */
+    max-width: 650px;     /* 🔹 más compacto */
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    animation: fadeIn 1.2s ease-in-out, gradientMove 8s ease infinite;
+    transition: transform 0.4s ease;
+}
+
+.hero-section:hover {
+    transform: scale(1.02); /* 🔹 efecto más sutil */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fondo animado */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ================================
+   Títulos y subtítulos
+   ================================ */
+.hero-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111111;
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-subtitle {
+    font-size: 0.95rem;
+    color: #444444;
+    animation: slideUp 1.2s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================
+   Botón animado
+   ================================ */
+.hero-btn {
+    transition: all 0.4s ease;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 8px 20px;
+    background-color: #ffc107;
+    color: #111111;
+    border: none;
+}
+
+.hero-btn:hover {
+    transform: scale(1.06) rotate(-1deg);
+    box-shadow: 0 0 10px rgba(255,193,7,0.6);
+}
+
+/* ================================
+   Iconos decorativos
+   ================================ */
+.hero-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.4rem;
+    color: #111111;
+}
+
+.hero-icons i {
+    animation: bounce 2s infinite;
+}
+
+.hero-icons i:nth-child(2) { animation-delay: 0.2s; }
+.hero-icons i:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 768px) {
+    .hero-title { font-size: 1.5rem; }
+    .hero-subtitle { font-size: 0.85rem; }
+    .hero-btn { padding: 7px 16px; }
+    .hero-icons { font-size: 1.2rem; }
+    .hero-section { margin-top: 35px; } /* 🔹 menos separación en móviles */
+}
