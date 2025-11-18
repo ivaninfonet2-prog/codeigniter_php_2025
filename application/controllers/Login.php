@@ -8,21 +8,28 @@ class Login extends CI_Controller
         parent::__construct();
         $this->load->model('Usuario_modelo');
         $this->load->library('session');
-        $this->load->helper('url_helper');
+        $this->load->helper('url');
     }
     
     public function index() 
     {
-        // Imagen de fondo dinámica para el login
         $data['fondo_login'] = base_url('activos/imagenes/mi_fondo.jpg');
         $data['titulo'] = 'UNLa Tienda';
 
-        // Cargar vistas
         $this->load->view('templates/header_2', $data); 
-        $this->load->view('formularios/formulario_login', $data); // 🔹 aquí se pasa la imagen
+        $this->load->view('templates/body', $data); 
         $this->load->view('templates/footer');
     }
-    
+
+    // 🔹 Función modular para cargar solo el formulario
+    public function mostrar_formulario($data = [])
+    {
+        if (empty($data)) {
+            $data['titulo'] = 'UNLa Tienda';
+        }
+        $this->load->view('formularios/formulario_login', $data);
+    }
+
     public function autenticar()
     {
         $nombre_usuario = $this->input->post('nombre_usuario');

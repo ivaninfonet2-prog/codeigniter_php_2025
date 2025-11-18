@@ -19,8 +19,8 @@ class Principio extends CI_Controller
             'fondo'        => base_url('activos/imagenes/mi_fondo.jpg')
         ];
 
-        $this->load->view('templates/header', $data);   // Header con título dinámico
-        $this->load->view('inicio/index', $data);       // Contenido principal
-        $this->load->view('templates/footer');          // Footer
+        $this->load->view('templates/header', $data);
+        $this->load->view('inicio/index', $data);
+        $this->load->view('templates/footer');
     }
 }
