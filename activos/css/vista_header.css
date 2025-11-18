@@ -5,28 +5,34 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121212;
     color: #ffffff;
+    box-sizing: border-box;
 }
 
 /* Header principal */
 .main-header {
-    position: fixed;       /* 🔹 fijo arriba */
+    position: fixed;       /* fijo arriba */
     top: 0;
     left: 0;
-    width: 100vw;          /* 🔹 ocupa todo el ancho de la ventana */
+    right: 0;
+    width: 100%;
+    height: 80px;          /* altura definida */
     background: linear-gradient(90deg, #000000, #1a1a1a);
     box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     z-index: 1000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 /* Ajuste del contenedor del logo y título */
 .navbar .navbar-brand {
-    padding-left: 40px;   /* 🔹 agrega espacio desde el borde izquierdo */
+    padding-left: 40px;
 }
 
-/* Alternativa: si preferís que todo el contenido del header tenga aire */
 .container-fluid {
-    padding-left: 40px;   /* 🔹 separa todo el contenido del header */
-    padding-right: 40px;  /* 🔹 mantiene simetría con el lado derecho */
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 /* Logo */
@@ -34,13 +40,13 @@ body {
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    border: 2px solid #ffc107;
+    border: 2px solid #ffffff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo-img:hover {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 12px rgba(255,193,7,0.7);
+    box-shadow: 0 0 12px rgba(255,255,255,0.7);
 }
 
 /* Título */
@@ -53,25 +59,19 @@ body {
 }
 
 .site-title:hover {
-    color: #ffc107;
-}
-
-/* Menú */
-.nav-menu .nav-link {
     color: #ffffff;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Menú */
 .nav-menu {
-    margin-right: 40px;   /* 🔹 separa el menú de la esquina derecha */
+    display: flex;
+    justify-content: flex-end; /* lleva todo a la derecha */
+    padding-right: 25px;       /* espacio para que no quede pegado */
+    gap: 15px;
 }
 
-.nav-menu .nav-link {
+.nav-menu .nav-link,
+.nav-menu .btn {
     color: #ffffff;
     font-weight: 500;
     text-decoration: none;
@@ -80,19 +80,15 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.nav-menu .nav-link:hover {
-    color: #ffc107;
-    background-color: rgba(255,193,7,0.1);
+.nav-menu .nav-link:hover,
+.nav-menu .btn:hover {
+    color: #ffffff;
+    background-color: rgba(255,255,255,0.1);
 }
 
-
+/* Hamburguesa */
 .navbar-toggler-icon {
-    filter: invert(1); /* 🔹 icono blanco */
-}
-
-/* Ajuste para que el contenido no quede oculto detrás del header */
-body {
-    padding-top: 80px; /* 🔹 espacio igual a la altura del header */
+    filter: invert(1);
 }
 
 /* Responsive */
@@ -101,7 +97,12 @@ body {
         font-size: 1.3rem;
     }
 
-    .nav-menu .nav-link {
+    .nav-menu {
+        padding-right: 15px; /* menos espacio en pantallas chicas */
+    }
+
+    .nav-menu .nav-link,
+    .nav-menu .btn {
         width: 100%;
         text-align: left;
     }

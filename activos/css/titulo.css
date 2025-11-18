@@ -2,20 +2,20 @@
    Hero Section
    ================================ */
 .hero-section {
-    background: linear-gradient(135deg, #f9f9f9, #e0e0e0); /* 🔹 fondo claro */
+    background: linear-gradient(135deg, #007bff, #0056b3); /* 🔹 fondo azul */
     background-size: 200% 200%;
-    color: #222222; /* 🔹 texto oscuro */
-    padding: 30px 12px;   /* 🔹 menos padding interno */
+    color: #ffffff; /* 🔹 texto claro para contraste */
+    padding: 30px 12px;
     border-radius: 12px;
-    margin: 60px auto 20px auto; /* 🔹 más separación superior respecto al header */
-    max-width: 650px;     /* 🔹 más compacto */
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    margin: 60px auto 20px auto;
+    max-width: 650px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
     animation: fadeIn 1.2s ease-in-out, gradientMove 8s ease infinite;
     transition: transform 0.4s ease;
 }
 
 .hero-section:hover {
-    transform: scale(1.02); /* 🔹 efecto más sutil */
+    transform: scale(1.02);
 }
 
 /* Animación de entrada */
@@ -37,7 +37,7 @@
 .hero-title {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #111111;
+    color: #ffffff; /* 🔹 texto blanco */
     animation: slideDown 1s ease;
 }
 
@@ -48,7 +48,7 @@
 
 .hero-subtitle {
     font-size: 0.95rem;
-    color: #444444;
+    color: #e0e0e0; /* 🔹 gris claro para contraste */
     animation: slideUp 1.2s ease;
 }
 
@@ -65,14 +65,14 @@
     font-weight: 600;
     border-radius: 25px;
     padding: 8px 20px;
-    background-color: #ffc107;
-    color: #111111;
+    background-color: #00bfff; /* 🔹 celeste */
+    color: #ffffff;
     border: none;
 }
 
 .hero-btn:hover {
     transform: scale(1.06) rotate(-1deg);
-    box-shadow: 0 0 10px rgba(255,193,7,0.6);
+    box-shadow: 0 0 12px rgba(0,191,255,0.7); /* 🔹 brillo celeste */
 }
 
 /* ================================
@@ -83,7 +83,7 @@
     justify-content: center;
     gap: 12px;
     font-size: 1.4rem;
-    color: #111111;
+    color: #ffffff; /* 🔹 iconos blancos */
 }
 
 .hero-icons i {
@@ -106,5 +106,5 @@
     .hero-subtitle { font-size: 0.85rem; }
     .hero-btn { padding: 7px 16px; }
     .hero-icons { font-size: 1.2rem; }
-    .hero-section { margin-top: 35px; } /* 🔹 menos separación en móviles */
+    .hero-section { margin-top: 35px; }
 }

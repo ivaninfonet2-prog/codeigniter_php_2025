@@ -1,16 +1,15 @@
-
 :root {
-    --color-fondo: #f9f9f9;
-    --color-texto: #333;
-    --color-titulo: #1a1a1a;
-    --color-acento: #0077b6;
-    --color-precio: #28a745;
-    --color-tarjeta: #ffffff;
-    --color-boton: #0077b6;
-    --color-boton-hover: #005f8e;
-    --color-boton-texto: #ffffff;
-    --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --sombra-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --color-fondo: #121212;          /* 🔹 fondo oscuro */
+    --color-texto: #f0f0f0;          /* 🔹 texto claro */
+    --color-titulo: #ffffff;         /* 🔹 títulos blancos */
+    --color-acento: #00bfff;         /* 🔹 celeste azulado para acentos */
+    --color-precio: #28a745;         /* 🔹 verde para precios (mantiene contraste) */
+    --color-tarjeta: rgba(0,191,255,0.15); /* 🔹 tarjeta con fondo celeste translúcido */
+    --color-boton: #00bfff;          /* 🔹 botón celeste claro */
+    --color-boton-hover: #009acd;    /* 🔹 celeste más oscuro al hover */
+    --color-boton-texto: #ffffff;    /* 🔹 texto blanco en botones */
+    --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --sombra-hover: 0 8px 20px rgba(0, 0, 0, 0.6);
     --transicion: 0.35s ease;
 }
 
@@ -34,7 +33,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
     padding: 0 10px;
-    margin-bottom: 60px; /* Espacio extra antes del footer */
+    margin-bottom: 60px;
 }
 
 /* Tarjeta */
@@ -49,6 +48,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     animation: fadeInUp 0.5s ease-in-out;
+    color: var(--color-texto);
 }
 
 .tarjeta:hover {
@@ -64,7 +64,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: #eee;
+    background-color: #0d0d0d; /* 🔹 fondo oscuro detrás de imagen */
 }
 
 /* Imagen dentro de la tarjeta */
@@ -80,7 +80,7 @@ body {
 /* Hover imagen */
 .tarjeta:hover .imagen-espectaculo {
     transform: scale(1.05);
-    filter: brightness(1.05) contrast(1.05);
+    filter: brightness(1.1) contrast(1.1);
 }
 
 /* Contenido */
@@ -98,7 +98,7 @@ body {
 .contenido h3 {
     margin: 10px 0 6px;
     font-size: clamp(1.1rem, 2vw, 1.3rem);
-    color: var(--color-acento);
+    color: var(--color-acento); /* 🔹 celeste azulado */
     transition: color var(--transicion);
     text-align: center;
 }
@@ -124,7 +124,7 @@ body {
     font-size: 0.85rem;
     font-weight: 600;
     transition: background-color var(--transicion), transform var(--transicion);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     text-align: center;
 }
 
@@ -170,6 +170,6 @@ body {
     }
 
     .tarjetas-container {
-        margin-bottom: 80px; /* Más espacio en móviles */
+        margin-bottom: 80px;
     }
 }

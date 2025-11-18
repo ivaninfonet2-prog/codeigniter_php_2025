@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -7,21 +6,23 @@ class Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
         $this->load->model('Usuario_modelo');
-        $this->load->model('Espectaculo_modelo');
         $this->load->library('session');
         $this->load->helper('url_helper');
     }
     
     public function index() 
     {
-        // Cargar header con navbar responsive
-        $this->load->view('templates/header'); 
-        $this->load->view('formularios/formulario_login');
+        // Imagen de fondo dinámica para el login
+        $data['fondo_login'] = base_url('activos/imagenes/mi_fondo.jpg');
+        $data['titulo'] = 'UNLa Tienda';
+
+        // Cargar vistas
+        $this->load->view('templates/header_2', $data); 
+        $this->load->view('formularios/formulario_login', $data); // 🔹 aquí se pasa la imagen
         $this->load->view('templates/footer');
     }
-
+    
     public function autenticar()
     {
         $nombre_usuario = $this->input->post('nombre_usuario');

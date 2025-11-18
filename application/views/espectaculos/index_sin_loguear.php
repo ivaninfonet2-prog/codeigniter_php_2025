@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <h2 class="titulo"> Espectáculos</h2>
+    <h2 class="titulo"> Lista de los mejores Espectáculos</h2>
 
     <div class="tarjetas-container">
         <?php foreach ($espectaculos as $espectaculo) : ?>
