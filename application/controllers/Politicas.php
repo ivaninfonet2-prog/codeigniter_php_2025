@@ -10,13 +10,13 @@ class Politicas extends CI_Controller
         $data['titulo'] = 'Acerca de UNLa Tienda';
 
         // Header común
-        $this->load->view('politicas_principal/header_politicas', $data);
+        $this->load->view('politicas_principal/header_politicas_principal', $data);
 
         // Vista principal
-        $this->load->view('politicas_principal/body_politicas', $data);
+        $this->load->view('politicas_principal/body_politicas_principal', $data);
 
         // Footer común
-        $this->load->view('politicas_principal/footer_politicas');
+        $this->load->view('politicas_principal/footer_politicas_principal');
     }
     
     public function index_2() 
