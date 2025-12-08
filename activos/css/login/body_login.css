@@ -1,10 +1,10 @@
-<<<<<<< HEAD
 /* ==========================
    CONTENEDOR PRINCIPAL LOGIN
 ========================== */
 .body-login {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -31,12 +31,14 @@
   padding: 20px;
 }
 
-/* Texto fuera de la tarjeta */
+/* ==========================
+   TEXTOS
+========================== */
 .titulo-login {
   color: #ffffff;
   font-size: 2.4rem;
   font-weight: 700;
-  margin-top: -40px; /* Subido un poco */
+  margin-top: -40px;
   margin-bottom: 6px;
   text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
@@ -48,8 +50,26 @@
   text-shadow: 0 0 6px rgba(0,0,0,0.4);
 }
 
+.login-description {
+  font-size: 14px;
+  color: #f7f7f7;
+  margin-bottom: 20px;
+}
+
+.login-extra {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.highlight {
+  color: #007bff; /* unificado */
+  font-weight: bold;
+}
+
 /* ==========================
-   TARJETA / FORMULARIO (GLASS EFFECT)
+   TARJETA / FORMULARIO
 ========================== */
 .login-form {
   width: 100%;
@@ -65,13 +85,6 @@
   box-shadow: 0 10px 28px rgba(0,0,0,0.25);
 }
 
-/* Descripción dentro de la tarjeta */
-.login-description {
-  font-size: 14px;
-  color: #f7f7f7;
-  margin-bottom: 20px;
-}
-
 /* ==========================
    CAMPOS DEL FORMULARIO
 ========================== */
@@ -80,6 +93,8 @@
   padding: 10px;
   border-radius: 6px;
   margin-top: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
 }
 
 /* ==========================
@@ -89,62 +104,10 @@
   display: flex;
   gap: 12px;
   margin-top: 15px;
-=======
-.body-login {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.login-form {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 18px;
-  max-width: 280px;
-  margin: auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.login-description {
-  font-size: 13px;
-  color: #555;
-  margin-bottom: 18px;
-}
-
-.form-control {
-  width: 100%;
-  padding: 7px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 5px;
-}
-
-.login-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
->>>>>>> da0aeb1fb2f7b6372806ff3804e884ba9fe2557f
-}
-
-.login-buttons .btn {
-  flex: 1;
-<<<<<<< HEAD
-}
-
-/* ==========================
-   TEXTO EXTRA
-========================== */
-.login-extra {
-  margin-top: 18px;
-  font-size: 14px;
-  color: #ffffff;
-}
-
-.highlight {
-  color: #00bfff;
-  font-weight: bold;
+.login-buttons .btn:last-child {
+  margin-right: 0;
 }
 
 /* ==========================
@@ -153,6 +116,15 @@
 .alert {
   margin-bottom: 12px;
   font-size: 14px;
+}
+
+/* ==========================
+   VOLVER
+========================== */
+.volver-inicio,
+.volver-login {
+  text-align: center;
+  margin-top: 40px;
 }
 
 /* ==========================
@@ -171,40 +143,3 @@
     font-size: 1rem;
   }
 }
-=======
-  margin-right: 8px;
-}
-
-.login-buttons .btn:last-child {
-  margin-right: 0;
-}
-
-.login-extra {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.highlight {
-  color: #007bff;
-  font-weight: bold;
-}
-.volver-inicio {
-  text-align: center;
-  margin-top: 40px;   /* 👈 aumenta la separación hacia arriba */
-}
-
-.volver-inicio .btn {
-  padding: 6px 12px;
-}
-
-
-.volver-login {
-  text-align: center;
-  margin-top: 40px;   /* 👈 aumenta la separación hacia arriba */
-}
-
-.volver-login .btn {
-  padding: 6px 12px;
-}
-
->>>>>>> da0aeb1fb2f7b6372806ff3804e884ba9fe2557f

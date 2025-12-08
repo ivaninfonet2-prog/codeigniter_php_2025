@@ -32,7 +32,6 @@ class Acerca extends CI_Controller
         // Footer común
         $this->load->view('acerca_login/footer_acerca_login');
     }
-<<<<<<< HEAD
 
     public function acerca_registrar() 
     {
@@ -97,7 +96,3 @@ class Acerca extends CI_Controller
 }
 
 ?>
-=======
-}
-?>
->>>>>>> da0aeb1fb2f7b6372806ff3804e884ba9fe2557f
