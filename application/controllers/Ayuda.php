@@ -24,13 +24,13 @@ class Ayuda extends CI_Controller
 =======
 
         // Cargar header común
-        $this->load->view('ayuda_principal/header_ayuda', $data);
+        $this->load->view('ayuda_principal/header_ayuda_principal', $data);
 
         // Vista principal de la sección "Ayuda"
-        $this->load->view('ayuda_principal/body_ayuda', $data);
+        $this->load->view('ayuda_principal/body_ayuda_principal', $data);
 
         // Cargar footer común
-        $this->load->view('ayuda_principal/footer_ayuda');
+        $this->load->view('ayuda_principal/footer_ayuda_principal');
     }
 
     public function ayuda_2() 

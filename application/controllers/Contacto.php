@@ -25,13 +25,13 @@ class Contacto extends CI_Controller
 =======
 
         // Cargar header común
-        $this->load->view('contacto_principal/header_contacto', $data);
+        $this->load->view('contacto_principal/header_contacto_principal', $data);
 
         // Vista principal de la sección "Contacto"
-        $this->load->view('contacto_principal/body_contacto', $data);
+        $this->load->view('contacto_principal/body_contacto_principal', $data);
 
         // Cargar footer común
-        $this->load->view('contacto_principal/footer_contacto');
+        $this->load->view('contacto_principal/footer_contacto_principal');
     }
 
     public function contacto_2() 
