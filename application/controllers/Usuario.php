@@ -170,9 +170,9 @@ class Usuario extends CI_Controller
             $data = $this->datos_base('Editar Usuario');
             $data['usuario'] = $usuario;
            
-            $this->load->view('usuario/form_header', $data);
-            $this->load->view('usuario/form_body', $data);
-            $this->load->view('usuario/form_footer', $data);
+            $this->load->view('editar_usuario/header_editar_usuario', $data);
+            $this->load->view('editar_usuario/body_usuario', $data);
+            $this->load->view('editar_usuario/footer_usuario', $data);
         } 
         else 
         {
@@ -190,7 +190,7 @@ class Usuario extends CI_Controller
 
             $this->Usuario_modelo->actualizar_usuario($id_usuario, $usuario_data);
            
-            redirect('usuario');
+            redirect('administrador');
         }
     }
 
@@ -204,7 +204,7 @@ class Usuario extends CI_Controller
         }
         $this->Usuario_modelo->eliminar_usuario($id_usuario);
         
-        redirect('usuario');
+        redirect('administrador');
     }
 
 }
