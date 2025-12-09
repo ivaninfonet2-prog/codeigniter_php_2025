@@ -2,81 +2,45 @@
    CONTENEDOR GENERAL
    ======================= */
 .main-content {
-    min-height: 100vh;                 /* altura completa de la ventana */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;            /* para que top-buttons y card se alineen verticalmente */
-    align-items: center;
-    justify-content: flex-start;       /* inicia desde arriba */
-    padding: 80px 15px 40px 15px;     /* más espacio superior e inferior */
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 20px 40px 20px; /* Más espacio arriba */
     font-family: Arial, sans-serif;
+    color: #222;
 
+    /* FONDO MEJORADO */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    filter: brightness(0.9) contrast(1.05);
-}
-
-/* =======================
-   BOTONES FUERA DE LA TARJETA
-   ======================= */
-.top-buttons-outside {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    width: 100%;
-    max-width: 600px;   /* igual que la tarjeta */
-    margin-bottom: 30px; /* separación mayor de la tarjeta */
-}
-
-.top-buttons-outside .btn-secondary {
-    background-color: #6c757d;
-    color: white;
-}
-
-.top-buttons-outside .btn-secondary:hover {
-    background-color: #565e64;
-}
-
-.top-buttons-outside .btn-danger {
-    background-color: #dc3545;
-    color: white;
-}
-
-.top-buttons-outside .btn-danger:hover {
-    background-color: #a71d2a;
+    filter: brightness(0.95) contrast(1.05);
 }
 
 /* =======================
    TARJETA / FORMULARIO
    ======================= */
 .card {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(6px);
-    padding: 20px 24px;
-    border-radius: 14px;
-
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    padding: 25px 30px;
+    border-radius: 12px;
     width: 100%;
-    max-width: 600px;      
-    max-height: 85vh;      /* ocupa menos altura para no pegar al footer */
-    overflow-y: auto;
-
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    max-width: 420px; /* Más compacta */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     border: 1px solid rgba(255, 255, 255, 0.25);
-
-    animation: fadeIn 0.4s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-/* =======================
-   ANIMACIÓN
-   ======================= */
+/* Animación suave */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(10px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
 /* =======================
-   TÍTULO
+   TITULO
    ======================= */
 .card h2 {
     text-align: center;
@@ -87,101 +51,111 @@
 }
 
 /* =======================
-   FORMULARIO - LABEL E INPUT
+   BOTONES ARRIBA
    ======================= */
-.form-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 14px;
+.botones-arriba {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.form-group label {
-    font-size: 14px;
+/* =======================
+   INPUTS Y TEXTAREA
+   ======================= */
+.form-label {
+    display: block;
+    margin-top: 12px;
     font-weight: bold;
-    width: 30%;
+    color: #333;
 }
 
-.form-control {
-    width: 65%;
-    padding: 8px 10px;
-    font-size: 14px;
-    border: 1px solid rgba(0,0,0,0.3);
-    border-radius: 5px;
-    background: rgba(255,255,255,0.9);
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 6px;
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #4CAF50;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(76,175,80,0.4);
 }
 
 /* =======================
-   FORM-ROW (dos campos lado a lado)
-   ======================= */
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 4%;
-}
-
-.form-row .form-group {
-    width: 48%;
-}
-
-/* =======================
-   BOTONES DENTRO DE TARJETA
+   BOTONES UNIFORMES
    ======================= */
 .btn {
-    width: 100%;
-    padding: 10px 16px;
+    display: inline-block;
+    padding: 10px 22px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
     background-color: #007BFF;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-top: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    min-width: 120px;
+    text-align: center;
 }
 
 .btn:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Botones finales en el formulario */
+.botones-finales {
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* =======================
    MENSAJES
    ======================= */
 .alert {
-    padding: 8px;
-    margin-bottom: 12px;
-    border-radius: 5px;
-    font-size: 13px;
+    background: rgba(0, 123, 255, 0.15);
+    color: #004085;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-.alert-danger {
-    background: rgba(220, 53, 69, 0.2);
-    color: #8b0000;
+.alert.success {
+    background: rgba(40, 167, 69, 0.15);
+    color: #155724;
+}
+
+.error-msg {
+    color: #a00;
+    font-size: 0.85rem;
+    margin-top: 3px;
+}
+
+.error-input {
+    border-color: #dc3545;
+    box-shadow: 0 0 5px rgba(220,53,69,0.4);
 }
 
 /* =======================
    RESPONSIVE
    ======================= */
-@media (max-width: 600px) {
-    .main-content {
-        padding: 60px 15px 30px 15px;
+@media (max-width: 500px) {
+    .card {
+        padding: 20px 15px;
     }
-
-    .top-buttons-outside {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        margin-bottom: 20px;
+    .btn {
+        width: 48%;
+        margin-bottom: 10px;
     }
-
-    .card { 
-        max-width: 95%; 
-        padding: 18px; 
-    }
-
-    .form-row { flex-direction: column; }
-    .form-row .form-group { width: 100%; }
-
-    .form-group { flex-direction: column; align-items: flex-start; }
-    .form-group label { width: 100%; margin-bottom: 4px; }
-    .form-control { width: 100%; }
 }

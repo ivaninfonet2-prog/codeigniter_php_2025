@@ -116,5 +116,9 @@ class Administrador extends CI_Controller
         $this->load->view('editar_espectaculo/body_editar', $data);
         $this->load->view('editar_espectaculo/footer_editar', $data);
     }
+
+
+    
+ 
 }
 ?>

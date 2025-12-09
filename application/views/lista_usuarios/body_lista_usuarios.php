@@ -32,8 +32,8 @@
                             <td><?= $usuario->nombre_usuario ?></td>
                             <td><?= $usuario->dni ?></td>
                             <td>
-                                <a href="<?= base_url('administrador/editar_usuario/'.$usuario->id_usuario) ?>" class="boton-accion editar">Editar</a>
-                                <a href="<?= base_url('administrador/eliminar_usuario/'.$usuario->id_usuario) ?>" class="boton-accion eliminar" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">Eliminar</a>
+                                <a href="<?= base_url('usuario/editar_usuario/'.$usuario->id_usuario) ?>" class="boton-accion editar">Editar</a>
+                                <a href="<?= base_url('usuario/eliminar_usuario/'.$usuario->id_usuario) ?>" class="boton-accion eliminar" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">Eliminar</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
