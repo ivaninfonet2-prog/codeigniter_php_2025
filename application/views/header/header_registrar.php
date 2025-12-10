@@ -23,8 +23,8 @@
 
         <!-- Botones a la derecha -->
         <nav class="nav-menu">
-            <a href="<?= base_url(''); ?>" class="btn btn-login">Volver al Inicio</a>
-         
+            <a href="<?= base_url('login'); ?>" class="btn btn-login">Login</a>
+            <a href="<?= base_url('registrar'); ?>" class="btn btn-register">Registrar</a>
         </nav>
 
     </div>

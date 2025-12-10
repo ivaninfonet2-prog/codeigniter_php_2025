@@ -4,11 +4,12 @@
 .main-footer {
     background: #0d0d0d;
     color: #ffffff;
-    font-size: 0.95rem;
+    font-size: 1.1rem; /* 🔥 Aumenté el tamaño general */
+    text-align: center; /* 🔥 Asegura que TODO el contenido quede centrado */
     box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
-    width: 100%;          /* ✅ ocupa todo el ancho de la página */
-    margin: 0;            /* ✅ elimina márgenes */
-    padding: 20px 0;      /* espacio interno arriba/abajo */
+    width: 100%;
+    margin: 0;
+    padding: 30px 0; /* 🔥 Más espacio vertical */
     box-sizing: border-box;
     display: block;
 }
@@ -16,18 +17,20 @@
 /* Links del footer */
 .footer-links {
     display: flex;
-    justify-content: center; /* ✅ centrados en el ancho completo */
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;             /* ✅ ocupa todo el ancho */
-    margin: 0;
-    padding: 0 20px;         /* opcional: espacio lateral */
+    gap: 28px; /* 🔥 Más separación entre enlaces */
+    width: 100%;
+    margin: 20px 0; /* 🔥 Más espacio alrededor */
+    padding: 0 20px;
     box-sizing: border-box;
 }
 
 .footer-links .footer-link {
-    color: #00bfff; /* azul celeste claro */
+    color: #00bfff;
     text-decoration: none;
+    font-size: 1.15rem; /* 🔥 Enlaces más grandes */
+    letter-spacing: 0.5px; /* 🔥 Letras un poco más separadas */
     transition: color 0.3s ease, transform 0.3s ease;
     font-weight: 500;
 }
@@ -39,18 +42,20 @@
 
 /* Botón volver */
 .btn-warning {
+    font-size: 1.1rem; /* 🔥 Botón más grande */
+    padding: 10px 28px; /* 🔥 Más cómodo */
     font-weight: 600;
     border-radius: 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 15px;
-    background-color: #00bfff; /* azul celeste claro */
+    margin-top: 20px;
+    background-color: #00bfff;
     border: 1px solid #00bfff;
     color: #ffffff;
 }
 
 .btn-warning:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(0,191,255,0.7); /* brillo celeste claro */
+    transform: scale(1.06);
+    box-shadow: 0 0 12px rgba(0,191,255,0.7);
 }
 
 /* ================================
@@ -60,6 +65,6 @@
     .footer-links {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 15px; /* 🔥 Más espacio en móvil también */
     }
 }

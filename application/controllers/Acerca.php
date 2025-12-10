@@ -47,6 +47,39 @@ class Acerca extends CI_Controller
         // Footer común
         $this->load->view('acerca_administrador/footer_acerca_administrador');
     }
+
+    public function acerca_login() 
+    {
+        $data['fondo']  = base_url('activos/imagenes/mi_fondo.jpg');
+        $data['titulo'] = 'Acerca de UNLa Tienda';
+
+        // Header común
+        $this->load->view('header/header_login', $data);
+
+       // Vista principal
+        $this->load->view('acerca_principal/body_acerca_principal', $data);
+
+        // Footer común
+        $this->load->view('principal/footer_principal');
+    }
+
+    public function acerca_registrar() 
+    {
+        $data['fondo']  = base_url('activos/imagenes/mi_fondo.jpg');
+        $data['titulo'] = 'Acerca de UNLa Tienda';
+
+        // Header común
+        $this->load->view('header/registrar', $data);
+
+       // Vista principal
+        $this->load->view('principal/body_principal', $data);
+
+        // Footer común
+        $this->load->view('principal/footer_principal');
+    }
+
+
+
 }
 
 ?>
