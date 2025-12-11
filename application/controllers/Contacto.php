@@ -11,13 +11,13 @@ class Contacto extends CI_Controller
         $data['titulo'] = 'Contacto de UNLa Tienda';
 
         // Cargar header común
-        $this->load->view('header/header_principal', $data);
+        $this->load->view('header_footer/header_footer_principal', $data);
 
         // Vista principal de la sección "Contacto"
         $this->load->view('contacto_principal/body_contacto_principal', $data);
 
         // Cargar footer común
-        $this->load->view('principal/footer_principal');
+        $this->load->view('footer_footer/footer_footer_principal');
     }
 
     public function contacto_login() 

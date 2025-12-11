@@ -10,13 +10,13 @@ class Politicas extends CI_Controller
         $data['titulo'] = 'Politica de UNLa Tienda';
 
         // Header común
-        $this->load->view('header/header_principal', $data);
+        $this->load->view('header_footer/header_footer_politicas', $data);
 
         // Vista principal
-        $this->load->view('politicas_principal/body_politicas_principal', $data);
+        $this->load->view('body_footer/body_footer_politicas', $data);
 
         // Footer común
-        $this->load->view('principal/footer_principal');
+        $this->load->view('footer_footer/footer_footer_principal');
     }
     
     public function politicas_login() 
@@ -25,13 +25,13 @@ class Politicas extends CI_Controller
         $data['titulo'] = 'Acerca de UNLa Tienda';
 
         // Header común
-        $this->load->view('header/header_login', $data);
+        $this->load->view('header_footer/header_footer_login', $data);
 
        // Vista principal
-        $this->load->view('politicas_principal/body_politicas_principal', $data);
+        $this->load->view('body_footer/body_footer_politicas', $data);
 
         // Footer común
-        $this->load->view('footer/footer_login');
+        $this->load->view('footer_footer/footer_footer_login');
     }
 
     public function politicas_registrar() 
@@ -40,13 +40,13 @@ class Politicas extends CI_Controller
         $data['titulo'] = 'Acerca de UNLa Tienda';
 
         // Header común
-        $this->load->view('header/header_registrar', $data);
+        $this->load->view('header_footer/header_footer_registrar', $data);
 
        // Vista principal
-        $this->load->view('politicas_principal/body_politicas_principal', $data);
+        $this->load->view('body_footer/body_footer_politicas', $data);
 
         // Footer común
-        $this->load->view('footer/footer_registrar');
+        $this->load->view('footer_footer/footer_footer_registrar');
     }
 
     public function politicas_usuario() 
@@ -56,13 +56,13 @@ class Politicas extends CI_Controller
         $data['titulo'] = 'Politica de UNLa Tienda';
 
         // Cargar header común
-        $this->load->view('header/header_usuario', $data);
+        $this->load->view('header_footer/header_footer_usuario', $data);
 
         // Vista principal de la sección "Políticas"
-        $this->load->view('politicas_principal/body_politicas_principal', $data);
+        $this->load->view('body_footer/body_footer_politicas', $data);
 
         // Cargar footer común
-        $this->load->view('footer/footer_usuario');
+        $this->load->view('footer_footer/footer_usuario');
     }
 
     public function politicas_administrador() 
@@ -72,13 +72,13 @@ class Politicas extends CI_Controller
         $data['titulo'] = 'Politica de UNLa Tienda';
 
         // Cargar header común
-        $this->load->view('politicas_administrador/header_politicas_administrador', $data);
+        $this->load->view('header_footer/header_footer_administrador', $data);
 
         // Vista principal de la sección "Políticas"
-        $this->load->view('politicas_administrador/body_politicas_administrador', $data);
+        $this->load->view('body_footer/body_footer_politicas', $data);
 
         // Cargar footer común
-        $this->load->view('politicas_administrador/footer_politicas_administrador');
+        $this->load->view('footer_footer/footer_footer_administrador');
     }
 
 }

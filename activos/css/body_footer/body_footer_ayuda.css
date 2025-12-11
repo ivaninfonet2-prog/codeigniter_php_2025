@@ -1,0 +1,117 @@
+/* =============================== FONDO GENERAL =============================== */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+}
+
+/* =============================== TEXTO FUERA DE LA TARJETA =============================== */
+.intro-text {
+    text-align: center;
+    margin-top: 110px; /* espacio desde el header */
+    padding: 0 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro-text h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #e9f3ff;
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+.intro-text p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* =============================== MAIN =============================== */
+.main-content {
+    min-height: calc(100vh - 250px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* =============================== TARJETA =============================== */
+.cuadro-ayuda 
+ {
+    background: rgba(255, 255, 255, 0.06); /* más transparente */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* ligeramente visible */
+    padding: 30px 25px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover suave */
+.cuadro-ayuda:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.45);
+    transform: none;
+}
+
+/* =============================== TÍTULO =============================== */
+.cuadro-ayuda h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #7ee8fa;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
+/* =============================== TEXTO INTERNO =============================== */
+.cuadro-ayuda p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #eef9ff;
+    opacity: 0.95;
+    margin-bottom: 12px;
+}
+
+.extra-info {
+    font-size: 0.95rem;
+    color: #d6f1ff;
+    opacity: 0.9;
+}
+
+/* =============================== RESPONSIVE =============================== */
+@media (max-width: 768px) {
+    .intro-text h1 {
+        font-size: 1.85rem;
+    }
+
+    .intro-text p {
+        font-size: 1.05rem;
+    }
+
+    .cuadro-ayuda {
+        padding: 25px;
+        max-width: 92%;
+    }
+
+    .cuadro-ayuda h2 {
+        font-size: 1.7rem;
+    }
+
+    .cuadro-ayuda p {
+        font-size: 1rem;
+    }
+}
