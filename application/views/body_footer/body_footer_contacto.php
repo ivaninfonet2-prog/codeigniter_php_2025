@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Enlace al CSS -->
-    <link rel="stylesheet" href="<?= base_url('activos/css/body_footer/body_footer_contacto_.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('activos/css/body_footer/body_footer_contacto.css'); ?>">
 </head>
 <body style="background-image: url('<?= $fondo; ?>');">
 
