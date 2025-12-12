@@ -4,12 +4,13 @@
 
 /* Modal */
 .modal-content {
-    background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco translúcido */
+    background-color: rgba(255, 255, 255, 0.2);  /* Fondo ligeramente blanco */
     color: #333;  /* Texto oscuro para legibilidad */
     border-radius: 10px;
     border: none;
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);  /* Sombra suave */
+    backdrop-filter: blur(10px);  /* Desenfoque del fondo */
 }
 
 /* Título del modal */

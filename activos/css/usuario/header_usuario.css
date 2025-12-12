@@ -76,26 +76,20 @@ body {
     font-weight: 600;
     text-decoration: none;
     border: none;
+    color: #ffffff; /* Texto blanco */
+    display: inline-block;
 }
 
-/* Botón Login */
-.btn-login {
-    background-color: #0066ff;
-    color: #ffffff;
+/* Botón Cerrar Sesión (Rojo) */
+.nav-menu .btn-cerrar {
+    background-color: #ff4d4d !important; /* Rojo brillante */
+    color: #ffffff !important; /* Texto blanco */
+    border: 2px solid #ffffff !important; /* Borde blanco */
 }
 
-.btn-login:hover {
-    background-color: #004bb3;
-}
-
-/* Botón Registrar */
-.btn-register {
-    background-color: #009944;
-    color: #ffffff;
-}
-
-.btn-register:hover {
-    background-color: #006633;
+.nav-menu .btn-cerrar:hover {
+    background-color: #cc0000 !important; /* Rojo más oscuro */
+    border-color: #990000 !important; /* Borde más oscuro */
 }
 
 /* ================================
@@ -119,8 +113,8 @@ body {
     .nav-menu {
         gap: 15px;
         width: 100%;
-        justify-content: center;
-        margin-right: 0; /* centrado en móviles */
+        justify-content: center; /* centrado en móviles */
+        margin-right: 0;
     }
 
     .btn {
