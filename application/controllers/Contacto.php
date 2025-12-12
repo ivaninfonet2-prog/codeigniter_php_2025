@@ -26,13 +26,13 @@ class Contacto extends CI_Controller
         $data['titulo'] = 'Acerca de UNLa Tienda';
 
         // Header común
-        $this->load->view('header/header_login', $data);
+        $this->load->view('header_footer/header_footer_login', $data);
 
        // Vista principal
         $this->load->view('contacto_principal/body_contacto_principal', $data);
 
         // Footer común
-        $this->load->view('footer/footer_login');
+        $this->load->view('footer_footer/footer_footer_login');
     }
 
     public function contacto_registrar() 
@@ -41,13 +41,13 @@ class Contacto extends CI_Controller
         $data['titulo'] = 'Acerca de UNLa Tienda';
 
         // Header común
-        $this->load->view('header/header_registrar', $data);
+        $this->load->view('header_footer/header_footer_registrar', $data);
 
        // Vista principal
         $this->load->view('contacto_principal/body_contacto_principal', $data);
 
         // Footer común
-        $this->load->view('footer/footer_registrar');
+        $this->load->view('footer_footer/footer_footer_registrar');
     }
 
     public function contacto_usuario() 
@@ -56,13 +56,13 @@ class Contacto extends CI_Controller
         $data['fondo'] = base_url('activos/imagenes/mi_fondo.jpg');
 
         // Cargar header común
-        $this->load->view('header/header_usuario', $data);
+        $this->load->view('header_footer/header_footer_usuario', $data);
 
         // Vista principal de la sección "Contacto"
         $this->load->view('contacto_principal/body_contacto_principal', $data);
 
         // Cargar footer común
-        $this->load->view('footer/footer_usuario');
+        $this->load->view('footer_footer/footer_footer_usuario');
     }
 
     public function contacto_administrador() 
@@ -71,13 +71,13 @@ class Contacto extends CI_Controller
         $data['fondo'] = base_url('activos/imagenes/mi_fondo.jpg');
 
         // Cargar header común
-        $this->load->view('contacto_administrador/header_contacto_administrador', $data);
+        $this->load->view('header_footer/header_footer_administrador', $data);
 
         // Vista principal de la sección "Contacto"
-        $this->load->view('contacto_administrador/body_contacto_administrador', $data);
+        $this->load->view('contacto_principal/body_contacto_principal', $data);
 
         // Cargar footer común
-        $this->load->view('contacto_administrador/footer_contacto_administrador');
+        $this->load->view('footer_footer/footer_footer_administrador');
     }
 
 }

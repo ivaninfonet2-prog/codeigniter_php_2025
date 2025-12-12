@@ -1,35 +1,35 @@
 /* Título fuera de la tarjeta (sobre el fondo) */
 .titulo {
-    font-size: 1.8em; /* Ajuste del tamaño de la fuente */
+    font-size: 1.8em;
     font-weight: bold;
     color: #fff;
     text-align: center;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     width: 100%;
-    margin-top: 40px; /* Margen superior añadido para separar más del header */
-    margin-bottom: 20px; /* Margen inferior para separar del subtítulo */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-    overflow: visible; /* Asegura que el contenido no se oculte */
+    margin-top: 140px; /* Más separación del header */
+    margin-bottom: 20px;
+    white-space: nowrap;
+    overflow: visible;
 }
 
 /* Subtítulo fuera de la tarjeta (sobre el fondo) */
 .subtitulo {
-    font-size: 1.2em; /* Ajuste del tamaño del subtítulo */
+    font-size: 1.2em;
     color: #eee;
-    margin-bottom: 30px; /* Aumentamos el margen para separar más de la tarjeta */
+    margin-bottom: 50px; /* Más separación de la tarjeta */
     text-align: center;
     width: 100%;
-    max-width: 90%; /* Mantener subtítulo dentro de un área controlada */
+    max-width: 90%;
     margin: 0 auto;
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-    overflow: hidden; /* Evita que se desborde */
-    text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Caja de contenido (tarjeta) */
 .usuario-contenido {
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); /* Efecto esmerilado de fondo */
+    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 16px;
     text-align: center;
@@ -37,8 +37,8 @@
     width: 100%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     border: none;
-    margin-top: 20px; /* Separación de la tarjeta desde el subtítulo */
-    margin-bottom: 40px; /* Margen inferior para separar la tarjeta del footer */
+    margin-top: 70px; /* Más separación del subtítulo */
+    margin-bottom: 40px;
 }
 
 /* Imagen dentro de la tarjeta */
@@ -105,15 +105,15 @@
 /* Responsividad para pantallas grandes */
 @media (min-width: 1200px) {
     .usuario-contenido {
-        max-width: 900px; /* Ampliar aún más la tarjeta en pantallas grandes */
+        max-width: 900px;
     }
 
     .titulo {
-        font-size: 2.5em; /* Aumentar tamaño del título */
+        font-size: 2.5em;
     }
 
     .subtitulo {
-        font-size: 1.5em; /* Aumentar subtítulo en pantallas grandes */
+        font-size: 1.5em;
     }
 }
 
@@ -124,16 +124,19 @@
     }
 
     .titulo {
-        font-size: 2em; /* Ajuste tamaño en móviles */
+        font-size: 2em;
+        margin-top: 100px; /* Ajuste proporcional en móviles */
     }
 
     .subtitulo {
-        font-size: 1.2em; /* Ajuste tamaño en móviles */
+        font-size: 1.2em;
+        margin-bottom: 40px;
     }
 
     .usuario-contenido {
-        width: 95%; /* Ajustar al 95% del ancho */
+        width: 95%;
         padding: 20px;
+        margin-top: 50px; /* Ajuste proporcional en móviles */
     }
 
     .d-flex {

@@ -1,0 +1,110 @@
+/* ================================
+   Modal de Cerrar Sesión
+   ================================ */
+
+/* Modal */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco translúcido */
+    color: #333;  /* Texto oscuro para legibilidad */
+    border-radius: 10px;
+    border: none;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);  /* Sombra suave */
+}
+
+/* Título del modal */
+.modal-header {
+    border-bottom: 1px solid #ccc; /* Línea sutil de separación */
+    padding-bottom: 15px;
+}
+
+.modal-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #333;  /* Título oscuro */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera para mejorar legibilidad */
+}
+
+/* Cuerpo del modal */
+.modal-body {
+    font-size: 1.1rem;
+    color: #333;  /* Texto oscuro */
+    line-height: 1.5;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);  /* Sombra ligera para mayor contraste */
+}
+
+/* Botones del modal */
+.modal-footer .btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+/* Botón de Cancelar */
+.modal-footer .btn-secondary {
+    background-color: #555;  /* Fondo gris oscuro */
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #666;  /* Fondo gris más oscuro */
+    border-color: #555;
+}
+
+/* Botón de Confirmación (Cerrar sesión) */
+.modal-footer .btn-danger {
+    background-color: #007bbf;  /* Azul coherente con el diseño de los botones */
+    color: #fff;
+    border: 1px solid #007bbf;
+}
+
+.modal-footer .btn-danger:hover {
+    background-color: #005f8f;  /* Azul más oscuro al pasar el mouse */
+    border-color: #005f8f;
+}
+
+/* Estilos del fondo del modal */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.6);  /* Fondo oscuro translúcido */
+}
+
+/* Asegura que el modal está centrado en la pantalla */
+.modal-dialog {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+/* Opcional: Efectos de transición */
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+}
+
+.modal.fade.show .modal-dialog {
+    transform: translate(0, 0);
+}
+
+/* ================================
+   Responsive para Modal
+   ================================ */
+@media (max-width: 768px) {
+    .modal-dialog {
+        margin: 10px auto;
+    }
+
+    .modal-title {
+        font-size: 1.3rem;  /* Ajustar tamaño del título en pantallas pequeñas */
+    }
+
+    .modal-body {
+        font-size: 0.9rem;  /* Ajustar tamaño del texto en pantallas pequeñas */
+    }
+
+    .modal-footer .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}

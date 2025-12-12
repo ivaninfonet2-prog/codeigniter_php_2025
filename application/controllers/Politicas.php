@@ -10,7 +10,7 @@ class Politicas extends CI_Controller
         $data['titulo'] = 'Politica de UNLa Tienda';
 
         // Header común
-        $this->load->view('header_footer/header_footer_politicas', $data);
+        $this->load->view('header_footer/header_footer_principal', $data);
 
         // Vista principal
         $this->load->view('body_footer/body_footer_politicas', $data);
@@ -62,7 +62,7 @@ class Politicas extends CI_Controller
         $this->load->view('body_footer/body_footer_politicas', $data);
 
         // Cargar footer común
-        $this->load->view('footer_footer/footer_usuario');
+        $this->load->view('footer_footer/footer_footer_usuario');
     }
 
     public function politicas_administrador() 
