@@ -11,4 +11,4 @@
     </div>
 </footer>
 
-<link rel="stylesheet" href="<?= base_url('activos/css/usuario_reservas_detalle/footer_usuario_reservas_detalle.css'); ?>">
+<link rel="stylesheet" href="<?= base_url('activos/css/principal/footer_principal.css'); ?>">

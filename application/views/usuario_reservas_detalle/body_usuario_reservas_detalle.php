@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Detalle de Reserva</title>
     <link rel="stylesheet" href="<?php echo base_url('activos/css/usuario_reservas_detalle/body_usuario_reservas_detalle.css'); ?>">
+    <!-- Nuevo CSS para el aviso -->
+    <link rel="stylesheet" href="<?php echo base_url('activos/css/usuario_reservas_detalle/aviso_usuario_reservas_detalle.css'); ?>">
 </head>
 
 <body style="background-image: url('<?= $fondo; ?>');">
@@ -22,19 +24,28 @@
         </div>
 
         <?php if ($this->session->flashdata('mensaje_cancelacion')): ?>
-            <div class="detalle-card" style="background: rgba(220, 53, 69, 0.15); color: #a00; margin-top: 20px; text-align: center;">
+            <div class="detalle-card aviso-cancelacion">
                 <?= $this->session->flashdata('mensaje_cancelacion'); ?>
             </div>
         <?php else: ?>
             <div class="boton-container">
-                <a href="<?= base_url('reservar/cancelar_reserva/'.$reserva['id_reserva']); ?>" class="boton">Cancelar Reserva</a>
-            </div>
-
-            <div class="boton-container">
-                <a href="<?= base_url('usuario/usuario_reservas'); ?>" class="boton">Volver a mis reservas</a>
+                <!-- Botón que abre el aviso -->
+                <a href="#aviso-cancelacion" class="boton">Cancelar Reserva</a>
             </div>
         <?php endif; ?>
     </main>
+
+    <!-- Aviso de confirmación en HTML -->
+    <div id="aviso-cancelacion" class="overlay">
+        <div class="popup">
+            <h2>Confirmar Cancelación</h2>
+            <p>¿Está seguro de que desea cancelar la reserva?</p>
+            <div class="acciones">
+                <a href="<?= base_url('reservar/cancelar_reserva/'.$reserva['id_reserva']); ?>" class="boton confirmar">Sí, cancelar</a>
+                <a href="#" class="boton volver">No, volver</a>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

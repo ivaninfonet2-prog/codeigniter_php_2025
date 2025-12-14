@@ -4,13 +4,12 @@
 
 /* Modal */
 .modal-content {
-    background-color: rgba(255, 255, 255, 0.2);  /* Fondo ligeramente blanco */
-    color: #333;  /* Texto oscuro para legibilidad */
+    background-color: #fff;   /* Fondo blanco sólido */
+    color: #000;              /* Texto negro para legibilidad */
     border-radius: 10px;
     border: none;
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);  /* Sombra suave */
-    backdrop-filter: blur(10px);  /* Desenfoque del fondo */
 }
 
 /* Título del modal */
@@ -22,16 +21,14 @@
 .modal-title {
     font-size: 1.7rem;
     font-weight: bold;
-    color: #333;  /* Título oscuro */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera para mejorar legibilidad */
+    color: #000;  /* Título negro */
 }
 
 /* Cuerpo del modal */
 .modal-body {
     font-size: 1.1rem;
-    color: #333;  /* Texto oscuro */
+    color: #000;  /* Texto negro */
     line-height: 1.5;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);  /* Sombra ligera para mayor contraste */
 }
 
 /* Botones del modal */
@@ -58,13 +55,13 @@
 
 /* Botón de Confirmación (Cerrar sesión) */
 .modal-footer .btn-danger {
-    background-color: #007bbf;  /* Azul coherente con el diseño de los botones */
+    background-color: #007bbf;  /* Azul coherente */
     color: #fff;
     border: 1px solid #007bbf;
 }
 
 .modal-footer .btn-danger:hover {
-    background-color: #005f8f;  /* Azul más oscuro al pasar el mouse */
+    background-color: #005f8f;  /* Azul más oscuro */
     border-color: #005f8f;
 }
 
@@ -73,19 +70,23 @@
     background-color: rgba(0, 0, 0, 0.6);  /* Fondo oscuro translúcido */
 }
 
-/* Asegura que el modal está centrado en la pantalla */
+/* Centrado del modal */
 .modal-dialog {
     max-width: 500px;
-    margin: 30px auto;
+    margin: auto;              /* Centrado vertical y horizontal */
+    display: flex;
+    align-items: center;
+    min-height: 100vh;         /* Ocupa toda la altura de la pantalla */
 }
 
-/* Opcional: Efectos de transición */
+/* Efectos de transición */
 .modal.fade .modal-dialog {
     transition: transform 0.3s ease-out;
+    transform: translateY(-20px);
 }
 
 .modal.fade.show .modal-dialog {
-    transform: translate(0, 0);
+    transform: translateY(0);
 }
 
 /* ================================
@@ -94,14 +95,15 @@
 @media (max-width: 768px) {
     .modal-dialog {
         margin: 10px auto;
+        min-height: auto;
     }
 
     .modal-title {
-        font-size: 1.3rem;  /* Ajustar tamaño del título en pantallas pequeñas */
+        font-size: 1.3rem;
     }
 
     .modal-body {
-        font-size: 0.9rem;  /* Ajustar tamaño del texto en pantallas pequeñas */
+        font-size: 0.9rem;
     }
 
     .modal-footer .btn {

@@ -1,77 +1,123 @@
-/* Imagen del artista tipo carnet */
-.tarjeta .imagen {
-    width: 80px;   /* aprox. 5cm en pantalla */
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 0 auto 1rem; /* centrada y con margen abajo */
-    display: block;
+/* ================================
+   General
+   ================================ */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #f8f9fa;
 }
 
-/* Tarjeta transparente con un poquito de negro */
-.tarjeta {
-    background: rgba(0, 0, 0, 0.4); /* negro suave */
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    overflow: hidden;
+/* ================================
+   Header principal
+   ================================ */
+.main-header {
+    width: 100%;
+    height: 100px;
+    background-color: #000; /* Fondo negro sólido */
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Hover en tarjeta */
-.tarjeta:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+/* Contenedor interno */
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 30px; /* Más espacio interno */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
 }
 
-/* Letras claras dentro de la tarjeta */
-.tarjeta h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #ffffff; /* blanco */
-}
-
-.tarjeta h2 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-weight: normal;
-    color: #e0e0e0; /* gris claro */
-}
-
-.tarjeta .precio {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #81c784; /* verde claro */
-    margin-bottom: 1rem;
-}
-
-/* Botón "Ver espectáculo" */
-.boton-ver {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    background: linear-gradient(135deg, #4caf50, #81c784);
-    color: #fff;
-    border-radius: 8px;
+/* ================================
+   Logo + título
+   ================================ */
+.brand {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
 }
 
-.boton-ver:hover {
-    background: linear-gradient(135deg, #81c784, #4caf50);
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+.logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #ffffff; /* Borde blanco sobrio */
+    margin-right: 12px;
 }
 
-/* Título debajo del header */
-.mensaje-bienvenida {
-    font-size: 2rem;
+.site-title {
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #ffffff; /* blanco bien visible */
-    margin-top: 120px; /* lo baja para que no se pegue al header fijo */
-    margin-bottom: 0.5rem;
-    text-align: center;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* ================================
+   Menú a la derecha
+   ================================ */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Separación entre botones */
+    margin-right: 40px; /* Margen para que no se peguen al borde derecho */
+}
+
+/* ================================
+   Botones personalizados
+   ================================ */
+.btn {
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+}
+
+/* Botón Cerrar Sesión - Aseguramos que el color de fondo sea rojo */
+.btn-cerrar {
+    background-color: #ff4d4d !important; /* Rojo brillante */
+    color: #ffffff !important; /* Texto blanco */
+    border: none !important; /* Elimina el borde predeterminado */
+    transition: background-color 0.3s ease; /* Efecto de transición para el hover */
+}
+
+.btn-cerrar:hover {
+    background-color: #cc0000 !important; /* Rojo más oscuro al hacer hover */
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 768px) {
+    .main-header {
+        height: 90px;
+    }
+
+    .site-title {
+        font-size: 1.4rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+        width: 100%;
+        justify-content: center; /* Centrando los elementos en móviles */
+        margin-right: 0;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
