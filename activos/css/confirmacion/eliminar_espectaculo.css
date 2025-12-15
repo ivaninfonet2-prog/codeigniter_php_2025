@@ -1,0 +1,84 @@
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff1f2; /* tono suave de alerta */
+    min-height: 100vh;
+}
+
+/* ===== CONTENEDOR ===== */
+.confirmacion-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ===== TARJETA ===== */
+.confirmacion-card {
+    background: #ffffff;
+    padding: 30px;
+    max-width: 430px;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* Variante peligrosa */
+.confirmacion-card.peligro {
+    border-top: 5px solid #b91c1c;
+}
+
+/* ===== TEXTO ===== */
+.confirmacion-card h1 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: #991b1b;
+}
+
+.confirmacion-card p {
+    margin: 15px 0 25px;
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+/* ===== ACCIONES ===== */
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease;
+}
+
+/* Eliminar */
+.btn.confirmar {
+    background: #b91c1c;
+    color: #ffffff;
+}
+
+/* Cancelar */
+.btn.cancelar {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+/* Hover */
+.btn:hover {
+    opacity: 0.9;
+}

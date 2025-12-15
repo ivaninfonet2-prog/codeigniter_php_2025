@@ -1,0 +1,78 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+}
+
+/* ===== CONTENEDOR ===== */
+.confirmacion-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ===== TARJETA ===== */
+.confirmacion-card {
+    background: #ffffff;
+    padding: 30px;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ===== TEXTO ===== */
+.confirmacion-card h1 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: #b91c1c;
+}
+
+.confirmacion-card p {
+    margin: 15px 0 25px;
+    font-size: 1rem;
+    color: #374151;
+}
+
+/* ===== ACCIONES ===== */
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* Confirmar */
+.btn.confirmar {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+/* Cancelar */
+.btn.cancelar {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+/* Hover simple */
+.btn:hover {
+    opacity: 0.9;
+}
