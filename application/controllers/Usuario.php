@@ -17,25 +17,10 @@ class Usuario extends CI_Controller
         $this->load->helper(['url', 'form']);
     }
 
-    /* =========================================================
-       DATOS BASE (SOLUCIONA EL ERROR)
-       ========================================================= */
-    private function datos_base($titulo = '')
+    // panel principal del usuario
+    public function index() 
     {
-        return [
-            'titulo'     => $titulo,
-            'fondo'      => base_url('activos/imagenes/mi_fondo.jpg'),
-            'id_usuario' => $this->session->userdata('id_usuario'),
-            'logged_in'  => $this->session->userdata('logged_in')
-        ];
-    }
-
-    /* =========================================================
-       PANEL PRINCIPAL USUARIO
-       ========================================================= */
-    public function index()
-    {
-        if (!$this->session->userdata('logged_in'))
+        if ( ! $this->session->userdata('logged_in'))
         {
             redirect('login');
             return;
@@ -46,17 +31,28 @@ class Usuario extends CI_Controller
         $this->output->set_header("Cache-Control: post-check=0, pre-check=0", false);
         $this->output->set_header("Pragma: no-cache");
 
-        $data = $this->datos_base('Bienvenido Usuario');
-        $data['nombre']   = '';
-        $data['apellido'] = '';
-
         $id_usuario = $this->session->userdata('id_usuario');
-        $usuario = $this->Usuario_modelo->obtener_por_id($id_usuario);
+        $usuario = $this->Usuario_modelo->obtener_usuario_por_id($id_usuario);
+
+        $data = 
+        [
+            'titulo'     => 'Bienvenido Usuario',
+            'fondo'      => base_url('activos/imagenes/mi_fondo.jpg'),
+            'id_usuario' => $id_usuario,
+            'logged_in'  => $this->session->userdata('logged_in'),
+            'nombre'     => '',
+            'apellido'   => ''
+        ];
 
         if ($usuario)
         {
             $data['nombre']   = $usuario->nombre;
             $data['apellido'] = $usuario->apellido;
+        }
+        else
+        {
+            $data['nombre']   = '';
+            $data['apellido'] = '';
         }
 
         $this->load->view('usuario/header_usuario', $data);
@@ -64,22 +60,24 @@ class Usuario extends CI_Controller
         $this->load->view('usuario/footer_usuario', $data);
     }
 
-    /* =========================================================
-       ESPECTÁCULOS
-       ========================================================= */
+    // usuario espectaculos
     public function usuario_espectaculos()
     {
-        $data = $this->datos_base('Cartelera de Espectáculos');
-        $data['espectaculos'] = $this->Espectaculo_modelo->obtener_espectaculos();
+        $data = 
+        [
+            'titulo'       => 'Cartelera de Espectáculos',
+            'fondo'        => base_url('activos/imagenes/mi_fondo.jpg'),
+            'id_usuario'   => $this->session->userdata('id_usuario'),
+            'logged_in'    => $this->session->userdata('logged_in'),
+            'espectaculos' => $this->Espectaculo_modelo->obtener_espectaculos()
+        ];
 
         $this->load->view('usuario_espectaculos/usuario_espectaculos_header', $data);
         $this->load->view('usuario_espectaculos/usuario_espectaculos_body', $data);
         $this->load->view('usuario_espectaculos/usuario_espectaculos_footer');
     }
 
-    /* =========================================================
-       RESERVAS
-       ========================================================= */
+    // reservas del usuario
     public function usuario_reservas()
     {
         $id_usuario = $this->session->userdata('id_usuario');
@@ -90,19 +88,26 @@ class Usuario extends CI_Controller
             return;
         }
 
-        $data = $this->datos_base('Mis Reservas');
-        $data['reservas'] = $this->Reserva_modelo->obtener_reservas($id_usuario);
+        $data = 
+        [
+            'titulo'     => 'Mis Reservas',
+            'fondo'      => base_url('activos/imagenes/mi_fondo.jpg'),
+            'id_usuario' => $id_usuario,
+            'logged_in'  => $this->session->userdata('logged_in'),
+            'reservas'   => $this->Reserva_modelo->obtener_reservas($id_usuario)
+        ];
 
         $this->load->view('usuario_reservas/usuario_reservas_header', $data);
         $this->load->view('usuario_reservas/usuario_reservas_body', $data);
         $this->load->view('usuario_reservas/usuario_reservas_footer');
     }
 
+    // usuario reservas detalle
     public function usuario_reservas_detalle($id_reserva)
     {
         $id_usuario = $this->session->userdata('id_usuario');
 
-        if (!$id_usuario)
+        if ( ! $id_usuario)
         {
             redirect('login');
             return;
@@ -110,49 +115,69 @@ class Usuario extends CI_Controller
 
         $reserva = $this->Reserva_modelo->obtener_reserva_detalle($id_reserva, $id_usuario);
 
-        if (!$reserva)
+        if ( ! $reserva)
         {
             show_error('Reserva no encontrada.', 404);
         }
 
-        $data = $this->datos_base('Detalle de Reserva');
-        $data['reserva'] = $reserva;
+        $data = 
+        [
+            'titulo'     => 'Detalle de Reserva',
+            'fondo'      => base_url('activos/imagenes/mi_fondo.jpg'),
+            'id_usuario' => $id_usuario,
+            'logged_in'  => $this->session->userdata('logged_in'),
+            'reserva'    => $reserva
+        ];
 
         $this->load->view('usuario_reservas_detalle/header_usuario_reservas_detalle', $data);
         $this->load->view('usuario_reservas_detalle/body_usuario_reservas_detalle', $data);
         $this->load->view('usuario_reservas_detalle/footer_usuario_reservas_detalle', $data);
     }
 
-    /* =========================================================
-       VALIDACIÓN
-       ========================================================= */
+    // validación de usuario  
     private function validar_usuario($es_nuevo = true)
     {
         $this->form_validation->set_rules('nombre', 'Nombre', 'required|trim');
         $this->form_validation->set_rules('apellido', 'Apellido', 'required|trim');
-        $this->form_validation->set_rules(
-            'email',
-            'Email',
-            'required|valid_email' . ($es_nuevo ? '|is_unique[usuarios.nombre_usuario]' : '')
-        );
 
         if ($es_nuevo)
         {
+            // Si es un usuario nuevo, el email debe ser único
+            $this->form_validation->set_rules(
+                'email',
+                'Email',
+                'required|valid_email|is_unique[usuarios.nombre_usuario]'
+            );
+
             $this->form_validation->set_rules('password', 'Contraseña', 'required|min_length[6]');
             $this->form_validation->set_rules('password_confirm', 'Confirmar Contraseña', 'required|matches[password]');
         }
+        else
+        {
+            // Si es edición, no se valida la unicidad del email
+            $this->form_validation->set_rules(
+                'email',
+                'Email',
+                'required|valid_email'
+            );
+        }
     }
 
-    /* =========================================================
-       CREAR USUARIO
-       ========================================================= */
+    // crear usuario
+
     public function crear_usuario()
     {
         $this->validar_usuario(true);
 
         if ($this->form_validation->run() === FALSE)
         {
-            $data = $this->datos_base('Crear Usuario');
+            $data = 
+            [
+                'titulo'     => 'Crear Usuario',
+                'fondo'      => base_url('activos/imagenes/mi_fondo.jpg'),
+                'id_usuario' => $this->session->userdata('id_usuario'),
+                'logged_in'  => $this->session->userdata('logged_in')
+            ];
 
             $this->load->view('crear_usuario/header_crear_usuario', $data);
             $this->load->view('crear_usuario/body_crear_usuario', $data);
@@ -160,7 +185,8 @@ class Usuario extends CI_Controller
         }
         else
         {
-            $usuario_data = [
+            $usuario_data = 
+            [
                 'nombre'         => $this->input->post('nombre'),
                 'apellido'       => $this->input->post('apellido'),
                 'nombre_usuario' => $this->input->post('email'),
@@ -181,12 +207,11 @@ class Usuario extends CI_Controller
         }
     }
 
-    /* =========================================================
-       EDITAR USUARIO
-       ========================================================= */
+    // EDITAR USUARIO
+       
     public function editar_usuario($id_usuario)
     {
-        $usuario = $this->Usuario_modelo->obtener_por_id($id_usuario);
+        $usuario = $this->Usuario_modelo->obtener_usuario_por_id($id_usuario);
 
         if (!$usuario)
         {
@@ -197,8 +222,14 @@ class Usuario extends CI_Controller
 
         if ($this->form_validation->run() === FALSE)
         {
-            $data = $this->datos_base('Editar Usuario');
-            $data['usuario'] = $usuario;
+            $data = 
+            [
+                'titulo'     => 'Editar Usuario',
+                'fondo'      => base_url('activos/imagenes/mi_fondo.jpg'),
+                'id_usuario' => $this->session->userdata('id_usuario'),
+                'logged_in'  => $this->session->userdata('logged_in'),
+                'usuario'    => $usuario
+            ];
 
             $this->load->view('editar_usuario/header_editar_usuario', $data);
             $this->load->view('editar_usuario/body_editar_usuario', $data);
@@ -206,7 +237,8 @@ class Usuario extends CI_Controller
         }
         else
         {
-            $usuario_data = [
+            $usuario_data =
+            [
                 'nombre'         => $this->input->post('nombre'),
                 'apellido'       => $this->input->post('apellido'),
                 'nombre_usuario' => $this->input->post('email')
@@ -227,34 +259,32 @@ class Usuario extends CI_Controller
         }
     }
 
-    /* =========================================================
-       ELIMINAR USUARIO
-       ========================================================= */
     public function eliminar_usuario($id_usuario)
     {
         $usuario = $this->Usuario_modelo->obtener_por_id($id_usuario);
 
-        if (!$usuario)
+        if ( ! $usuario)
         {
             show_error('Usuario no encontrado.', 404);
         }
 
+        // Verificar si el usuario tiene clientes asociados
         $this->db->where('usuario_id', $id_usuario);
         $clientes = $this->db->get('clientes');
 
         if ($clientes->num_rows() > 0)
         {
             $this->session->set_flashdata(
-                'mensaje_error',
-                'No se puede eliminar el usuario porque tiene clientes asociados.'
+            'mensaje_error',
+            'No se puede eliminar el usuario porque tiene clientes asociados.'
             );
         }
         else
         {
             $this->Usuario_modelo->eliminar_usuario($id_usuario);
             $this->session->set_flashdata(
-                'mensaje_exito',
-                'Usuario eliminado correctamente.'
+            'mensaje_exito',
+            'Usuario eliminado correctamente.'
             );
         }
 
