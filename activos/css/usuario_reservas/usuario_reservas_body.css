@@ -15,7 +15,7 @@ body {
    CONTENEDOR
 ================================ */
 .contenido {
-    padding: 6rem 1.5rem 4rem;
+    padding: 5rem 1.5rem 4rem; /* sube todo un poco */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -29,22 +29,22 @@ body {
 .intro {
     max-width: 900px;
     text-align: center;
-    margin-bottom: 2.2rem;
-    margin-top: 3rem;  /* Bajar el texto superior */
+    margin-bottom: 1.8rem;
+    margin-top: 2rem; /* sube el bloque */
 }
 
 .titulo {
     font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-    margin-top: 2rem;  /* Bajar un poco más el título */
+    margin-bottom: 0.4rem;
+    margin-top: 0.8rem; /* SUBE el título */
     color: #ffffff;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.55);
 }
 
 .descripcion {
-    font-size: 1.15rem;
-    color: #f1f1f1;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    font-size: 1.1rem;
+    color: #f3f3f3;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.45);
 }
 
 /* ===============================
@@ -54,25 +54,29 @@ body {
     width: 100%;
     max-width: 900px;
     border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.78); /* MÁS TRANSPARENTE */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    animation: fadeInUp 0.8s ease;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+    animation: fadeInUp 0.7s ease;
 }
 
-/* TEXTO OSCURO Y LEGIBLE */
+/* TEXTO */
 .tabla-reservas th,
 .tabla-reservas td {
     padding: 14px 16px;
     text-align: center;
-    color: #222;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    color: #1f1f1f;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 /* HEADER TABLA */
 .tabla-reservas th {
-    background: rgba(230, 242, 255, 0.95);
+    background: rgba(220, 235, 250, 0.85);
     color: #1f3a5f;
     font-weight: 700;
     position: sticky;
@@ -81,22 +85,22 @@ body {
 
 /* FILAS */
 .tabla-reservas tr:nth-child(even) {
-    background: rgba(245, 245, 245, 0.9);
+    background: rgba(245, 245, 245, 0.75);
 }
 
 .tabla-reservas tr:hover {
-    background: rgba(220, 235, 255, 0.9);
-    transition: background 0.3s ease;
+    background: rgba(215, 230, 250, 0.85);
+    transition: background 0.25s ease;
 }
 
 /* ===============================
    TOTALES
 ================================ */
 .tabla-reservas td.total {
-    font-weight: bold;
+    font-weight: 700;
     color: #2e7d32;
-    background: rgba(200, 255, 200, 0.35);
-    border-radius: 4px;
+    background: rgba(180, 240, 180, 0.35);
+    border-radius: 6px;
 }
 
 /* ===============================
@@ -105,17 +109,17 @@ body {
 .boton-detalle {
     display: inline-block;
     padding: 8px 16px;
-    background: #1e88e5;
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
     color: #ffffff;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 6px;
-    transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 7px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .boton-detalle:hover {
-    background: #1565c0;
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(30, 136, 229, 0.45);
 }
 
 /* ===============================
@@ -125,8 +129,8 @@ body {
     font-size: 1.2rem;
     color: #ffffff;
     font-style: italic;
-    margin-top: 2rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    margin-top: 1.6rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.55);
 }
 
 /* ===============================
@@ -135,7 +139,7 @@ body {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(16px);
     }
     to {
         opacity: 1;
@@ -147,12 +151,18 @@ body {
    RESPONSIVE
 ================================ */
 @media (max-width: 768px) {
+
+    .intro {
+        margin-top: 1.4rem;
+    }
+
     .titulo {
         font-size: 1.8rem;
+        margin-top: 0.6rem;
     }
 
     .descripcion {
-        font-size: 1.05rem;
+        font-size: 1.02rem;
     }
 
     .tabla-reservas th,
