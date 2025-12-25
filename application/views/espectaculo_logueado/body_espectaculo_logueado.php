@@ -76,13 +76,13 @@
 
                 <div class="botones">
                     <button type="submit" class="btn reservar">Reservar</button>
-                    <a href="<?= site_url('usuario') ?>" class="btn volver">Volver</a>
+                    <a href="<?= site_url('usuario/usuario_espectaculos') ?>" class="btn volver">Ir a Espectaculos</a>
                 </div>
             </form>
         <?php else: ?>
             <div class="error">Entradas agotadas.</div>
             <div class="botones">
-                <a href="<?= site_url('usuario') ?>" class="btn volver">Volver</a>
+                <a href="<?= site_url('usuario/usuario_espectaculos') ?>" class="btn volver">Ir a Espectaculos</a>
             </div>
         <?php endif; ?>
 
