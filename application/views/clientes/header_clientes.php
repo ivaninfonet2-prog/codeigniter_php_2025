@@ -5,41 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $titulo ?? 'UNLa Tienda'; ?></title>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS Header -->
+    <link rel="stylesheet" href="<?= base_url('activos/css/administrador_espectaculos/header_administrador_espectaculos.css'); ?>">
 
-    <!-- CSS personalizado -->
-    <link rel="stylesheet" href="<?= base_url('activos/css/clientes/header_clientes.css'); ?>">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body>
 
 <header class="main-header">
-    <nav class="navbar shadow-sm">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="header-container d-flex justify-content-between align-items-center">
+        <!-- Logo + título (LOGOUT FORZADO) -->
+        <a href="<?= site_url('login/logout'); ?>" class="brand d-flex align-items-center text-decoration-none" title="Cerrar sesión">
+            <img src="<?= base_url('activos/imagenes/logo.jpg'); ?>" class="logo-img me-2" alt="Logo UNLa">
+            <span class="site-title">UNLa Tienda</span>
+        </a>
 
-            <!-- LOGO = LOGOUT FORZADO -->
-            <a class="navbar-brand d-flex align-items-center"
-               href="<?= site_url('login/logout'); ?>"
-               title="Cerrar sesión">
-                <img src="<?= base_url('activos/imagenes/logo.jpg'); ?>"
-                     alt="Logo UNLa"
-                     class="logo-img me-2">
-                <span class="site-title">UNLa Tienda</span>
+        <!-- Menú de navegación -->
+        <nav class="nav-menu d-flex gap-3">
+            <a href="<?= site_url('administrador'); ?>" class="btn btn-volver">
+                Ir al Administrador
             </a>
-
-            <!-- Botón Cerrar Sesión -->
-            <a class="btn btn-outline-dark"
-               href="<?= site_url('administrador/cerrar_sesion_administrador'); ?>">
+            <a href="<?= site_url('confirmacion/cerrar_sesion_administrador'); ?>" class="btn btn-cerrar">
                 Cerrar Sesión
             </a>
-
-        </div>
-    </nav>
+        </nav>
+    </div>
 </header>
 
-<!-- Bootstrap JS (opcional) -->
+<!-- Scripts de Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Prevención de retroceso y logout forzado -->
+<script>
+    if (window.history.replaceState) 
+    {
+        window.history.replaceState(null, null, window.location.href);
+    }
+
+    window.onpageshow = function(event) 
+    {
+        if (event.persisted || !<?= json_encode($this->session->userdata('logged_in')); ?>) 
+        {
+            window.location.replace('<?= site_url("login"); ?>');
+        }
+    };
+</script>
 
 </body>
 </html>

@@ -23,11 +23,11 @@
         </a>
 
         <!-- Menú de navegación -->
-        <nav class="nav-menu d-flex gap-2">
-            <a href="<?= site_url('administrador'); ?>" class="btn btn-success">
+        <nav class="nav-menu d-flex gap-3">
+            <a href="<?= site_url('administrador'); ?>" class="btn btn-volver">
                 Ir al Administrador
             </a>
-            <a href="<?= site_url('confirmacion/cerrar_sesion_administrador'); ?>" class="btn btn-danger">
+            <a href="<?= site_url('confirmacion/cerrar_sesion_administrador'); ?>" class="btn btn-cerrar">
                 Cerrar Sesión
             </a>
         </nav>
@@ -39,7 +39,6 @@
 
 <!-- Prevención de retroceso y logout forzado -->
 <script>
-    // Reemplaza el historial para prevenir volver a páginas privadas
     if (window.history.replaceState) 
     {
         window.history.replaceState(null, null, window.location.href);
@@ -47,7 +46,6 @@
 
     window.onpageshow = function(event) 
     {
-        // Si se usa cache o no hay sesión activa, redirige al login
         if (event.persisted || !<?= json_encode($this->session->userdata('logged_in')); ?>) 
         {
             window.location.replace('<?= site_url("login"); ?>');
