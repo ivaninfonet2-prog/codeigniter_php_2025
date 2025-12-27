@@ -13,7 +13,7 @@
         <p>El espectáculo será eliminado de forma permanente.</p>
 
         <div class="acciones">
-            <a href="<?= site_url('admin/eliminar_espectaculo'); ?>" class="btn confirmar">Eliminar</a>
+            <a href="<?= site_url('administrador/eliminar_espectaculo'); ?>" class="btn confirmar">Eliminar</a>
             <a href="<?= current_url(); ?>" class="btn cancelar">Cancelar</a>
         </div>
     </div>

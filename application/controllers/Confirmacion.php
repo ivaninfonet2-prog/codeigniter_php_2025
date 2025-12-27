@@ -114,6 +114,14 @@ class Confirmacion extends CI_Controller
     /** Confirmar eliminar espectáculo */
     public function eliminar_espectaculo()
     {
+          $data =
+        [
+            'titulo'     => 'Confirmar cancelación de reserva',
+            'fondo'      => base_url('activos/imagenes/mi_fondo.jpg'),
+        ];
+
+        $this->load->view('administrador/header_administrador', $data);
         $this->load->view('confirmacion/eliminar_espectaculo');
+        $this->load->view('administrador/footer_administrador');
     }
 }
