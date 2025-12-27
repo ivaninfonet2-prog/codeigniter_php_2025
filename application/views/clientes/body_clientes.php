@@ -1,9 +1,14 @@
-<h2>Listado de Clientes</h2>
-
-<!-- CSS personalizado -->
+<!-- CSS personalizado para el body -->
 <link rel="stylesheet" href="<?= base_url('activos/css/clientes/body_clientes.css'); ?>">
 
 <main class="inicio-container" style="background-image: url('<?= $fondo ?>');">
+    
+    <!-- Texto y descripción antes de la tabla -->
+    <div class="header-text">
+        <h2>Listado de Clientes</h2>
+        <p>A continuación se muestran todos los clientes registrados en el sistema, con sus datos de contacto y usuario asociado.</p>
+    </div>
+
     <?php if (!empty($clientes)): ?>
         <div class="table-container">
             <table class="clientes-table">
@@ -30,13 +35,8 @@
             </table>
         </div>
 
-        <!-- Botones debajo de la tabla -->
-        <div class="botones-acciones">
-            <a href="<?= base_url('administrador'); ?>" class="btn volver">Volver al panel</a>
-            <a href="<?= base_url('login/logout'); ?>" class="btn cerrar">Cerrar sesión</a>
-        </div>
-
     <?php else: ?>
         <p class="no-datos"><?= isset($mensaje) ? $mensaje : 'No hay datos disponibles.' ?></p>
     <?php endif; ?>
+    
 </main>

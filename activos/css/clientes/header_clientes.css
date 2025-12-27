@@ -1,82 +1,139 @@
-
-/* General */
-body {
+/* ======================================================
+   BASE
+====================================================== */
+* {
+    box-sizing: border-box;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212; /* fondo oscuro general */
-    color: #f8f9fa;            /* texto claro por defecto */
+    padding: 0;
 }
 
-/* Header principal */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
 .main-header {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;          /* ocupa todo el ancho */
-    height: 80px;
-    background-color: #1a1a1a; /* fondo oscuro */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, #000000, #141414);
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.8);
 }
 
-/* Contenedor */
-.container-fluid {
-    padding-left: 20px;   /* margen interno para logo */
-    padding-right: 0;
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Logo */
+/* ======================================================
+   BRAND
+====================================================== */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
 .logo-img {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 2px solid #ffffff; /* contorno blanco */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.logo-img:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 12px rgba(255,255,255,0.6);
+    border: 2px solid #ffffff;
 }
 
-/* Título */
 .site-title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #ffffff; /* texto blanco */
-    margin: 0;
+    color: #ffffff;
 }
 
-/* Menú */
+/* ======================================================
+   NAV
+====================================================== */
 .nav-menu {
-    margin-right: 40px;
-    gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
 }
 
-/* Botones Login y Registrar */
-.nav-menu .btn {
-    background-color: #007bbf; /* fondo azul */
-    color: #ffffff;            /* texto blanco */
+/* ======================================================
+   BOTONES
+====================================================== */
+.btn {
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
     border: none;
-    font-weight: 500;
-    border-radius: 5px;
-    padding: 8px 16px;
-    transition: all 0.3s ease;
     cursor: pointer;
-}
-.nav-menu .btn:hover {
-    background-color: #005f8f; /* azul más oscuro al pasar el mouse */
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0,123,191,0.6);
+    letter-spacing: 0.4px;
+    transition: all 0.25s ease;
 }
 
-/* Hamburguesa */
-.navbar-toggler-icon {
-    filter: invert(1); /* icono claro para que se vea sobre fondo oscuro */
+.btn-volver {
+    background: linear-gradient(135deg, #1e90ff, #0d6efd);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(30,144,255,0.6);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .site-title { font-size: 1.3rem; }
-    .nav-menu { margin-right: 20px; }
-    .nav-menu .btn { width: 100%; text-align: left; }
+.btn-volver:hover {
+    background: linear-gradient(135deg, #4aa3ff, #1e90ff);
+    box-shadow: 0 0 18px rgba(74,163,255,0.9);
+    transform: translateY(-2px);
+}
+
+.btn-cerrar {
+    background: linear-gradient(135deg, #ff5f6d, #dc3545);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(255,95,109,0.6);
+}
+
+.btn-cerrar:hover {
+    background: linear-gradient(135deg, #ff7b86, #ff5f6d);
+    box-shadow: 0 0 18px rgba(255,123,134,0.9);
+    transform: translateY(-2px);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 992px) {
+    .header-container {
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px 20px;
+    }
+
+    .nav-menu {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }

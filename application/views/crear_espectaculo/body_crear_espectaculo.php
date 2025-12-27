@@ -10,14 +10,14 @@
 
 <main class="main-content" style="background-image: url('<?= $fondo ?>');">
 
-    <!-- Botones fuera de la tarjeta -->
-    <div class="top-buttons-outside">
-        <a href="<?= base_url('administrador') ?>" class="btn btn-secondary">Volver al Panel</a>
-        <a href="<?= base_url('login/logout') ?>" class="btn btn-danger">Cerrar sesión</a>
+    <!-- TÍTULO PRINCIPAL Y DESCRIPCIÓN -->
+    <div class="page-header">
+        <h1><?= $titulo ?></h1>
+        <p>Complete los datos del espectáculo para agregarlo al sistema. Asegúrese de incluir todos los campos requeridos.</p>
     </div>
 
+    <!-- TARJETA / FORMULARIO -->
     <div class="card">
-        <h2><?= $titulo ?></h2>
 
         <!-- Error de imagen -->
         <?php if ($this->session->flashdata('error_imagen')): ?>
@@ -82,7 +82,11 @@
                 <input type="file" name="imagen">
             </div>
 
-            <button type="submit" class="btn">Crear Espectáculo</button>
+            <!-- BOTONES -->
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-submit">Crear Espectáculo</button>
+                <a href="<?= base_url('administrador') ?>" class="btn btn-cancel">Cancelar</a>
+            </div>
 
         <?= form_close(); ?>
     </div>
