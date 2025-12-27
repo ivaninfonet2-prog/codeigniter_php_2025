@@ -1,128 +1,193 @@
+/* ================================
+   Base
+================================ */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    color: #333;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #ffffff;
 }
 
+/* ================================
+   Contenido principal
+================================ */
 .main-content {
-    padding: 60px 20px;
+    min-height: 100vh;
+    padding: 60px 30px 60px; /* 🔥 sube aún más */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 100vh;
 }
 
-.titulo {
+/* ================================
+   Encabezado sección
+================================ */
+.encabezado-seccion {
     text-align: center;
-    font-size: 2.2rem;
-    margin-top: 40px;   /* espacio desde el header */
-    margin-bottom: 30px;
-    color: #111;
+    max-width: 900px;
+    margin: 0 auto 18px; /* 🔥 más pegado al header */
 }
 
+.titulo-principal {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0 0 4px; /* 🔥 menos separación */
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.descripcion-principal {
+    font-size: 1.2rem; /* 🔥 un poco más grande */
+    color: #eaeaea;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ================================
+   Alerta
+================================ */
+.alerta {
+    max-width: 600px;
+    margin: 0 auto 26px;
+    background: rgba(40, 167, 69, 0.9);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+}
+
+.cerrar-alerta {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+/* ================================
+   Tarjetas
+================================ */
 .contenedor-tarjetas {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: 30px;
 }
 
 .tarjeta {
-    background: rgba(255, 255, 255, 0.6); /* 🔹 mucho más transparente */
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    width: 280px; /* 🔹 más chica que antes */
+    width: 300px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
     overflow: hidden;
-    transition: transform 0.2s;
-    padding-bottom: 10px;
+    transition: transform 0.25s ease;
 }
 
 .tarjeta:hover {
-    transform: scale(1.04);
+    transform: translateY(-6px);
 }
 
+/* Imagen */
 .imagen {
-    width: 160px;   /* más chica, tipo carnet */
+    width: 160px;
     height: 160px;
     object-fit: cover;
+    margin: 18px auto 10px;
     display: block;
-    margin: 15px auto;
-    border-radius: 6px;
-    border: 2px solid #ccc;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.6);
 }
 
+/* ================================
+   Contenido tarjeta
+================================ */
 .contenido {
-    padding: 15px;
+    padding: 15px 20px 20px;
     text-align: center;
-    color: #222;
 }
 
 .contenido h3 {
-    margin-top: 0;
-    color: #007BFF; /* 🔹 título en azul */
-    font-size: 1.3rem;
+    margin: 8px 0 12px;
+    font-size: 1.35rem;
+    color: #ffffff;
 }
 
 .contenido p {
     margin: 6px 0;
     font-size: 0.95rem;
-    color: #444; /* 🔹 texto en gris oscuro */
+    color: #f0f0f0;
 }
 
 .contenido p strong {
-    color: #d35400; /* 🔹 etiquetas en naranja */
+    color: #ffc107;
 }
 
+.detalle {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #dddddd;
+}
+
+/* ================================
+   Acciones
+================================ */
 .acciones-tarjeta {
-    margin-top: 12px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
 }
 
+/* Botones */
 .boton {
-    display: inline-block;
-    padding: 7px 11px;
-    border-radius: 4px;
+    flex: 1;
+    padding: 8px 0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
     text-decoration: none;
     color: #fff;
-    background-color: #007BFF;
-    transition: background-color 0.3s;
-    font-size: 0.9rem;
-}
-
-.boton:hover {
-    background-color: #0056b3;
+    text-align: center;
 }
 
 .boton-editar {
     background-color: #28a745;
 }
 
-.boton-editar:hover {
-    background-color: #1e7e34;
-}
-
 .boton-eliminar {
     background-color: #dc3545;
 }
 
-.boton-eliminar:hover {
-    background-color: #c82333;
-}
-
+/* ================================
+   Mensaje vacío
+================================ */
 .mensaje-vacio {
     text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-    margin-top: 40px;
-}
-
-.acciones {
-    text-align: center;
+    font-size: 1.2rem;
+    color: #ffffff;
     margin-top: 50px;
 }
 
-.acciones .boton {
-    margin: 0 10px;
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 768px) {
+
+    .main-content {
+        padding-top: 55px; /* 🔥 más arriba en mobile */
+    }
+
+    .titulo-principal {
+        font-size: 2rem;
+    }
+
+    .descripcion-principal {
+        font-size: 1.1rem;
+    }
+
+    .tarjeta {
+        width: 90%;
+    }
 }

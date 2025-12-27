@@ -1,45 +1,50 @@
-/* ================================
-   General
-================================ */
+/* ======================================================
+   BASE
+====================================================== */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    padding-top: 100px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121212;
     color: #f8f9fa;
 }
 
-/* ================================
-   Header principal
-================================ */
+/* ======================================================
+   HEADER
+====================================================== */
 .main-header {
-    width: 100%;
-    height: 100px;
-    background-color: #000;
-    display: flex;
-    align-items: center;
     position: fixed;
     top: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, #000000, #141414);
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.8);
 }
 
-/* Contenedor interno */
 .header-container {
     width: 100%;
     max-width: 1400px;
     margin: auto;
-    padding: 0 30px;
+    padding: 0 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* ================================
-   Logo + título
-================================ */
+/* ======================================================
+   BRAND
+====================================================== */
 .brand {
     display: flex;
     align-items: center;
+    gap: 14px;
     text-decoration: none;
 }
 
@@ -48,105 +53,96 @@ body {
     height: 60px;
     border-radius: 50%;
     border: 2px solid #ffffff;
-    margin-right: 12px;
 }
 
 .site-title {
     font-size: 1.8rem;
     font-weight: 700;
     color: #ffffff;
-    letter-spacing: 0.5px;
 }
 
-/* ================================
-   Menú a la derecha
-================================ */
+/* ======================================================
+   NAV
+====================================================== */
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 30px; /* Más espacio entre botones */
+    gap: 22px;
 }
 
-/* ================================
-   Botones personalizados
-================================ */
+/* ======================================================
+   BOTONES (VERSIÓN CLARA)
+====================================================== */
 .btn {
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
     text-decoration: none;
     border: none;
-    display: inline-block;
     cursor: pointer;
-    transition: all 0.3s ease;
+    letter-spacing: 0.4px;
+    transition: all 0.25s ease;
 }
 
-/* Botón rojo para Cerrar Sesión */
-.btn-cerrar {
-    background-color: #ff4d4d !important;
-    color: #ffffff !important;
-}
-
-.btn-cerrar:hover {
-    background-color: #cc0000 !important;
-    transform: scale(1.05);
-}
-
-/* Botón azul para Ir al Administrador */
+/* ---- VOLVER (AZUL CLARO) ---- */
 .btn-volver {
-    background-color: #007bff !important;
-    color: #ffffff !important;
+    background: linear-gradient(135deg, #1e90ff, #0d6efd);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(30, 144, 255, 0.6);
 }
 
 .btn-volver:hover {
-    background-color: #0056b3 !important;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #4aa3ff, #1e90ff);
+    box-shadow: 0 0 18px rgba(74, 163, 255, 0.9);
+    transform: translateY(-2px);
 }
 
-/* ================================
-   Responsive
-================================ */
+/* ---- CERRAR SESIÓN (ROJO CLARO) ---- */
+.btn-cerrar {
+    background: linear-gradient(135deg, #ff5f6d, #dc3545);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 95, 109, 0.6);
+}
+
+.btn-cerrar:hover {
+    background: linear-gradient(135deg, #ff7b86, #ff5f6d);
+    box-shadow: 0 0 18px rgba(255, 123, 134, 0.9);
+    transform: translateY(-2px);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
 @media (max-width: 992px) {
+    body {
+        padding-top: 130px;
+    }
+
     .header-container {
         flex-direction: column;
-        gap: 12px;
-        padding: 10px 20px;
+        gap: 14px;
+        padding: 16px 20px;
     }
 
     .nav-menu {
-        width: 100%;
         justify-content: center;
-        gap: 20px;
-    }
-
-    .btn {
-        width: auto;
-        min-width: 140px;
-        text-align: center;
+        width: 100%;
     }
 }
 
 @media (max-width: 576px) {
-    .main-header {
-        height: auto;
-        padding: 10px 0;
-    }
-
-    .site-title {
-        font-size: 1.4rem;
-    }
-
-    .logo-img {
-        width: 50px;
-        height: 50px;
+    body {
+        padding-top: 160px;
     }
 
     .nav-menu {
         flex-direction: column;
-        gap: 12px;
+        width: 100%;
     }
 
     .btn {
         width: 100%;
+        text-align: center;
     }
 }
