@@ -34,7 +34,7 @@ body {
 .bienvenida-admin {
     max-width: 760px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .bienvenida-admin h1 {
@@ -49,6 +49,45 @@ body {
     line-height: 1.6;
     color: rgba(255,255,255,0.9);
     text-shadow: 0 2px 4px rgba(0,0,0,0.35);
+}
+
+/* ===============================
+   MENSAJES GLOBALES
+================================ */
+.mensaje-global-exito {
+    margin-bottom: 35px;
+    padding: 18px 26px;
+
+    background: rgba(46, 204, 113, 0.90);
+    color: #ffffff;
+
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.30);
+
+    text-align: center;
+    max-width: 720px;
+    width: 100%;
+}
+
+.mensaje-global-error {
+    margin-bottom: 35px;
+    padding: 18px 26px;
+
+    background: rgba(231, 76, 60, 0.90);
+    color: #ffffff;
+
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.30);
+
+    text-align: center;
+    max-width: 720px;
+    width: 100%;
 }
 
 /* ===============================
@@ -90,12 +129,6 @@ body {
     margin-bottom: 6px;
 }
 
-/* Mensajes ocupan todo el ancho */
-.mensaje-exito,
-.mensaje-error {
-    grid-column: 1 / -1;
-}
-
 /* ===============================
    BOTONES
 ================================ */
@@ -128,7 +161,7 @@ body {
 }
 
 /* ===============================
-   COLORES
+   COLORES BOTONES
 ================================ */
 .botones-container .boton:nth-of-type(1) {
     background: linear-gradient(135deg, #6a5acd, #483d8b);

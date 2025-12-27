@@ -31,14 +31,16 @@
             Seleccioná una opción para administrar el contenido del sistema.
         </p>
 
-        <!-- Mensajes -->
-        <?php if ($this->session->flashdata('mensaje')): ?>
-            <div class="<?php
-                echo strpos($this->session->flashdata('mensaje'), 'correctamente') !== false
-                ? 'mensaje-exito'
-                : 'mensaje-error';
-            ?>">
-                <?= $this->session->flashdata('mensaje'); ?>
+        <!--  MENSAJE FLASH CORREGIDO -->
+        <?php if ($this->session->flashdata('success')): ?>
+            <div class="mensaje-exito">
+                <?= $this->session->flashdata('success'); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($this->session->flashdata('error')): ?>
+            <div class="mensaje-error">
+                <?= $this->session->flashdata('error'); ?>
             </div>
         <?php endif; ?>
 

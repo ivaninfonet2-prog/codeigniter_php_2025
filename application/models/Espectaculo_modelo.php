@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -99,9 +98,9 @@ class Espectaculo_modelo extends CI_Model
     public function obtener_detalles($id_espectaculo) 
     {
         $q = $this->db
-                 ->select('detalles')
-                 ->where('id_espectaculo', $id_espectaculo)
-                 ->get('espectaculos');
+                  ->select('detalles')
+                  ->where('id_espectaculo', $id_espectaculo)
+                  ->get('espectaculos');
 
         return ($q->num_rows() > 0)
             ? $q->row()->detalles
@@ -109,10 +108,15 @@ class Espectaculo_modelo extends CI_Model
     }
 
     // -------------------------------------------------------
-    // AGREGAR ESPECTÁCULO
+    // AGREGAR ESPECTÁCULO (PROTEGIDO CONTRA NULL)
     // -------------------------------------------------------
     public function agregar_espectaculo($data)
     {
+        // Protección extra: imagen NUNCA NULL
+        if (!isset($data['imagen']) || empty($data['imagen'])) {
+            $data['imagen'] = 'activos/imagenes/espectaculos/default.jpg';
+        }
+
         return $this->db->insert('espectaculos', $data);
     }
 
@@ -121,6 +125,11 @@ class Espectaculo_modelo extends CI_Model
     // -------------------------------------------------------
     public function actualizar_espectaculo($id, $datos)
     {
+        // Si viene vacía, no se actualiza la imagen
+        if (isset($datos['imagen']) && empty($datos['imagen'])) {
+            unset($datos['imagen']);
+        }
+
         return $this->db
                     ->where('id_espectaculo', $id)
                     ->update('espectaculos', $datos);
@@ -131,13 +140,9 @@ class Espectaculo_modelo extends CI_Model
     // -------------------------------------------------------
     public function eliminar_espectaculo_completo($id_espectaculo)
     {
-        // Eliminar ventas
         $this->db->where('espectaculo_id', $id_espectaculo)->delete('ventas');
-
-        // Eliminar reservas
         $this->db->where('espectaculo_id', $id_espectaculo)->delete('reservas');
 
-        // Finalmente eliminar espectáculo
         return $this->db
                     ->where('id_espectaculo', $id_espectaculo)
                     ->delete('espectaculos');
@@ -160,4 +165,3 @@ class Espectaculo_modelo extends CI_Model
             : $usuario;
     }
 }
-?>

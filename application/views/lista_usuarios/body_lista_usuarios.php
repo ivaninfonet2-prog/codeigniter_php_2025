@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Usuarios</title>
+    <title><?= isset($titulo) ? $titulo : 'Lista de Usuarios' ?></title>
     <link rel="stylesheet" href="<?= base_url('activos/css/lista_usuarios/body_lista_usuarios.css'); ?>">
 </head>
 <body>
-<main class="inicio-container" style="background-image: url('<?= $fondo ?>');">
+<main class="inicio-container" style="background-image: url('<?= isset($fondo) ? $fondo : '' ?>');">
 
-    <h2 class="titulo-tabla"><?= $titulo ?></h2>
+    <h2 class="titulo-tabla"><?= isset($titulo) ? $titulo : 'Lista de Usuarios' ?></h2>
 
     <div class="tabla-container">
         <table class="tabla-usuarios">
@@ -23,14 +23,14 @@
                 </tr>
             </thead>
             <tbody>
-                <?php if (!empty($usuarios)): ?>
+                <?php if (!empty($usuarios) && is_array($usuarios)): ?>
                     <?php foreach ($usuarios as $usuario): ?>
                         <tr>
-                            <td><?= $usuario->id_usuario ?></td>
-                            <td><?= $usuario->nombre ?></td>
-                            <td><?= $usuario->apellido ?></td>
-                            <td><?= $usuario->nombre_usuario ?></td>
-                            <td><?= $usuario->dni ?></td>
+                            <td><?= htmlspecialchars($usuario->id_usuario) ?></td>
+                            <td><?= htmlspecialchars($usuario->nombre) ?></td>
+                            <td><?= htmlspecialchars($usuario->apellido) ?></td>
+                            <td><?= htmlspecialchars($usuario->nombre_usuario) ?></td>
+                            <td><?= htmlspecialchars($usuario->dni) ?></td>
                             <td>
                                 <a href="<?= base_url('usuario/editar_usuario/'.$usuario->id_usuario) ?>" class="boton-accion editar">Editar</a>
                                 <a href="<?= base_url('usuario/eliminar_usuario/'.$usuario->id_usuario) ?>" class="boton-accion eliminar" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">Eliminar</a>
@@ -44,6 +44,7 @@
                 <?php endif; ?>
             </tbody>
         </table>
+    </div>
 
 </main>
 </body>
