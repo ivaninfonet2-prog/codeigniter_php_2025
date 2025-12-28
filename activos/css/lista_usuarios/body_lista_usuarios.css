@@ -1,119 +1,166 @@
-/* ===== Estilos generales ===== */
+/* ==============================
+   ESTILOS GENERALES
+   ============================== */
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #111;
-    color: #fff;
+    background-color: #0f0f0f;
+    color: #ffffff;
 }
 
 .inicio-container {
     min-height: 100vh;
-    padding: 2rem;
+    padding: 60px 20px 40px; /* sube el contenido */
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
-/* Título */
-.titulo-tabla {
+/* ==============================
+   ENCABEZADO
+   ============================== */
+.encabezado {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding-top: 10px;
     text-align: center;
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #4dd0e1;
-    margin-bottom: 2rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
-/* Contenedor de tabla con efecto vidrio */
+.titulo {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.85);
+}
+
+.descripcion {
+    font-size: 1.05rem;
+    color: #f1f1f1;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+/* ==============================
+   CONTENEDOR TABLA
+   ============================== */
+.tabla-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .tabla-container {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     overflow-x: auto;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
-/* Tabla de usuarios */
+/* ==============================
+   TABLA USUARIOS
+   ============================== */
 .tabla-usuarios {
     width: 100%;
     border-collapse: collapse;
 }
 
-.tabla-usuarios th, .tabla-usuarios td {
-    padding: 0.8rem 1rem;
+.tabla-usuarios th,
+.tabla-usuarios td {
+    padding: 12px 14px;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .tabla-usuarios th {
-    background: rgba(77, 208, 225, 0.3);
-    color: #fff;
-    font-weight: bold;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
     text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.6px;
 }
 
 .tabla-usuarios tr:hover {
-    background: rgba(77, 208, 225, 0.1);
-    transition: background 0.3s ease;
+    background: rgba(255, 255, 255, 0.08);
 }
 
-/* Botones de acción */
-.boton-accion {
-    padding: 0.5rem 0.9rem;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    margin: 0 2px;
+/* ==============================
+   ACCIONES
+   ============================== */
+.acciones {
+    white-space: nowrap;
+}
+
+.boton {
     display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.boton-accion.editar {
-    background: linear-gradient(135deg, #4caf50, #81c784);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.boton-accion.eliminar {
-    background: linear-gradient(135deg, #f44336, #e57373);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.boton-accion:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-}
-
-/* Botón agregar usuario */
-.boton-agregar {
-    display: inline-block;
-    background: linear-gradient(135deg, #4dd0e1, #26c6da);
-    padding: 0.6rem 1.2rem;
-    border-radius: 10px;
-    color: #111;
-    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 8px;
     text-decoration: none;
-    margin-top: 1rem;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin: 2px;
+    transition: all 0.25s ease;
 }
 
-.boton-agregar:hover {
-    background: linear-gradient(135deg, #26c6da, #4dd0e1);
-    transform: translateY(-2px) scale(1.05);
+.boton.editar {
+    background: linear-gradient(135deg, #43a047, #66bb6a);
+    color: #ffffff;
 }
 
-/* Responsivo */
+.boton.eliminar {
+    background: linear-gradient(135deg, #e53935, #ef5350);
+    color: #ffffff;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* ==============================
+   SIN DATOS
+   ============================== */
+.sin-datos {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #e0e0e0;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
 @media (max-width: 768px) {
-    .tabla-usuarios th, .tabla-usuarios td {
-        padding: 0.5rem 0.7rem;
+    .inicio-container {
+        padding-top: 50px;
     }
 
-    .titulo-tabla {
-        font-size: 1.8rem;
+    .titulo {
+        font-size: 1.9rem;
     }
 
-    .boton-accion {
-        padding: 0.4rem 0.7rem;
-        font-size: 0.9rem;
+    .descripcion {
+        font-size: 0.95rem;
+    }
+
+    .tabla-container {
+        padding: 15px;
+    }
+
+    .tabla-usuarios th,
+    .tabla-usuarios td {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .boton {
+        font-size: 0.8rem;
+        padding: 5px 10px;
     }
 }
