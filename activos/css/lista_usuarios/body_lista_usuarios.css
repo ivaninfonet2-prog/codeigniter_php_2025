@@ -10,7 +10,7 @@ body {
 
 .inicio-container {
     min-height: 100vh;
-    padding: 60px 20px 40px; /* sube el contenido */
+    padding: 40px 20px 40px; /* 🔼 sube contenido */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -21,8 +21,7 @@ body {
    ============================== */
 .encabezado {
     max-width: 900px;
-    margin: 0 auto 20px;
-    padding-top: 10px;
+    margin: 0 auto 12px; /* 🔼 menos espacio abajo */
     text-align: center;
 }
 
@@ -30,7 +29,7 @@ body {
     font-size: 2.4rem;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 8px;
+    margin-bottom: 6px; /* 🔼 más compacto */
     text-shadow: 0 3px 8px rgba(0,0,0,0.85);
 }
 
@@ -138,7 +137,7 @@ body {
    ============================== */
 @media (max-width: 768px) {
     .inicio-container {
-        padding-top: 50px;
+        padding-top: 30px; /* 🔼 también sube en mobile */
     }
 
     .titulo {

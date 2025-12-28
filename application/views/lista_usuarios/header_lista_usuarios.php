@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title><?= $titulo ?? 'UNLa Tienda'; ?></title>
 
-    <!-- CSS del Header -->
+    <!-- CSS Header -->
     <link rel="stylesheet" href="<?= base_url('activos/css/lista_usuarios/header_lista_usuarios.css'); ?>">
 
     <!-- Bootstrap (opcional, no interfiere) -->
@@ -19,7 +20,7 @@
 
         <!-- LOGO + TÍTULO (LOGOUT FORZADO) -->
         <a href="<?= site_url('login/logout'); ?>" class="brand" title="Cerrar sesión">
-            <img src="<?= base_url('activos/imagenes/logo.jpg'); ?>" class="logo-img" alt="Logo UNLa">
+            <img src="<?= base_url('activos/imagenes/logo.jpg'); ?>" alt="Logo UNLa" class="logo-img">
             <span class="site-title">UNLa Tienda</span>
         </a>
 
@@ -50,7 +51,7 @@
         window.history.replaceState(null, null, window.location.href);
     }
 
-    window.onpageshow = function(event) {
+    window.onpageshow = function (event) {
         if (event.persisted || !<?= json_encode($this->session->userdata('logged_in')); ?>) {
             window.location.replace('<?= site_url("login"); ?>');
         }
