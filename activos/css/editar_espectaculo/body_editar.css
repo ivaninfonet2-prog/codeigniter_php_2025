@@ -3,40 +3,37 @@
 ======================= */
 .main-content {
     min-height: 100vh;
-    padding: 70px 20px;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 /* =======================
-   ENCABEZADO EXTERNO
+   ENCABEZADO
 ======================= */
 .encabezado-editar {
-    max-width: 900px;
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     color: #fff;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 .encabezado-editar h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.45);
+    font-size: 2.3rem;
+    margin-bottom: 8px;
 }
 
 .encabezado-editar p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    max-width: 680px;
+    max-width: 650px;
     margin: 0 auto;
-    color: rgba(255,255,255,0.9);
-    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    font-size: 1.05rem;
 }
 
 /* =======================
@@ -45,154 +42,123 @@
 .card {
     width: 100%;
     max-width: 520px;
-    background: rgba(255, 255, 255, 0.28);
+    background: rgba(255,255,255,0.3);
     backdrop-filter: blur(14px);
     border-radius: 18px;
-    padding: 30px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-    animation: fadeIn 0.4s ease-in-out;
-    margin-bottom: 25px;
+    padding: 28px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    animation: fadeIn 0.4s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.card h2 {
-    text-align: center;
-    margin-bottom: 18px;
-    color: #0d6efd;
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* =======================
    FORMULARIO
 ======================= */
-.form-label {
+.card label {
+    display: block;
     margin-top: 14px;
     font-weight: 600;
     color: #222;
 }
 
-.form-control {
+.form-control,
+.card input,
+.card textarea {
     width: 100%;
+    margin-top: 6px;
     padding: 9px 12px;
-    margin-top: 5px;
     border-radius: 7px;
     border: 1px solid rgba(0,0,0,0.25);
-    background: rgba(255,255,255,0.9);
-    transition: 0.2s;
+    background: rgba(255,255,255,0.95);
 }
 
-.form-control:focus {
-    outline: none;
-    border-color: #0d6efd;
-    box-shadow: 0 0 6px rgba(13,110,253,0.4);
+.card textarea {
+    min-height: 90px;
+    resize: vertical;
 }
 
 /* Dos columnas */
-.fila-doble {
+.fila {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-/* =======================
-   BOTONES
-======================= */
-.btn {
-    display: inline-block;
-    padding: 11px 26px;
-    border-radius: 7px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.25s;
-    cursor: pointer;
-    border: none;
-    text-align: center;
-}
-
-.btn-primario {
-    background: #0d6efd;
-    color: #fff;
-}
-
-.btn-secundario {
-    background: #6c757d;
-    color: #fff;
-}
-
-.btn-cancelar {
-    background: #dc3545;
-    color: #fff;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-}
-
-/* =======================
-   ACCIONES (AFUERA)
-======================= */
-.acciones-form {
-    display: flex;
-    justify-content: center;
     gap: 14px;
-    flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 /* =======================
-   IMAGEN ACTUAL
+   IMAGEN ACTUAL / PREVIEW
 ======================= */
-.imagen-actual {
+.imagen-actual,
+.preview {
     text-align: center;
-    margin: 20px 0;
+    margin: 18px 0;
 }
 
-.imagen-actual span {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.imagen-actual img {
-    max-width: 190px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+.imagen-actual img,
+.preview img {
+    max-width: 200px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
 /* =======================
    MENSAJES
 ======================= */
 .alert {
-    background: rgba(13,110,253,0.15);
+    background: rgba(13,110,253,0.2);
     color: #084298;
     padding: 10px;
     border-radius: 8px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
-.error-msg {
-    font-size: 0.85rem;
-    color: #b02a37;
+/* =======================
+   ACCIONES
+======================= */
+.acciones-form {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 22px;
+    flex-wrap: wrap;
 }
 
-.error-input {
-    border-color: #dc3545;
+.acciones-form a,
+.acciones-form button {
+    padding: 10px 26px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.acciones-form button {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.acciones-form a {
+    background: #dc3545;
+    color: #fff;
+}
+
+.acciones-form button:hover,
+.acciones-form a:hover {
+    filter: brightness(1.1);
 }
 
 /* =======================
    RESPONSIVE
 ======================= */
-@media (max-width: 520px) {
-    .fila-doble {
+@media (max-width: 560px) {
+    .fila {
         grid-template-columns: 1fr;
-    }
-
-    .encabezado-editar h1 {
-        font-size: 2rem;
     }
 
     .acciones-form {
@@ -200,7 +166,9 @@
         width: 100%;
     }
 
-    .acciones-form .btn {
+    .acciones-form a,
+    .acciones-form button {
         width: 100%;
+        text-align: center;
     }
 }

@@ -1,203 +1,179 @@
 /* =======================
    CONTENEDOR GENERAL
-   ======================= */
+======================= */
 .main-content {
     min-height: 100vh;
+    padding: 40px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding: 40px 15px 40px 15px; /* menos padding-top para subir el título */
-    font-family: Arial, sans-serif;
 
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    filter: brightness(0.9) contrast(1.05);
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+    filter: brightness(0.95);
 }
 
 /* =======================
-   TÍTULO PRINCIPAL Y DESCRIPCIÓN
-   ======================= */
+   ENCABEZADO
+======================= */
 .page-header {
     text-align: center;
     color: #fff;
-    margin: 10px 0 20px 0; /* menos espacio encima y debajo */
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    margin-bottom: 25px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
 .page-header h1 {
     font-size: 2rem;
-    margin-bottom: 6px; /* reduce espacio con el párrafo */
+    margin-bottom: 6px;
 }
 
 .page-header p {
     font-size: 1rem;
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
 }
 
 /* =======================
-   TARJETA / FORMULARIO
-   ======================= */
+   TARJETA
+======================= */
 .card {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(6px);
-    padding: 24px 28px;
-    border-radius: 14px;
-
     width: 100%;
     max-width: 600px;
-    max-height: 85vh;
-    overflow-y: auto;
-
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
-    animation: fadeIn 0.4s ease-in-out;
+    background: rgba(255,255,255,0.28);
+    backdrop-filter: blur(10px);
+    padding: 26px;
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+    animation: fadeIn 0.35s ease;
 }
 
-/* =======================
-   ANIMACIÓN
-   ======================= */
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* =======================
-   TÍTULO TARJETA
-   ======================= */
-.card h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #007BFF;
-    font-size: 1.6rem;
+   FORMULARIO
+======================= */
+.card label {
+    display: block;
     font-weight: 600;
-}
-
-/* =======================
-   FORMULARIO - LABEL E INPUT
-   ======================= */
-.form-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 14px;
-}
-
-.form-group label {
-    font-size: 14px;
-    font-weight: bold;
-    width: 30%;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 65%;
-    padding: 8px 10px;
-    font-size: 14px;
-    border: 1px solid rgba(0,0,0,0.3);
-    border-radius: 5px;
-    background: rgba(255,255,255,0.9);
-}
-
-/* =======================
-   FORM-ROW (dos campos lado a lado)
-   ======================= */
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 4%;
-}
-
-.form-row .form-group {
-    width: 48%;
-}
-
-/* =======================
-   BOTONES DENTRO DE TARJETA
-   ======================= */
-.form-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
     margin-top: 14px;
-    flex-wrap: wrap;
+    color: #222;
 }
 
-.btn-submit {
-    width: auto;
-    padding: 8px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.card input,
+.card textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 9px 12px;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.25);
+    background: rgba(255,255,255,0.95);
     font-size: 14px;
-    cursor: pointer;
-    transition: background 0.2s ease;
 }
 
-.btn-submit:hover {
-    background-color: #0056b3;
+.card textarea {
+    resize: vertical;
+    min-height: 80px;
 }
 
-/* BOTÓN CANCELAR ROJO */
-.btn-cancel {
-    display: inline-block;
-    padding: 8px 20px;
-    background-color: #dc3545; /* rojo */
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 14px;
+/* Dos columnas */
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* =======================
+   PREVIEW IMAGEN
+======================= */
+.preview {
+    margin-top: 15px;
     text-align: center;
-    transition: background 0.2s ease;
 }
 
-.btn-cancel:hover {
-    background-color: #b02a37; /* rojo oscuro */
+.preview img {
+    max-width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.25);
+}
+
+.oculto {
+    display: none;
 }
 
 /* =======================
    MENSAJES
-   ======================= */
+======================= */
 .alert {
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 12px;
-    border-radius: 5px;
-    font-size: 13px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
 }
 
-.alert-danger {
-    background: rgba(220, 53, 69, 0.2);
+.alert.error {
+    background: rgba(220,53,69,0.2);
     color: #8b0000;
+}
+
+.alert.success {
+    background: rgba(25,135,84,0.2);
+    color: #0f5132;
+}
+
+/* =======================
+   ACCIONES
+======================= */
+.acciones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.acciones button,
+.acciones a {
+    padding: 9px 22px;
+    border-radius: 7px;
+    text-decoration: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.acciones button {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.acciones a {
+    background: #dc3545;
+    color: #fff;
+}
+
+.acciones button:hover,
+.acciones a:hover {
+    filter: brightness(1.1);
 }
 
 /* =======================
    RESPONSIVE
-   ======================= */
+======================= */
 @media (max-width: 600px) {
-    .main-content {
-        padding: 40px 15px 30px 15px;
+    .fila {
+        grid-template-columns: 1fr;
     }
 
-    .page-header h1 { font-size: 1.5rem; }
-    .page-header p { font-size: 0.9rem; }
-
-    .card { 
-        max-width: 95%; 
-        padding: 18px; 
+    .acciones {
+        justify-content: center;
     }
-
-    .form-row { flex-direction: column; }
-    .form-row .form-group { width: 100%; }
-
-    .form-group { flex-direction: column; align-items: flex-start; }
-    .form-group label { width: 100%; margin-bottom: 4px; }
-    .form-group input,
-    .form-group textarea { width: 100%; }
-
-    .form-buttons { justify-content: center; gap: 10px; }
 }
