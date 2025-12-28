@@ -1,65 +1,172 @@
-/* ================================
-   Footer principal
-   ================================ */
-.main-footer {
-    background: #0d0d0d;
-    color: #ffffff;
-    font-size: 0.95rem;
-    box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
-    width: 100%;          /* ✅ ocupa todo el ancho de la página */
-    margin: 0;            /* ✅ elimina márgenes */
-    padding: 20px 0;      /* espacio interno arriba/abajo */
+/* ======================================================
+   RESET & BASE
+====================================================== */
+* {
     box-sizing: border-box;
-    display: block;
 }
 
-/* Links del footer */
-.footer-links {
-    display: flex;
-    justify-content: center; /* ✅ centrados en el ancho completo */
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;             /* ✅ ocupa todo el ancho */
+body {
     margin: 0;
-    padding: 0 20px;         /* opcional: espacio lateral */
-    box-sizing: border-box;
+    padding-top: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #f8f9fa;
 }
 
-.footer-links .footer-link {
-    color: #00bfff; /* azul celeste claro */
+/* ======================================================
+   HEADER
+====================================================== */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, #000000, #141414);
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ======================================================
+   BRAND
+====================================================== */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    font-weight: 500;
 }
 
-.footer-links .footer-link:hover {
+.logo-img {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    object-fit: cover;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #ffffff;
-    transform: translateY(-2px);
+    white-space: nowrap;
 }
 
-/* Botón volver */
-.btn-warning {
+/* ======================================================
+   NAV
+====================================================== */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* ======================================================
+   BOTONES (ADMIN SOBRIO)
+====================================================== */
+.btn {
+    padding: 11px 24px;
+    border-radius: 10px;
     font-weight: 600;
-    border-radius: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 15px;
-    background-color: #00bfff; /* azul celeste claro */
-    border: 1px solid #00bfff;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition:
+        background 0.25s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    line-height: 1;
+}
+
+/* ---- VOLVER ---- */
+.btn-volver {
+    background: linear-gradient(180deg, #1f6feb, #155acb);
     color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 
-.btn-warning:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(0,191,255,0.7); /* brillo celeste claro */
+.btn-volver:hover {
+    background: linear-gradient(180deg, #2b7bff, #1f6feb);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
 }
 
-/* ================================
-   Responsive
-   ================================ */
-@media (max-width: 768px) {
-    .footer-links {
+.btn-volver:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ---- CERRAR SESIÓN ---- */
+.btn-cerrar {
+    background: linear-gradient(180deg, #d73a49, #b92533);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.btn-cerrar:hover {
+    background: linear-gradient(180deg, #e55361, #d73a49);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.55);
+}
+
+.btn-cerrar:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 992px) {
+    body {
+        padding-top: 140px;
+    }
+
+    .header-container {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        gap: 14px;
+        padding: 16px 20px;
+    }
+
+    .nav-menu {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 180px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
     }
 }
