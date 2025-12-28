@@ -1,54 +1,110 @@
-<!-- Enlace al CSS específico para esta vista -->
-<link rel="stylesheet" href="<?= base_url('activos/css/crear_usuario/body_crear_usuario.css') ?>">
+<link rel="stylesheet" href="<?= base_url('activos/css/crear_usuario/body_crear_usuario.css'); ?>">
 
-<main class="main-content" style="background-image: url('<?= $fondo ?? '' ?>');">
+<main class="main-content"
+      style="background-image: url('<?= $fondo ?? '' ?>');">
+
+    <!-- TITULO Y DESCRIPCION -->
+    <section class="page-header">
+        <h1>Crear usuario</h1>
+        <p>
+            Completá el formulario para registrar un nuevo usuario en el sistema.
+        </p>
+    </section>
+
+    <!-- TARJETA -->
     <div class="card">
 
-        <h2>Crear Usuario</h2>
-
-        <!-- Botones de navegación -->
-        <div class="botones-arriba">
-            <a href="<?= base_url('administrador') ?>" class="btn">Panel Administrador</a>
-            <a href="javascript:history.back()" class="btn">Volver</a>
+        <!-- TEXTO INFORMATIVO -->
+        <div class="card-info">
+            Todos los campos son obligatorios.
+            La contraseña deberá ser confirmada antes de guardar.
         </div>
 
         <!-- Mensajes flash -->
         <?php if ($this->session->flashdata('mensaje_exito')): ?>
-            <div class="alert success"><?= $this->session->flashdata('mensaje_exito'); ?></div>
+            <div class="alert success">
+                <?= $this->session->flashdata('mensaje_exito'); ?>
+            </div>
         <?php endif; ?>
 
         <?php if ($this->session->flashdata('mensaje_error')): ?>
-            <div class="alert"><?= $this->session->flashdata('mensaje_error'); ?></div>
+            <div class="alert">
+                <?= $this->session->flashdata('mensaje_error'); ?>
+            </div>
         <?php endif; ?>
 
-        <form action="<?= base_url('usuario/crear_usuario') ?>" method="post">
+        <form action="<?= base_url('usuario/crear_usuario'); ?>" method="post">
 
-            <label class="form-label">Nombre</label>
-            <input type="text" name="nombre" class="form-control <?= form_error('nombre') ? 'error-input' : '' ?>" value="<?= set_value('nombre') ?>" required>
-            <div class="error-msg"><?= form_error('nombre'); ?></div>
+            <div class="form-grid">
 
-            <label class="form-label">Apellido</label>
-            <input type="text" name="apellido" class="form-control <?= form_error('apellido') ? 'error-input' : '' ?>" value="<?= set_value('apellido') ?>" required>
-            <div class="error-msg"><?= form_error('apellido'); ?></div>
+                <!-- Nombre -->
+                <div class="form-group">
+                    <label class="form-label">Nombre</label>
+                    <input type="text"
+                           name="nombre"
+                           value="<?= set_value('nombre'); ?>"
+                           class="<?= form_error('nombre') ? 'error-input' : '' ?>"
+                           required>
+                    <div class="error-msg"><?= form_error('nombre'); ?></div>
+                </div>
 
-            <label class="form-label">Email</label>
-            <input type="email" name="email" class="form-control <?= form_error('email') ? 'error-input' : '' ?>" value="<?= set_value('email') ?>" required>
-            <div class="error-msg"><?= form_error('email'); ?></div>
+                <!-- Apellido -->
+                <div class="form-group">
+                    <label class="form-label">Apellido</label>
+                    <input type="text"
+                           name="apellido"
+                           value="<?= set_value('apellido'); ?>"
+                           class="<?= form_error('apellido') ? 'error-input' : '' ?>"
+                           required>
+                    <div class="error-msg"><?= form_error('apellido'); ?></div>
+                </div>
 
-            <label class="form-label">Contraseña</label>
-            <input type="password" name="password" class="form-control <?= form_error('password') ? 'error-input' : '' ?>" required>
-            <div class="error-msg"><?= form_error('password'); ?></div>
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email"
+                           name="email"
+                           value="<?= set_value('email'); ?>"
+                           class="<?= form_error('email') ? 'error-input' : '' ?>"
+                           required>
+                    <div class="error-msg"><?= form_error('email'); ?></div>
+                </div>
 
-            <label class="form-label">Confirmar Contraseña</label>
-            <input type="password" name="password_confirm" class="form-control <?= form_error('password_confirm') ? 'error-input' : '' ?>" required>
-            <div class="error-msg"><?= form_error('password_confirm'); ?></div>
+                <!-- Password -->
+                <div class="form-group">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password"
+                           name="password"
+                           class="<?= form_error('password') ? 'error-input' : '' ?>"
+                           required>
+                    <div class="error-msg"><?= form_error('password'); ?></div>
+                </div>
 
-            <!-- Botones de acción -->
+                <!-- Confirmar Password -->
+                <div class="form-group full-width">
+                    <label class="form-label">Confirmar contraseña</label>
+                    <input type="password"
+                           name="password_confirm"
+                           class="<?= form_error('password_confirm') ? 'error-input' : '' ?>"
+                           required>
+                    <div class="error-msg"><?= form_error('password_confirm'); ?></div>
+                </div>
+
+            </div>
+
+            <!-- BOTONES -->
             <div class="botones-finales">
-                <button type="submit" class="btn">Crear Usuario</button>
-                <a href="<?= base_url('administrador') ?>" class="btn">Cancelar</a>
+                <button type="submit" class="btn">
+                    Crear usuario
+                </button>
+
+                <a href="<?= base_url('administrador'); ?>"
+                   class="btn btn-danger">
+                    Cancelar
+                </a>
             </div>
 
         </form>
     </div>
+
 </main>

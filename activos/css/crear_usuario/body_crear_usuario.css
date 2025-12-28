@@ -3,159 +3,182 @@
    ======================= */
 .main-content {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 80px 20px 40px 20px; /* Más espacio arriba */
-    font-family: Arial, sans-serif;
+    padding: 90px 20px 40px;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: #222;
 
-    /* FONDO MEJORADO */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    filter: brightness(0.95) contrast(1.05);
 }
 
 /* =======================
-   TARJETA / FORMULARIO
+   TITULO Y DESCRIPCION
    ======================= */
-.card {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(12px);
-    padding: 25px 30px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 420px; /* Más compacta */
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Animación suave */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* =======================
-   TITULO
-   ======================= */
-.card h2 {
+.page-header {
+    max-width: 820px;
+    margin: 0 auto 22px;
     text-align: center;
-    margin-bottom: 20px;
-    color: #007BFF;
-    font-size: 1.6rem;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: #0d6efd;
     font-weight: 600;
+    margin-bottom: 6px;
 }
 
-/* =======================
-   BOTONES ARRIBA
-   ======================= */
-.botones-arriba {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-/* =======================
-   INPUTS Y TEXTAREA
-   ======================= */
-.form-label {
-    display: block;
-    margin-top: 12px;
-    font-weight: bold;
+.page-header p {
+    font-size: 0.95rem;
     color: #333;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
-    width: 100%;
-    padding: 8px 12px;
-    margin-top: 5px;
-    border: 1px solid rgba(0,0,0,0.2);
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 6px;
-    font-size: 15px;
-    transition: all 0.2s ease-in-out;
-}
-
-input:focus,
-textarea:focus {
-    border-color: #4CAF50;
-    background: #fff;
-    box-shadow: 0 0 6px rgba(76,175,80,0.4);
-}
-
 /* =======================
-   BOTONES UNIFORMES
+   TARJETA
    ======================= */
-.btn {
-    display: inline-block;
-    padding: 10px 22px;
-    margin: 5px;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    background-color: #007BFF;
-    color: white;
-    transition: background-color 0.3s, transform 0.2s;
-    min-width: 120px;
-    text-align: center;
+.card {
+    max-width: 820px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.28);
+    backdrop-filter: blur(12px);
+    padding: 26px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
-.btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-/* Botones finales en el formulario */
-.botones-finales {
-    text-align: center;
-    margin-top: 20px;
+/* TEXTO INFORMATIVO */
+.card-info {
+    font-size: 0.9rem;
+    color: #333;
+    background: rgba(255,255,255,0.6);
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 /* =======================
-   MENSAJES
+   ALERTAS
    ======================= */
 .alert {
-    background: rgba(0, 123, 255, 0.15);
-    color: #004085;
-    padding: 10px;
+    background: rgba(13,110,253,0.15);
+    color: #084298;
+    padding: 12px;
     border-radius: 6px;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     text-align: center;
 }
 
 .alert.success {
-    background: rgba(40, 167, 69, 0.15);
+    background: rgba(40,167,69,0.2);
     color: #155724;
+    border: 1px solid rgba(40,167,69,0.4);
+}
+
+/* =======================
+   FORMULARIO
+   ======================= */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* =======================
+   INPUTS
+   ======================= */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.25);
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 6px rgba(76,175,80,0.45);
+}
+
+/* =======================
+   ERRORES
+   ======================= */
+.error-input {
+    border-color: #dc3545;
+    box-shadow: 0 0 6px rgba(220,53,69,0.45);
 }
 
 .error-msg {
-    color: #a00;
-    font-size: 0.85rem;
-    margin-top: 3px;
+    font-size: 0.8rem;
+    color: #a80000;
+    margin-top: 4px;
 }
 
-.error-input {
-    border-color: #dc3545;
-    box-shadow: 0 0 5px rgba(220,53,69,0.4);
+/* =======================
+   BOTONES
+   ======================= */
+.botones-finales {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 9px 22px;
+    margin: 6px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #0d6efd;
+    color: #fff;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    min-width: 150px;
+}
+
+.btn:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #b02a37;
 }
 
 /* =======================
    RESPONSIVE
    ======================= */
-@media (max-width: 500px) {
-    .card {
-        padding: 20px 15px;
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
     }
-    .btn {
-        width: 48%;
-        margin-bottom: 10px;
+
+    .card {
+        padding: 20px;
     }
 }

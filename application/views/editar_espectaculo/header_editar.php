@@ -6,7 +6,7 @@
     <title><?= $titulo ?? 'UNLa Tienda'; ?></title>
 
     <!-- CSS Header -->
-    <link rel="stylesheet" href="<?= base_url('activos/css/administrador_espectaculos/header_administrador_espectaculos.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('activos/css/editar_espectaculo/header_editar.css'); ?>">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">

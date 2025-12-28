@@ -210,86 +210,93 @@ class Usuario extends CI_Controller
     }
 
     // EDITAR USUARIO
-       
-    public function editar_usuario($id_usuario)
+public function editar_usuario($id_usuario)
+{
+    $usuario = $this->Usuario_modelo->obtener_usuario_por_id($id_usuario);
+
+    if (!$usuario)
     {
-        $usuario = $this->Usuario_modelo->obtener_usuario_por_id($id_usuario);
-
-        if (!$usuario)
-        {
-            show_error('Usuario no encontrado.', 404);
-        }
-
-        $this->validar_usuario(false);
-
-        if ($this->form_validation->run() === FALSE)
-        {
-            $data = 
-            [
-                'titulo'     => 'Editar Usuario',
-                'fondo'      => base_url('activos/imagenes/mi_fondo.jpg'),
-                'id_usuario' => $this->session->userdata('id_usuario'),
-                'logged_in'  => $this->session->userdata('logged_in'),
-                'usuario'    => $usuario
-            ];
-
-            $this->load->view('editar_usuario/header_editar_usuario', $data);
-            $this->load->view('editar_usuario/body_editar_usuario', $data);
-            $this->load->view('editar_usuario/footer_editar_usuario', $data);
-        }
-        else
-        {
-            $usuario_data =
-            [
-                'nombre'         => $this->input->post('nombre'),
-                'apellido'       => $this->input->post('apellido'),
-                'nombre_usuario' => $this->input->post('email')
-            ];
-
-            if ($this->input->post('password'))
-            {
-                $usuario_data['palabra_clave'] = password_hash(
-                    $this->input->post('password'),
-                    PASSWORD_DEFAULT
-                );
-            }
-
-            $this->Usuario_modelo->actualizar_usuario($id_usuario, $usuario_data);
-            $this->session->set_flashdata('mensaje_exito', 'Usuario actualizado correctamente.');
-
-            redirect('usuario/editar_usuario/' . $id_usuario);
-        }
+        show_error('Usuario no encontrado.', 404);
     }
 
-    public function eliminar_usuario($id_usuario)
-    {
-        $usuario = $this->Usuario_modelo->obtener_por_id($id_usuario);
+    // Reglas de validación (sin password obligatorio)
+    $this->validar_usuario(false);
 
-        if ( ! $usuario)
+    if ($this->form_validation->run() === FALSE)
+    {
+        $data = [
+            'titulo'     => 'Editar Usuario',
+            'fondo'      => base_url('activos/imagenes/mi_fondo.jpg'),
+            'id_usuario' => $this->session->userdata('id_usuario'),
+            'logged_in'  => $this->session->userdata('logged_in'),
+            'usuario'    => $usuario
+        ];
+
+        $this->load->view('editar_usuario/header_editar_usuario', $data);
+        $this->load->view('editar_usuario/body_editar_usuario', $data);
+        $this->load->view('editar_usuario/footer_editar_usuario', $data);
+    }
+    else
+    {
+        $usuario_data = [
+            'nombre'         => $this->input->post('nombre'),
+            'apellido'       => $this->input->post('apellido'),
+            'nombre_usuario' => $this->input->post('email')
+        ];
+
+        // Solo actualiza password si se ingresó uno nuevo
+        if ($this->input->post('password'))
         {
-            show_error('Usuario no encontrado.', 404);
+            $usuario_data['palabra_clave'] = password_hash(
+                $this->input->post('password'),
+                PASSWORD_DEFAULT
+            );
         }
 
-        // Verificar si el usuario tiene clientes asociados
-        $this->db->where('usuario_id', $id_usuario);
-        $clientes = $this->db->get('clientes');
+        $this->Usuario_modelo->actualizar_usuario($id_usuario, $usuario_data);
 
-        if ($clientes->num_rows() > 0)
-        {
-            $this->session->set_flashdata(
+        $this->session->set_flashdata(
+            'mensaje_exito',
+            'Usuario actualizado correctamente.'
+        );
+
+        redirect('usuario/editar_usuario/' . $id_usuario);
+    }
+}
+
+// --------------------------------------------------------
+// ELIMINAR USUARIO
+// --------------------------------------------------------
+public function eliminar_usuario($id_usuario)
+{
+    $usuario = $this->Usuario_modelo->obtener_usuario_por_id($id_usuario);
+
+    if (!$usuario)
+    {
+        show_error('Usuario no encontrado.', 404);
+    }
+
+    // Verificar clientes asociados
+    $this->db->where('usuario_id', $id_usuario);
+    $clientes = $this->db->get('clientes');
+
+    if ($clientes->num_rows() > 0)
+    {
+        $this->session->set_flashdata(
             'mensaje_error',
             'No se puede eliminar el usuario porque tiene clientes asociados.'
-            );
-        }
-        else
-        {
-            $this->Usuario_modelo->eliminar_usuario($id_usuario);
-            $this->session->set_flashdata(
+        );
+    }
+    else
+    {
+        $this->Usuario_modelo->eliminar_usuario($id_usuario);
+        $this->session->set_flashdata(
             'mensaje_exito',
             'Usuario eliminado correctamente.'
-            );
-        }
-
-        redirect('administrador');
+        );
     }
+
+    redirect('administrador');
+}
+
 }
