@@ -1,11 +1,12 @@
 <main class="registro-container" style="background-image: url('<?= $fondo; ?>');">
-    
-    <!-- Texto fuera de la tarjeta -->
+
+    <!-- Texto encima de la tarjeta -->
     <div class="registro-texto-encima">
         <h2 class="titulo-encima">Bienvenido, por favor regístrate para continuar</h2>
         <p class="subtitulo-encima">Rellena tus datos personales para crear una cuenta y acceder a todos nuestros servicios.</p>
     </div>
 
+    <!-- Tarjeta de registro -->
     <div class="registro-form">
         
         <!-- Aviso de error -->
@@ -21,11 +22,11 @@
             <div class="form-group-row">
                 <div class="w-50">
                     <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" required>
+                    <input type="text" class="form-control" name="nombre" id="nombre" required>
                 </div>
                 <div class="w-50">
                     <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" required>
+                    <input type="text" class="form-control" name="apellido" id="apellido" required>
                 </div>
             </div>
 
@@ -33,11 +34,11 @@
             <div class="form-group-row">
                 <div class="w-50">
                     <label for="dni" class="form-label">DNI</label>
-                    <input type="text" class="form-control" name="dni" required>
+                    <input type="text" class="form-control" name="dni" id="dni" required>
                 </div>
                 <div class="w-50">
                     <label for="telefono" class="form-label">Teléfono</label>
-                    <input type="text" class="form-control" name="telefono" required>
+                    <input type="text" class="form-control" name="telefono" id="telefono" required>
                 </div>
             </div>
 
@@ -45,11 +46,11 @@
             <div class="form-group-row">
                 <div class="w-50">
                     <label for="nombre_usuario" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="nombre_usuario" required>
+                    <input type="email" class="form-control" name="nombre_usuario" id="nombre_usuario" required>
                 </div>
                 <div class="w-50">
                     <label for="palabra_clave" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" name="palabra_clave" required autocomplete="new-password">
+                    <input type="password" class="form-control" name="palabra_clave" id="palabra_clave" required autocomplete="new-password">
                 </div>
             </div>
 
@@ -59,13 +60,13 @@
                 <a href="<?= site_url('login'); ?>" class="btn btn-primary">Iniciar sesión</a>
             </div>
         </form>
+    </div>
 
-        <!-- Bloque de iniciar sesión -->
-        <div class="registro-registered">
-            <p>¿Ya tienes una cuenta?</p>
-        </div>
+    <!-- Texto debajo de la tarjeta -->
+    <div class="registro-texto-debajo">
+        <p>Al registrarte aceptas nuestros Términos y Condiciones y la Política de Privacidad.</p>
     </div>
 </main>
 
-<!-- Enlace al archivo CSS del body -->
+<!-- Enlace al archivo CSS -->
 <link rel="stylesheet" href="<?= base_url('activos/css/registrar_usuario/body_registrar_usuario.css'); ?>">

@@ -1,20 +1,25 @@
 /* ================================
-   General
+   RESET Y ESTILOS GENERALES
    ================================ */
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121212;
     color: #f8f9fa;
 }
 
 /* ================================
-   Header principal
+   HEADER PRINCIPAL
    ================================ */
 .main-header {
     width: 100%;
     height: 85px;
-    background-color: #000000; /* fondo negro sólido */
+    background-color: #000000; /* Fondo negro sólido */
     box-shadow: 0 4px 18px rgba(0,0,0,0.6);
     display: flex;
     align-items: center;
@@ -23,7 +28,6 @@ body {
     z-index: 1000;
 }
 
-/* Contenedor interno */
 .header-container {
     width: 100%;
     max-width: 1400px;
@@ -35,7 +39,7 @@ body {
 }
 
 /* ================================
-   Logo + título
+   LOGO Y TÍTULO
    ================================ */
 .brand {
     display: flex;
@@ -48,7 +52,6 @@ body {
     height: 60px;
     border-radius: 50%;
     margin-right: 12px;
-    /* quitamos borde blanco y efectos */
 }
 
 .site-title {
@@ -56,62 +59,56 @@ body {
     font-weight: 700;
     color: #ffffff;
     letter-spacing: 0.5px;
-    /* quitamos efecto brilloso */
 }
 
 /* ================================
-   Menú a la derecha
+   MENÚ DE NAVEGACIÓN
    ================================ */
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 25px; /* más separación entre botones */
-    margin-right: 40px; /* evita que queden pegados al borde derecho */
+    gap: 25px;
 }
 
 /* ================================
-   Botones personalizados
+   BOTONES PERSONALIZADOS
    ================================ */
 .btn {
     padding: 10px 22px;
     border-radius: 8px;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: none; /* quitamos sombra */
-    transition: none; /* quitamos animación */
+    transition: background-color 0.2s ease;
 }
 
-/* Botón Login */
+/* Botón Login - verde */
 .btn-login {
-    background-color: #0066ff;
+    background-color: #28a745;
     color: #ffffff;
 }
 
 .btn-login:hover {
-    background-color: #004bb3; /* solo cambio de color */
+    background-color: #1e7e34;
 }
 
-/* Botón Registrar */
-.btn-register {
-    background-color: #009944;
+/* Botón Ir al Inicio - azul */
+.btn-home {
+    background-color: #007bff;
     color: #ffffff;
 }
 
-.btn-register:hover {
-    background-color: #006633; /* solo cambio de color */
+.btn-home:hover {
+    background-color: #0056b3;
 }
 
 /* ================================
-   Responsive
+   RESPONSIVE
    ================================ */
 @media (max-width: 768px) {
 
     .main-header {
-        height: 75px;
-    }
-
-    .site-title {
-        font-size: 1.4rem;
+        height: auto;
+        padding: 10px 0;
     }
 
     .header-container {
@@ -120,11 +117,14 @@ body {
         padding: 10px;
     }
 
+    .site-title {
+        font-size: 1.4rem;
+    }
+
     .nav-menu {
         gap: 15px;
         width: 100%;
         justify-content: center;
-        margin-right: 0; /* centrado en móviles */
     }
 
     .btn {

@@ -1,23 +1,21 @@
-<footer class="main-footer">
-    <div class="container text-center">
-        <p class="mb-2">&copy; <?= date('Y'); ?> UNLa Tienda. Todos los derechos reservados.</p>
+<!-- CSS del footer -->
+<link rel="stylesheet" href="<?= base_url('activos/css/login/footer_login.css'); ?>">
 
-        <ul class="footer-links list-inline mb-3">
-            <li class="list-inline-item">
-                <a href="<?= base_url('acerca/acerca_login'); ?>" class="footer-link">Acerca de</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="<?= base_url('contacto/contacto_login'); ?>" class="footer-link">Contacto</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="<?= base_url('politicas/politicas_login'); ?>" class="footer-link">Políticas</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="<?= base_url('ayuda/ayuda_login'); ?>" class="footer-link">Ayuda</a>
-            </li>
-        </ul>
+<footer class="main-footer">
+    <div class="footer-container">
+
+        <!-- Texto legal -->
+        <p class="footer-copy">
+            &copy; <?= date('Y'); ?> UNLa Tienda. Todos los derechos reservados.
+        </p>
+
+        <!-- Enlaces -->
+        <nav class="footer-links">
+            <a href="<?= base_url('acerca'); ?>">Acerca de</a>
+            <a href="<?= base_url('contacto'); ?>">Contacto</a>
+            <a href="<?= base_url('politicas'); ?>">Políticas</a>
+            <a href="<?= base_url('ayuda'); ?>">Ayuda</a>
+        </nav>
+
     </div>
 </footer>
-
-<!-- Enlace al CSS del footer -->
-<link rel="stylesheet" href="<?= base_url('activos/css/principal/footer_principal.css'); ?>">

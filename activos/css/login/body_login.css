@@ -1,173 +1,174 @@
-/* ==========================
-   FONDO Y CONTENEDOR GENERAL
-========================== */
-.body-login {
+/* =====================================================
+   FONDO GENERAL
+===================================================== */
+.login-bg {
   min-height: 100vh;
   display: flex;
-  justify-content: flex-start;  
-  align-items: center;      
-  flex-direction: column;
-
+  justify-content: center;
+  align-items: flex-start; /* contenido arriba */
+  padding: 40px 20px 60px; /* ⬆ título más arriba */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  padding-top: 120px; /* aire extra respecto al header */
-  padding-bottom: 60px; /* espacio con el footer */
 }
 
-.login-container {
+/* =====================================================
+   CONTENEDOR PRINCIPAL
+===================================================== */
+.login-wrapper {
+  width: 100%;
+  max-width: 460px;
   text-align: center;
-  padding: 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-/* ==========================
-   TITULOS FUERA DE LA TARJETA
-========================== */
-.titulo-login {
-  color: #ffffff;
-  font-size: 2.8rem;
+/* =====================================================
+   ENCABEZADO (TÍTULO + DESCRIPCIÓN)
+===================================================== */
+.login-header {
+  margin-bottom: 16px; /* espacio hasta la tarjeta */
+}
+
+.login-header h1 {
+  font-size: 3rem; /* más grande */
   font-weight: 700;
-  text-shadow: 0px 0px 14px rgba(0,0,0,0.7);
-  margin-bottom: 10px;
+  color: #ffffff;
+  margin-bottom: 6px;
+  text-shadow: 0 0 16px rgba(0,0,0,0.7);
 }
 
-.subtitulo-login {
-  color: #d9eaff;
+.login-header p {
   font-size: 1.25rem;
-  margin-bottom: 28px;
-  text-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+  color: #f0f0f0; /* más claro y fuerte */
+  margin-bottom: 20px; /* separa un poco de la tarjeta */
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-/* ==========================
-   TARJETA / FORMULARIO TRANSPARENTE
-========================== */
-.login-form {
-  width: 100%;
-  max-width: 430px;
-  padding: 35px;
-
-  background: rgba(0, 0, 0, 0.2); /* Fondo oscuro translúcido */
-  backdrop-filter: blur(14px); /* Efecto de vidrio esmerilado */
-  -webkit-backdrop-filter: blur(14px); /* Compatibilidad para Safari */
-  border-radius: 16px;
-
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde con un poco más de visibilidad */
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.25);
-
-  color: #f1f1f1; /* Texto claro para contrastar */
+/* =====================================================
+   TARJETA LOGIN
+===================================================== */
+.login-card {
+  margin-top: 0px; /* tarjeta pegada justo debajo de header */
+  padding: 38px;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 14px 38px rgba(0,0,0,0.3);
+  color: #f5f5f5;
 }
 
-/* ==========================
-   TEXTOS INTERNOS CLAROS
-========================== */
-.login-form .login-description {
-  color: #f1f1f1; /* Texto claro */
-  font-size: 16px;
-  margin-bottom: 20px;
+/* =====================================================
+   TEXTOS INTERNOS
+===================================================== */
+.login-text {
+  font-size: 18px;
+  margin-bottom: 24px; /* espacio extra dentro de la tarjeta */
+  color: #f5f5f5;
 }
 
-.login-form .form-label {
-  color: #f1f1f1; /* Color claro para etiquetas */
-  font-size: 16px;
+/* =====================================================
+   TEXTO FUERA DE LA TARJETA
+===================================================== */
+.login-extra {
+  margin-top: 36px; /* más separado de la tarjeta */
+  color: #ffffff;   /* muy claro */
+  font-size: 17px;  /* más grande y legible */
+  font-weight: 600; /* fuerte */
+}
+
+.login-extra span {
+  display: block;
+  margin-top: 6px;
+  color: #a0d4ff; /* azul claro y destacable */
+  font-weight: 700;
+  font-size: 17px;
+}
+
+/* =====================================================
+   FORMULARIO
+===================================================== */
+.login-card label {
+  display: block;
+  margin-bottom: 6px;
   font-weight: 600;
-  margin-bottom: 10px;
+  color: #f5f5f5;
+  font-size: 16px;
 }
 
-.login-form .form-control {
-  background: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.login-card .form-control {
   padding: 14px;
   font-size: 16px;
-  color: #333; /* Color oscuro para el texto dentro de los inputs */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  color: #333;
 }
 
-.login-form .form-control::placeholder {
-  color: #666;
+.login-card .form-control::placeholder {
+  color: #999;
 }
 
-.login-form .form-control:focus {
-  background: #ffffff;
-  border: 2px solid #0077ff;
-  box-shadow: 0 0 10px rgba(0,123,255,0.3);
+.login-card .form-control:focus {
+  border-color: #66b0ff;
+  box-shadow: 0 0 10px rgba(102,176,255,0.4);
 }
 
-.login-form .login-extra {
-  color: #f1f1f1; /* Texto claro */
-  font-size: 15px;
-  margin-top: 20px;
-}
-
-.login-form .highlight {
-  color: #0077ff; /* Azul brillante para destacar */
-  font-weight: bold;
-}
-
-/* ==========================
-   BOTONES CENTRADOS
-========================== */
-.login-buttons {
+/* =====================================================
+   BOTONES
+===================================================== */
+.login-actions {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 22px;
+  margin-top: 24px;
 }
 
-.login-buttons .btn {
-  padding: 12px 26px;
+.login-actions .btn {
+  padding: 14px 28px;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 10px;
-  transition: 0.2s;
-  color: white;
+  border-radius: 12px;
 }
 
-.login-buttons .btn-primary:hover {
-  background-color: #004ba7;
-}
-
-.login-buttons .btn-success:hover {
-  background-color: #0a7c32;
-}
-
-/* ==========================
-   ALERTA DE ERROR
-========================== */
-.login-form .alert {
-  font-size: 15px;
+/* =====================================================
+   ALERTA
+===================================================== */
+.login-card .alert {
   border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-  color: #fff;
-  background-color: #f44336;
+  font-size: 16px;
 }
 
-/* ==========================
+/* =====================================================
    RESPONSIVE
-========================== */
+===================================================== */
 @media (max-width: 480px) {
-  .titulo-login {
-    font-size: 2.2rem;
+  .login-bg {
+    padding-top: 30px;
   }
 
-  .subtitulo-login {
+  .login-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .login-header p {
     font-size: 1.1rem;
+    margin-bottom: 16px;
   }
 
-  .login-form {
-    padding: 26px;
-    max-width: 90%;
+  .login-card {
+    padding: 28px;
   }
 
-  .form-label,
-  .form-control,
-  .login-description {
+  .login-text {
+    font-size: 16px;
+  }
+
+  .login-extra {
+    font-size: 15px;
+  }
+
+  .login-extra span {
     font-size: 15px;
   }
 }

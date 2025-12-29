@@ -1,6 +1,6 @@
 /* ===============================
-   FONDO ===============================
-*/
+   FONDO
+=============================== */
 .registro-container {
     min-height: 100vh;
     display: flex;
@@ -11,52 +11,52 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    margin-top: 60px; /* Agregar margen superior para separar del header */
+    margin-top: 60px; /* margen para separar del header */
 }
 
 /* ===============================
-   TEXTO FUERA ===============================
-*/
+   TEXTO ENCIMA DE LA TARJETA
+=============================== */
 .registro-texto-encima {
     text-align: center;
-    color: #fff;
-    margin-bottom: 30px;
+    color: #ffffff;
+    margin-bottom: 35px;
 }
 
 .titulo-encima {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    text-shadow: 0 0 12px rgba(0,0,0,0.7);
+    text-shadow: 0 0 14px rgba(0,0,0,0.7);
 }
 
 .subtitulo-encima {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-top: 10px;
-    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 /* ===============================
-   TARJETA ===============================
-*/
+   TARJETA DE FORMULARIO
+=============================== */
 .registro-form {
-    background: rgba(0, 0, 0, 0.15); /* Fondo oscuro translúcido */
-    backdrop-filter: blur(12px); /* Efecto de vidrio esmerilado */
-    -webkit-backdrop-filter: blur(12px); /* Compatibilidad con Safari */
-    border-radius: 14px;
-    padding: 30px;
-    max-width: 520px;
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 16px;
+    padding: 35px;
+    max-width: 540px;
     width: 100%;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
-    color: #f1f1f1; /* Texto claro */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    color: #f1f1f1;
 }
 
 /* ===============================
-   INPUTS ===============================
-*/
+   INPUTS
+=============================== */
 .form-group-row {
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 18px;
+    margin-bottom: 22px;
 }
 
 .form-group-row .w-50 {
@@ -67,43 +67,46 @@
     font-weight: 600;
     margin-bottom: 8px;
     display: block;
-    color: #f1f1f1; /* Color claro para las etiquetas */
+    color: #ffffff;
+    font-size: 1.1rem;
 }
 
 .form-control {
-    border-radius: 8px;
-    border: 1px solid rgba(0,0,0,0.25);
-    background: rgba(255,255,255,0.9); /* Fondo blanco translúcido */
-    color: #333; /* Texto oscuro dentro de los inputs */
-    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.95);
+    color: #222;
+    padding: 11px;
+    font-size: 1rem;
     transition: 0.3s;
 }
 
 .form-control:focus {
     border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0,123,255,0.4);
+    box-shadow: 0 0 10px rgba(0,123,255,0.4);
 }
 
 .form-control::placeholder {
-    color: #666;
+    color: #555;
 }
 
 /* ===============================
-   BOTONES ===============================
-*/
+   BOTONES
+=============================== */
 .botones {
     display: flex;
-    justify-content: center; /* Centra los botones */
-    margin-top: 25px;
-    gap: 30px; /* Aumenta el espacio entre los botones */
+    justify-content: center;
+    margin-top: 28px;
+    gap: 28px;
 }
 
 .btn {
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: bold;
-    padding: 12px 30px; /* Aumenta el tamaño de los botones */
+    padding: 14px 32px;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 .btn-success {
@@ -125,20 +128,30 @@
 }
 
 /* ===============================
-   TEXTO EXTRA ===============================
-*/
+   TEXTO DEBAJO DE LA TARJETA
+=============================== */
+.registro-texto-debajo {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+/* ===============================
+   TEXTO EXTRA / REGISTRADO
+=============================== */
 .registro-registered {
-    margin-top: 20px;
-    font-size: 0.95rem;
+    margin-top: 22px;
+    font-size: 1rem;
     color: #f2f2f7;
     text-align: center;
 }
 
 /* ===============================
-   ALERTA ===============================
-*/
+   ALERTA
+=============================== */
 .alert-danger {
-    background: rgba(220,53,69,0.95); /* Fondo rojo translúcido */
+    background: rgba(220,53,69,0.95);
     color: #fff;
     border-radius: 8px;
     padding: 12px;
@@ -148,8 +161,8 @@
 }
 
 /* ===============================
-   RESPONSIVE ===============================
-*/
+   RESPONSIVE
+=============================== */
 @media (max-width: 600px) {
     .form-group-row {
         flex-direction: column;
@@ -161,19 +174,23 @@
 
     .botones {
         flex-direction: column;
-        gap: 20px; /* Ajusta el espacio entre los botones en pantallas pequeñas */
+        gap: 20px;
     }
 
     .btn {
-        width: 100%; /* Hace que los botones ocupen todo el ancho */
-        padding: 12px; /* Ajusta el tamaño de los botones */
+        width: 100%;
+        padding: 12px;
     }
 
     .titulo-encima {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
     }
 
     .subtitulo-encima {
-        font-size: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .registro-texto-debajo {
+        font-size: 1.05rem;
     }
 }

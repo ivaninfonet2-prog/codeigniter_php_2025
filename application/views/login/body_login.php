@@ -5,68 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $titulo ?></title>
 
-    <!-- CSS principal del login -->
+    <!-- CSS del Login -->
     <link rel="stylesheet" href="<?= base_url('activos/css/login/body_login.css'); ?>">
 
-    <!-- Bootstrap opcional -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
 
-<main class="body-login" style="background-image: url('<?= $fondo ?>');">
+<main class="login-bg" style="background-image: url('<?= $fondo ?>');">
 
-    <div class="login-container">
+    <section class="login-wrapper">
 
-        <!-- Texto fuera de la tarjeta -->
-        <h1 class="titulo-login">Bienvenido a UNLa Tienda</h1>
-        <p class="subtitulo-login">Accede a tu cuenta y descubre más beneficios.</p>
+        <!-- ENCABEZADO (TÍTULO + DESCRIPCIÓN) -->
+        <header class="login-header">
+            <h1>Bienvenido a UNLa Tienda</h1>
+            <p>Accede a tu cuenta y descubre más beneficios</p>
+        </header>
 
-        <!-- Formulario -->
-        <form action="<?= base_url('login/autenticar'); ?>" 
-              method="post" 
-              class="login-form" 
+        <!-- TARJETA LOGIN -->
+        <form class="login-card"
+              action="<?= base_url('login/autenticar'); ?>"
+              method="post"
               autocomplete="off">
 
-            <p class="login-description mb-4">
-                Bienvenido a <strong>UNLa Tienda login</strong>. Ingresa tus credenciales para acceder a tu cuenta.
+            <!-- Texto introductorio dentro de la tarjeta -->
+            <p class="login-text">
+                Bienvenido a <strong>UNLa Tienda</strong>.  
+                Ingresa tus credenciales para continuar.
             </p>
 
-            <!-- Mensaje de error -->
+            <!-- Alerta de error -->
             <?php if ($this->session->flashdata('error')): ?>
                 <div class="alert alert-danger">
                     <?= $this->session->flashdata('error'); ?>
                 </div>
             <?php endif; ?>
 
-            <!-- Usuario -->
-            <div class="form-group mb-4">
-                <label for="nombre_usuario" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario"
-                       placeholder="Ingresa tu usuario" required autocomplete="off">
+            <!-- Input Usuario -->
+            <div class="mb-4">
+                <label for="nombre_usuario">Usuario</label>
+                <input type="text"
+                       id="nombre_usuario"
+                       name="nombre_usuario"
+                       class="form-control"
+                       placeholder="Ingresa tu usuario"
+                       required>
             </div>
 
-            <!-- Contraseña -->
-            <div class="form-group mb-4">
-                <label for="palabra_clave" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="palabra_clave" name="palabra_clave"
-                       placeholder="Ingresa tu contraseña" required autocomplete="new-password">
+            <!-- Input Contraseña -->
+            <div class="mb-4">
+                <label for="palabra_clave">Contraseña</label>
+                <input type="password"
+                       id="palabra_clave"
+                       name="palabra_clave"
+                       class="form-control"
+                       placeholder="Ingresa tu contraseña"
+                       required>
             </div>
 
             <!-- Botones -->
-            <div class="login-buttons">
+            <div class="login-actions">
                 <button type="submit" class="btn btn-primary">Ingresar</button>
-                <a href="<?= site_url('registrar'); ?>" class="btn btn-success">Regístrate</a>
+                <a href="<?= site_url('registrar'); ?>" class="btn btn-success">Registrarse</a>
             </div>
 
-            <!-- Extra -->
-            <div class="login-extra text-center mt-4">
-                <p class="registro-text">
-                    ¿No tienes cuenta todavía? <br>
-                    <span class="highlight">¡Únete a nuestra comunidad!</span>
-                </p>
-            </div>
         </form>
-    </div>
+
+        <!-- TEXTO FUERA DE LA TARJETA -->
+        <div class="login-extra">
+            <p>¿No tienes cuenta todavía?</p>
+            <span>Únete a la comunidad de UNLa Tienda y empezá a disfrutar beneficios exclusivos.</span>
+        </div>
+
+    </section>
 </main>
 
 </body>
