@@ -26,13 +26,13 @@
         <!-- Menú de navegación -->
         <nav class="nav-menu">
 
-            <!-- Volver al panel del usuario -->
-            <a href="<?= site_url('usuario'); ?>" class="btn btn-login">
+            <!-- Volver al panel del usuario (Botón Azul) -->
+            <a href="<?= site_url('usuario'); ?>" class="btn-volver">
                 Volver al Usuario
             </a>
 
-            <!-- Cerrar sesión con confirmación -->
-            <a href="<?= site_url('confirmacion/cerrar_sesion_usuario'); ?>" class="btn btn-cerrar">
+            <!-- Cerrar sesión con confirmación (Botón Rojo) -->
+            <a href="<?= site_url('confirmacion/cerrar_sesion_usuario'); ?>" class="btn-cerrar">
                 Cerrar Sesión
             </a>
 

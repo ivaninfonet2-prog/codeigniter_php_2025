@@ -15,7 +15,7 @@ body {
    CONTENEDOR
 ================================ */
 .contenido {
-    padding: 5rem 1.5rem 4rem;
+    padding: 5.5rem 1.5rem 4rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -29,22 +29,22 @@ body {
 .intro {
     max-width: 900px;
     text-align: center;
-    margin-bottom: 1.8rem;
-    margin-top: 2rem;
+    margin-bottom: 2.2rem;
+    margin-top: 2.2rem;
 }
 
 .titulo {
-    font-size: 2.2rem;
-    margin-bottom: 0.4rem;
-    margin-top: 0.8rem;
+    font-size: 2.6rem; /* ⬆️ más grande */
+    margin-bottom: 0.6rem;
     color: #ffffff;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.55);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
 .descripcion {
-    font-size: 1.1rem;
+    font-size: 1.25rem; /* ⬆️ más grande */
     color: #f3f3f3;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.45);
+    line-height: 1.7;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
 /* ===============================
@@ -63,9 +63,10 @@ body {
 
 .tabla-reservas th,
 .tabla-reservas td {
-    padding: 14px 16px;
+    padding: 16px 18px; /* ⬆️ más aire */
     text-align: center;
     color: #1f1f1f;
+    font-size: 1.05rem; /* ⬆️ */
     border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
@@ -73,6 +74,7 @@ body {
     background: #dcebf8;
     color: #1f3a5f;
     font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .tabla-reservas tr:nth-child(even) {
@@ -88,12 +90,28 @@ body {
 ================================ */
 .boton-detalle {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 10px 18px;
     background: linear-gradient(135deg, #1e88e5, #1565c0);
     color: #ffffff;
     font-weight: 600;
+    font-size: 1rem;
     text-decoration: none;
-    border-radius: 7px;
+    border-radius: 8px;
+}
+
+/* ===============================
+   TEXTO DEBAJO (SIN TARJETA)
+================================ */
+.texto-inferior {
+    max-width: 900px;
+    margin-top: 1.6rem;
+    text-align: center;
+
+    font-size: 1.2rem; /* ⬆️ más grande */
+    line-height: 1.8;
+    color: #ffffff;
+
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.65);
 }
 
 /* ===============================
@@ -101,52 +119,15 @@ body {
 ================================ */
 .mensaje-exito {
     max-width: 900px;
-    margin: 0 auto 1.6rem;
-    padding: 1rem 1.2rem;
+    margin: 0 auto 1.8rem;
+    padding: 1.2rem 1.4rem;
     background: #e8f5e9;
     border: 1px solid #4caf50;
     color: #14532d;
     border-radius: 12px;
     text-align: center;
+    font-size: 1.05rem;
     box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-}
-
-/* ===============================
-   MENSAJE CANCELACIÓN (AISLADO)
-================================ */
-.mensaje-cancelacion {
-    max-width: 900px;
-    margin: 0 auto 2rem;
-    padding: 1.6rem 2rem;
-
-    background: #ffffff;              /* BLANCO REAL */
-    border: 2px solid #b91c1c;         /* CORTE VISUAL FUERTE */
-    border-radius: 16px;
-
-    color: #1f2933;
-    text-align: center;
-    font-size: 1.1rem;
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,0.35),
-        0 0 0 6px rgba(255,255,255,0.35); /* AÍSLA DEL FONDO */
-
-    animation: fadeInUp 0.5s ease;
-}
-
-/* TÍTULO */
-.mensaje-cancelacion strong {
-    display: block;
-    font-size: 1.4rem;
-    margin-bottom: 0.6rem;
-    color: #991b1b;
-}
-
-/* TEXTO SECUNDARIO */
-.mensaje-cancelacion .detalle {
-    margin-top: 0.4rem;
-    font-size: 1rem;
-    color: #4b5563;
 }
 
 /* ===============================
@@ -167,8 +148,12 @@ body {
    RESPONSIVE
 ================================ */
 @media (max-width: 768px) {
-    .mensaje-cancelacion {
-        padding: 1.3rem 1.4rem;
-        font-size: 1rem;
+    .titulo {
+        font-size: 2.2rem;
+    }
+
+    .descripcion,
+    .texto-inferior {
+        font-size: 1.1rem;
     }
 }

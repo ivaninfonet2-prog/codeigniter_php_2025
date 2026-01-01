@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $titulo ?? 'UNLa Tienda'; ?></title>
 
-    <!-- CSS personalizado -->
     <link rel="stylesheet" href="<?= base_url('activos/css/usuario_reservas_detalle/header_usuario_reservas_detalle.css'); ?>">
-
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -17,39 +14,30 @@
 <header class="main-header">
     <div class="header-container">
 
-        <!-- Logo + título (LOGOUT FORZADO) -->
         <a href="<?= site_url('login/logout'); ?>" class="brand" title="Cerrar sesión">
             <img src="<?= base_url('activos/imagenes/logo.jpg'); ?>" class="logo-img" alt="Logo UNLa">
             <span class="site-title">UNLa Tienda</span>
         </a>
 
-        <!-- Menú de navegación -->
         <nav class="nav-menu">
-
-            <!-- Volver al panel del usuario -->
-            <a href="<?= site_url('usuario'); ?>" class="btn btn-login">
+            <a href="<?= site_url('usuario'); ?>" class="btn-login">
                 Volver al Usuario
             </a>
 
-            <!-- Cerrar sesión con confirmación -->
-            <a href="<?= site_url('confirmacion/cerrar_sesion_usuario'); ?>" class="btn btn-cerrar">
+            <a href="<?= site_url('confirmacion/cerrar_sesion_usuario'); ?>" class="btn-cerrar">
                 Cerrar Sesión
             </a>
-
         </nav>
 
     </div>
 </header>
 
-<!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Protección contra volver con la flecha -->
 <script>
     if (window.history.replaceState) {
         window.history.replaceState(null, null, window.location.href);
     }
-
     window.onpageshow = function (event) {
         if (event.persisted) {
             window.location.reload();

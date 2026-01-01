@@ -59,6 +59,13 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+
+        <!-- TEXTO DEBAJO (SIN TARJETA) -->
+        <div class="texto-inferior">
+            Si necesitás modificar o cancelar alguna reserva,
+            ingresá al detalle del espectáculo correspondiente.
+        </div>
+
     <?php else: ?>
         <p class="no-reservas">No tienes reservas actualmente.</p>
     <?php endif; ?>

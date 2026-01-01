@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Detalle de Reserva</title>
 
+    <!-- CSS ÚNICO necesario -->
     <link rel="stylesheet" href="<?= base_url('activos/css/usuario_reservas_detalle/body_usuario_reservas_detalle.css'); ?>">
-    <link rel="stylesheet" href="<?= base_url('activos/css/usuario_reservas_detalle/aviso_usuario_reservas_detalle.css'); ?>">
 </head>
 
 <?php
@@ -69,17 +69,16 @@ $total_abonado   = number_format($reserva['monto_total'], 2, ',', '.');
 
         </div>
 
-        <!-- MENSAJE / ACCIONES -->
+        <!-- MENSAJE O ACCIONES -->
         <?php if ($mensaje): ?>
 
-            <div class="detalle-card aviso-cancelacion">
+            <div class="aviso-cancelacion">
                 <?= $mensaje; ?>
             </div>
 
         <?php else: ?>
 
             <div class="acciones">
-
                 <a href="<?= site_url('confirmacion/cancelar_reserva/' . $reserva['id_reserva']); ?>"
                    class="boton cancelar">
                     Cancelar reserva
@@ -89,7 +88,6 @@ $total_abonado   = number_format($reserva['monto_total'], 2, ',', '.');
                    class="boton volver">
                     Volver a reservas
                 </a>
-
             </div>
 
         <?php endif; ?>

@@ -1,6 +1,6 @@
 /* ================================
    General
-   ================================ */
+================================ */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -10,11 +10,11 @@ body {
 
 /* ================================
    Header principal
-   ================================ */
+================================ */
 .main-header {
     width: 100%;
     height: 100px;
-    background-color: #000; /* Fondo negro sólido */
+    background-color: #000;
     display: flex;
     align-items: center;
     position: fixed;
@@ -27,15 +27,15 @@ body {
     width: 100%;
     max-width: 1400px;
     margin: auto;
-    padding: 0 30px; /* Más espacio interno */
+    padding: 0 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    justify-content: space-between;
 }
 
 /* ================================
    Logo + título
-   ================================ */
+================================ */
 .brand {
     display: flex;
     align-items: center;
@@ -46,7 +46,7 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 2px solid #ffffff; /* Borde blanco sobrio */
+    border: 2px solid #ffffff;
     margin-right: 12px;
 }
 
@@ -58,65 +58,68 @@ body {
 }
 
 /* ================================
-   Menú a la derecha
-   ================================ */
+   Menú
+================================ */
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 20px; /* Separación entre botones */
-    margin-right: 40px; /* Margen para que no se peguen al borde derecho */
+    gap: 18px;
 }
 
 /* ================================
-   Botones personalizados
-   ================================ */
-.btn {
-    padding: 10px 22px;
-    border-radius: 8px;
+   BOTONES
+================================ */
+.nav-menu a {
+    padding: 11px 24px;          /* tamaño ajustado */
+    border-radius: 9px;
     font-weight: 600;
-    text-decoration: none;
-    border: none;
+    font-size: 0.95rem;
+    text-decoration: none !important;
+    color: #ffffff !important;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 
-/* Botón Cerrar Sesión - Aseguramos que el color de fondo sea rojo */
-.btn-cerrar {
-    background-color: #ff4d4d !important; /* Rojo brillante */
-    color: #ffffff !important; /* Texto blanco */
-    border: none !important; /* Elimina el borde predeterminado */
-    transition: background-color 0.3s ease; /* Efecto de transición para el hover */
+/* Botón azul */
+.nav-menu a.btn-login {
+    background-color: #3b82f6 !important;
 }
 
-.btn-cerrar:hover {
-    background-color: #cc0000 !important; /* Rojo más oscuro al hacer hover */
+.nav-menu a.btn-login:hover {
+    background-color: #2563eb !important;
+    transform: translateY(-1px);
+}
+
+/* Botón rojo */
+.nav-menu a.btn-cerrar {
+    background-color: #ff4d4d !important;
+}
+
+.nav-menu a.btn-cerrar:hover {
+    background-color: #cc0000 !important;
+    transform: translateY(-1px);
 }
 
 /* ================================
    Responsive
-   ================================ */
+================================ */
 @media (max-width: 768px) {
     .main-header {
-        height: 90px;
-    }
-
-    .site-title {
-        font-size: 1.4rem;
+        height: auto;
+        padding: 12px 0;
     }
 
     .header-container {
         flex-direction: column;
-        gap: 15px;
-        padding: 10px;
+        gap: 14px;
     }
 
     .nav-menu {
-        gap: 15px;
+        flex-direction: column;
         width: 100%;
-        justify-content: center; /* Centrando los elementos en móviles */
-        margin-right: 0;
     }
 
-    .btn {
+    .nav-menu a {
         width: 100%;
         text-align: center;
     }
