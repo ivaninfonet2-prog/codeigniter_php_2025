@@ -7,6 +7,8 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /* Fondo más brillante y contraste definido */
+    filter: brightness(1.2) contrast(1.1);
 }
 
 /* ===============================
@@ -15,7 +17,7 @@ body {
 .fondo-animado {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.12);
+    background: rgba(0, 0, 0, 0.08); /* más clara */
     z-index: -1;
 }
 
@@ -26,7 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 140px 20px 80px;
+    padding: 100px 20px 40px; /* menos padding inferior para acercar texto al footer */
     min-height: 100vh;
     box-sizing: border-box;
 }
@@ -35,10 +37,10 @@ body {
    TÍTULO
 ================================ */
 .titulo-principal {
-    font-size: 2.2rem;
-    margin-bottom: 18px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     color: #f5f8fb;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.45);
+    text-shadow: 0 3px 10px rgba(0,0,0,0.45);
 }
 
 /* ===============================
@@ -48,9 +50,9 @@ body {
     max-width: 520px;
     text-align: center;
     color: #f1f1f1;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 34px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 36px;
 }
 
 .texto-intro p {
@@ -61,28 +63,28 @@ body {
    TARJETA
 ================================ */
 .contenedor-mensaje {
-    background: rgba(255, 255, 255, 0.50);
-    padding: 30px 38px;
+    background: rgba(255, 255, 255, 0.55);
+    padding: 32px 40px;
     border-radius: 16px;
     text-align: center;
-    max-width: 440px;
+    max-width: 460px;
     width: 100%;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
 }
 
 /* ===============================
    DETALLE DENTRO DE TARJETA
 ================================ */
 .detalle-reserva {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.7;
     color: #1f3b4d;
-    margin-bottom: 26px;
+    margin-bottom: 28px;
 }
 
 .detalle-reserva p {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .detalle-reserva p:last-child {
@@ -90,7 +92,7 @@ body {
 }
 
 .detalle-reserva .agradecimiento {
-    margin-top: 14px;
+    margin-top: 16px;
     font-style: italic;
     color: #2a4d69;
 }
@@ -100,7 +102,7 @@ body {
 ================================ */
 .acciones {
     display: flex;
-    gap: 14px;
+    gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -109,12 +111,13 @@ body {
    BOTONES BASE
 ================================ */
 .boton {
-    padding: 12px 26px;
+    padding: 14px 28px;
     font-weight: 600;
     text-decoration: none;
     border-radius: 10px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-size: 1rem;
 }
 
 /* ===============================
@@ -144,19 +147,43 @@ body {
 }
 
 /* ===============================
+   TEXTO ADICIONAL DEBAJO DE TARJETA
+================================ */
+.texto-debajo {
+    margin-top: 12px; /* más cercano a la tarjeta */
+    font-size: 1.2rem; /* legible */
+    color: #ffffff;
+    text-align: center;
+    max-width: 550px;
+    line-height: 1.8;
+    padding: 0 20px;
+}
+
+/* ===============================
    RESPONSIVE
 ================================ */
 @media (max-width: 480px) {
     .titulo-principal {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+
+    .texto-intro {
+        font-size: 1rem;
     }
 
     .contenedor-mensaje {
-        padding: 26px 24px;
+        padding: 28px 26px;
     }
 
     .boton {
         width: 100%;
         text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .texto-debajo {
+        font-size: 1.1rem;
+        padding: 0 16px;
+        margin-top: 10px;
     }
 }

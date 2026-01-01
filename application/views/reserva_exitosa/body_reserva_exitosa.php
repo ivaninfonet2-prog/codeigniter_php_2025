@@ -51,6 +51,13 @@
 
         </div>
 
+        <!-- TEXTO DEBAJO DE LA TARJETA -->
+        <div class="texto-debajo">
+            <p>
+                Si tienes alguna duda sobre tu reserva, puedes contactarnos a través de nuestro correo de soporte o llamar a nuestra línea de atención al cliente.
+            </p>
+        </div>
+
     </main>
 
 </body>
