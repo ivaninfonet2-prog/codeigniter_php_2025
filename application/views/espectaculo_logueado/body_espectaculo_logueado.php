@@ -16,7 +16,7 @@
 
 <main class="container">
 
-    <!-- TEXTO SUPERIOR (fuera de la tarjeta) -->
+    <!-- TEXTO SUPERIOR -->
     <section class="intro">
         <h2>Detalle del espectáculo</h2>
         <p>
@@ -89,13 +89,19 @@
 
     </section>
 
-    <!-- Sección mapa con título y descripción -->
+    <!-- Sección mapa -->
     <section class="mapa-section">
         <h2 class="mapa-titulo">Ubicación del espectáculo</h2>
-        <p class="mapa-descripcion">Encontrá fácilmente el lugar del evento en el mapa para organizar tu llegada.</p>
+        <p class="mapa-descripcion">
+            Encontrá fácilmente el lugar del evento en el mapa para organizar tu llegada.
+        </p>
         <div class="mapa-externa" aria-label="Mapa del lugar del espectáculo">
             <img src="<?= base_url('activos/imagenes/mapa.jfif') ?>" alt="Mapa del lugar del espectáculo">
         </div>
+        <!-- Texto debajo del mapa -->
+        <p class="mapa-texto">
+            El evento se realizará en un espacio accesible y cómodo, con transporte público cercano y estacionamiento disponible. Te recomendamos llegar con anticipación para disfrutar la experiencia completa.
+        </p>
     </section>
 
 </main>

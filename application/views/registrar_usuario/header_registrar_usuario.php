@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $titulo ?? 'UNLa Tienda'; ?></title>
 
-    <!-- CSS del header -->
+    <!-- CSS del header con versiónado -->
     <link rel="stylesheet" href="<?= base_url('activos/css/registrar_usuario/header_registrar_usuario.css?v=' . time()); ?>">
 </head>
 
+<body>
 <header class="main-header">
     <div class="header-container">
 
@@ -34,4 +35,5 @@
 
     </div>
 </header>
+</body>
 </html>
