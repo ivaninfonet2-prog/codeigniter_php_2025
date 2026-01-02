@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -14,7 +14,7 @@ body {
 /* =============================== TEXTO FUERA DE LA TARJETA =============================== */
 .intro-text {
     text-align: center;
-    margin-top: 110px; /* espacio desde el header */
+    margin-top: 120px; /* Espacio desde el header */
     padding: 0 20px;
     max-width: 800px;
     margin-left: auto;
@@ -22,15 +22,15 @@ body {
 }
 
 .intro-text h1 {
-    font-size: 2.2rem;
+    font-size: 3rem; /* Aumenté el tamaño */
     font-weight: 600;
     color: #e9f3ff;
     margin-bottom: 12px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .intro-text p {
-    font-size: 1.15rem;
+    font-size: 1.3rem; /* Aumenté el tamaño */
     opacity: 0.9;
     margin: 0;
 }
@@ -42,80 +42,93 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 /* =============================== TARJETAS TRANSPARENTES =============================== */
-.cuadro-acerca
- {
-    background: rgba(255, 255, 255, 0.06); /* más transparente */
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+.cuadro-acerca {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro pero transparente */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.15); /* ligeramente visible */
-    padding: 30px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borde suave */
+    padding: 35px 30px;
     max-width: 500px;
     width: 90%;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
     text-align: center;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover suave */
-.cuadro-acerca:hover,
-.cuadro-contacto:hover,
-.cuadro-ayuda:hover,
-.cuadro-politicas:hover {
-    background-color: rgba(255, 255, 255, 0.10); /* leve aumento al pasar el mouse */
-    box-shadow: 0 10px 32px rgba(0,0,0,0.45);
+.cuadro-acerca:hover {
+    background-color: rgba(0, 0, 0, 0.6); /* Aumenta la oscuridad al pasar el mouse */
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
     transform: none;
 }
 
-
 /* =============================== TÍTULO =============================== */
 .cuadro-acerca h2 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Aumenté el tamaño */
     font-weight: 700;
     margin-bottom: 16px;
     color: #7ee8fa;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* =============================== TEXTO INTERNO =============================== */
 .cuadro-acerca p {
-    font-size: 1.05rem;
-    line-height: 1.5;
+    font-size: 1.2rem; /* Aumenté el tamaño */
+    line-height: 1.6;
     color: #eef9ff;
     opacity: 0.95;
     margin-bottom: 12px;
 }
 
 .extra-info {
-    font-size: 0.95rem;
+    font-size: 1.05rem; /* Aumenté el tamaño */
     color: #d6f1ff;
     opacity: 0.9;
+}
+
+/* =============================== TEXTO MINIMO FUERA DE LA TARJETA =============================== */
+.small-info-container {
+    text-align: center;
+    margin-top: 50px; /* Más separación entre la tarjeta y el texto */
+}
+
+.small-info {
+    font-size: 1.2rem; /* Aumenté el tamaño */
+    color: #ffffff; /* Color blanco fuerte para un buen contraste */
+    opacity: 1; /* Totalmente opaco para máxima visibilidad */
+    font-weight: bold; /* Puse el texto en negrita */
+    font-style: italic; /* Mantengo la cursiva */
 }
 
 /* =============================== RESPONSIVE =============================== */
 @media (max-width: 768px) {
     .intro-text h1 {
-        font-size: 1.85rem;
+        font-size: 2.5rem; /* Aumenté un poco el tamaño */
     }
 
     .intro-text p {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
     }
 
     .cuadro-acerca {
         padding: 25px;
-        max-width: 92%;
+        max-width: 90%;
     }
 
     .cuadro-acerca h2 {
-        font-size: 1.7rem;
+        font-size: 2rem; /* Aumenté un poco el tamaño */
     }
 
     .cuadro-acerca p {
         font-size: 1rem;
+    }
+
+    .small-info {
+        font-size: 1rem; /* Ajusté el tamaño para pantallas pequeñas */
     }
 }

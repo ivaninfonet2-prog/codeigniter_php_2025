@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1.7; /* más aire entre líneas */
+    line-height: 1.6;
 }
 
 /* ======================================================
@@ -39,31 +39,23 @@ body {
 ====================================================== */
 .intro-text {
     text-align: center;
-    margin: 140px 20px 40px; /* Aumenté el margen superior */
+    margin: 120px 20px 20px; /* Subo el título y la descripción más cerca de la tarjeta */
     max-width: 900px;
 }
 
 .intro-text h1 {
-    font-size: 3.4rem;
-    font-weight: 800;
+    font-size: 2.8rem;  /* Ajusto el tamaño del título */
+    font-weight: 700;
     color: #ffffff;
-    margin-bottom: 20px; /* Aumenté el margen inferior para separar más del párrafo */
+    margin-bottom: 20px; /* Ajusto el espacio debajo del título */
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
 }
 
-.intro-text h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #e0f7fa;
-    margin-bottom: 16px;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
-}
-
 .intro-text p {
-    font-size: 1.4rem;
-    color: #ffffff;
+    font-size: 1.6rem;  /* Ajusto el tamaño de la descripción */
+    color: #ff0;  /* Color fuerte para mejorar visibilidad */
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 18px; /* Ajusto la distancia entre la descripción y la tarjeta */
     text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
@@ -74,38 +66,38 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: -50px; /* Acercamos la tarjeta a la descripción */
+    margin-top: 0;
 }
 
 /* ======================================================
    TARJETA ESPECTÁCULO
 ====================================================== */
 .tarjeta-espectaculo {
-    background: rgba(25, 25, 25, 0.08); /* mucho más transparente */
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background: rgba(25, 25, 25, 0.12);  /* Hago la tarjeta más opaca */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-radius: 18px;
-    padding: 22px 20px; /* más compacta */
-    max-width: 560px;   /* más chica que antes */
-    width: 82%;
+    padding: 20px 18px;
+    max-width: 500px;  /* Reduzco el tamaño de la tarjeta */
+    width: 90%;
     display: flex;
     flex-direction: column;
-    gap: 22px; /* menos espacio entre elementos */
+    gap: 18px;
     align-items: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);  /* Sombras más suaves */
     transition: transform 0.3s ease;
 }
 
 .tarjeta-espectaculo:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px); /* Cambio a una animación más suave */
 }
 
 /* ======================================================
    IMAGEN ESPECTÁCULO
 ====================================================== */
 .imagen-espectaculo {
-    width: 190px;
-    height: 190px;
+    width: 160px;  /* Hago la imagen más pequeña */
+    height: 160px;
     object-fit: cover;
     border-radius: 18px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.7);
@@ -126,11 +118,11 @@ body {
 }
 
 .detalles li {
-    font-size: 1.35rem; /* tamaño ajustado */
+    font-size: 1.25rem;  /* Ajusto el tamaño de la fuente */
     color: #ffffff;
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.75);
+    font-weight: 500;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 /* ======================================================
@@ -144,7 +136,7 @@ body {
 }
 
 .mapa-titulo {
-    font-size: 2.3rem;
+    font-size: 2rem;  /* Ajusto el tamaño del título */
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 14px;
@@ -152,7 +144,7 @@ body {
 }
 
 .mapa-descripcion {
-    font-size: 1.25rem;
+    font-size: 1.2rem;  /* Ajusto el tamaño de la descripción */
     color: #ffffff;
     font-weight: 500;
     margin-bottom: 24px;
@@ -209,8 +201,8 @@ body {
 }
 
 .boton-login {
-    padding: 14px 32px;
-    font-size: 1.2rem;
+    padding: 12px 30px;
+    font-size: 1.1rem;  /* Ajusto el tamaño del botón */
     font-weight: 700;
     color: #fff;
     border-radius: 30px;
@@ -237,8 +229,8 @@ body {
     }
 
     .imagen-espectaculo {
-        width: 170px;
-        height: 170px;
+        width: 140px;
+        height: 140px;
     }
 
     .detalles li, .texto-login {
@@ -262,11 +254,7 @@ body {
         font-size: 2.4rem;
     }
 
-    .intro-text h2 {
-        font-size: 1.8rem;
-    }
-
     .intro-text p {
-        font-size: 1.15rem;
+        font-size: 1.4rem;  /* Ajusto para dispositivos móviles */
     }
 }

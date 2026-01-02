@@ -14,7 +14,7 @@ body {
 /* =============================== TEXTO FUERA DE LA TARJETA =============================== */
 .intro-text {
     text-align: center;
-    margin-top: 110px; /* 🔹 espacio desde el header */
+    margin-top: 120px; /* Espacio desde el header */
     padding: 0 20px;
     max-width: 800px;
     margin-left: auto;
@@ -22,72 +22,71 @@ body {
 }
 
 .intro-text h1 {
-    font-size: 2.2rem;
+    font-size: 3rem; /* Aumenté el tamaño */
     font-weight: 600;
     color: #e9f3ff;
     margin-bottom: 12px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .intro-text p {
-    font-size: 1.15rem;
+    font-size: 1.3rem; /* Aumenté el tamaño */
     opacity: 0.9;
     margin: 0;
 }
 
 /* =============================== MAIN =============================== */
 .main-content {
-    min-height: calc(100vh - 250px); /* ajusta según header y espacio externo */
+    min-height: calc(100vh - 250px); /* Ajusta según header y espacio externo */
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
-/* =============================== TARJETA =============================== */
-.cuadro-contacto 
- {
-    background: rgba(255, 255, 255, 0.06); /* más transparente */
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+/* =============================== TARJETA DE CONTACTO =============================== */
+.cuadro-contacto {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro pero transparente */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.15); /* ligeramente visible */
-    padding: 30px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borde suave */
+    padding: 35px 30px;
     max-width: 500px;
     width: 90%;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
     text-align: center;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover suave */
 .cuadro-contacto:hover {
-    background-color: rgba(255, 255, 255, 0.14);
-    box-shadow: 0 10px 32px rgba(0,0,0,0.45);
+    background-color: rgba(0, 0, 0, 0.6); /* Aumenta la oscuridad al pasar el mouse */
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
     transform: none;
 }
 
 /* =============================== TÍTULO =============================== */
 .cuadro-contacto h2 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Aumenté el tamaño */
     font-weight: 700;
     margin-bottom: 16px;
     color: #7ee8fa;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* =============================== TEXTO INTERNO =============================== */
 .cuadro-contacto p {
-    font-size: 1.05rem;
-    line-height: 1.5;
+    font-size: 1.2rem; /* Aumenté el tamaño */
+    line-height: 1.6;
     color: #eef9ff;
     opacity: 0.95;
     margin-bottom: 12px;
 }
 
 .extra-info {
-    font-size: 0.95rem;
+    font-size: 1.05rem; /* Aumenté el tamaño */
     color: #d6f1ff;
     opacity: 0.9;
 }
@@ -102,36 +101,54 @@ body {
     text-decoration: none;
     display: inline-block;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 .cuadro-contacto a.btn-celeste:hover {
     background: linear-gradient(135deg, #66d9ff, #33adff);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* =============================== TEXTO FUERA DE LA TARJETA (MÍNIMO) =============================== */
+.small-info-container {
+    text-align: center;
+    margin-top: 50px; /* Más separación entre la tarjeta y el texto */
+}
+
+.small-info {
+    font-size: 1.2rem; /* Aumenté el tamaño */
+    color: #ffffff; /* Blanco fuerte para un buen contraste */
+    opacity: 1;
+    font-weight: bold; /* Puse el texto en negrita */
+    font-style: italic; /* Mantengo la cursiva */
 }
 
 /* =============================== RESPONSIVE =============================== */
 @media (max-width: 768px) {
     .intro-text h1 {
-        font-size: 1.85rem;
+        font-size: 2.5rem; /* Aumenté un poco el tamaño */
     }
 
     .intro-text p {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
     }
 
     .cuadro-contacto {
         padding: 25px;
-        max-width: 92%;
+        max-width: 90%;
     }
 
     .cuadro-contacto h2 {
-        font-size: 1.7rem;
+        font-size: 2rem; /* Aumenté un poco el tamaño */
     }
 
     .cuadro-contacto p {
         font-size: 1rem;
+    }
+
+    .small-info {
+        font-size: 1rem; /* Ajusté el tamaño para pantallas pequeñas */
     }
 }
