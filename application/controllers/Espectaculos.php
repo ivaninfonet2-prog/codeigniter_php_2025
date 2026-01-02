@@ -85,7 +85,7 @@ class Espectaculos extends CI_Controller
         // 4) Cargar vistas
         $this->load->view('principal/header_principal', $data);
         $this->load->view('principal/body_principal', $data);
-        $this->load->view('principal/footer_principal', $data);
+        $this->load->view('footer_footer/footer_footer_principal', $data);
     }
 
     // LISTADO USUARIO
@@ -166,9 +166,9 @@ class Espectaculos extends CI_Controller
             'espectaculo' => $espectaculo
         ];
 
-        $this->load->view('espectaculo_sin_loguear/header_espectaculo_sin_loguear', $data);
+        $this->load->view('header_footer/header_footer_principal', $data);
         $this->load->view('espectaculo_sin_loguear/body_espectaculo_sin_loguear', $data);
-        $this->load->view('espectaculo_sin_loguear/footer_espectaculo_sin_loguear', $data);
+        $this->load->view('footer_footer/footer_footer_principal', $data);
     }
 
     // VER espectaculo LOGUEADO

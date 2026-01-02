@@ -20,36 +20,6 @@ class Contacto extends CI_Controller
         $this->load->view('footer_footer/footer_footer_principal');
     }
 
-    public function contacto_login() 
-    {
-        $data['fondo']  = base_url('activos/imagenes/mi_fondo.jpg');
-        $data['titulo'] = 'Acerca de UNLa Tienda';
-
-        // Header común
-        $this->load->view('header_footer/header_footer_login', $data);
-
-       // Vista principal
-        $this->load->view('body_footer/body_footer_contacto', $data);
-
-        // Footer común
-        $this->load->view('footer_footer/footer_footer_login');
-    }
-
-    public function contacto_registrar() 
-    {
-        $data['fondo']  = base_url('activos/imagenes/mi_fondo.jpg');
-        $data['titulo'] = 'Acerca de UNLa Tienda';
-
-        // Header común
-        $this->load->view('header_footer/header_footer_registrar', $data);
-
-       // Vista principal
-        $this->load->view('body_footer/body_footer_contacto', $data);
-
-        // Footer común
-        $this->load->view('footer_footer/footer_footer_registrar');
-    }
-
     public function contacto_usuario() 
     {
         // Ruta de la imagen de fondo
