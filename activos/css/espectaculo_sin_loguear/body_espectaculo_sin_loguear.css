@@ -11,93 +11,112 @@ html, body {
     height: 100%;
 }
 
+/* ======================================================
+   BODY & FONDO
+====================================================== */
 body {
-    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #0f0f0f;
     color: #f5f5f5;
     display: flex;
     flex-direction: column;
     align-items: center;
     line-height: 1.6;
+    position: relative;
 }
 
-/* ======================================================
-   FONDO
-====================================================== */
 .fondo-body {
     position: fixed;
     inset: 0;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
     z-index: -1;
-    filter: brightness(1.1) contrast(1.05);
+    filter: brightness(0.9) contrast(1.05);
 }
 
 /* ======================================================
-   INTRO
+   INTRO (Título y Descripción fuera de la tarjeta)
 ====================================================== */
 .intro-text {
     text-align: center;
-    margin: 120px 20px 20px; /* Subo el título y la descripción más cerca de la tarjeta */
+    margin: 80px 20px 20px;
     max-width: 900px;
+    z-index: 1;
 }
 
 .intro-text h1 {
-    font-size: 2.8rem;  /* Ajusto el tamaño del título */
+    font-size: 3rem;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 20px; /* Ajusto el espacio debajo del título */
+    margin-bottom: 10px;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
 }
 
 .intro-text p {
-    font-size: 1.6rem;  /* Ajusto el tamaño de la descripción */
-    color: #ff0;  /* Color fuerte para mejorar visibilidad */
+    font-size: 1.4rem;
+    color: #ff0;
     font-weight: 500;
-    margin-bottom: 18px; /* Ajusto la distancia entre la descripción y la tarjeta */
     text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
-}
-
-/* ======================================================
-   CONTENEDOR PRINCIPAL
-====================================================== */
-.registro-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 0;
 }
 
 /* ======================================================
    TARJETA ESPECTÁCULO
 ====================================================== */
+.registro-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 .tarjeta-espectaculo {
-    background: rgba(25, 25, 25, 0.12);  /* Hago la tarjeta más opaca */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(25,25,25,0.7);
+    backdrop-filter: blur(10px);
     border-radius: 18px;
-    padding: 20px 18px;
-    max-width: 500px;  /* Reduzco el tamaño de la tarjeta */
+    padding: 25px;
     width: 90%;
+    max-width: 850px;
     display: flex;
     flex-direction: column;
     gap: 18px;
     align-items: center;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.35);  /* Sombras más suaves */
-    transition: transform 0.3s ease;
-}
-
-.tarjeta-espectaculo:hover {
-    transform: translateY(-6px); /* Cambio a una animación más suave */
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
 }
 
 /* ======================================================
-   IMAGEN ESPECTÁCULO
+   NOMBRE Y DESCRIPCIÓN DENTRO DE LA TARJETA
 ====================================================== */
+.espectaculo-info {
+    text-align: center;
+    width: 100%;
+}
+
+.espectaculo-nombre {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.espectaculo-descripcion {
+    font-size: 1.3rem;
+    color: #ff0;
+    font-weight: 500;
+}
+
+/* ======================================================
+   IMAGEN DEL ESPECTÁCULO (Ahora más chica y centrada)
+====================================================== */
+.imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .imagen-espectaculo {
-    width: 160px;  /* Hago la imagen más pequeña */
-    height: 160px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 18px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.7);
@@ -109,76 +128,49 @@ body {
 }
 
 /* ======================================================
-   DETALLES
+   DETALLES (Más centrados)
 ====================================================== */
+.detalles {
+    width: 100%;
+    font-size: 1.22rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+}
+
 .detalles ul {
     list-style: none;
     padding-left: 0;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* CENTRA los ítems */
+    gap: 10px 50px; /* Espacio visual amplio */
 }
 
 .detalles li {
-    font-size: 1.25rem;  /* Ajusto el tamaño de la fuente */
-    color: #ffffff;
-    font-weight: 500;
-    margin-bottom: 12px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    width: auto;
 }
 
-/* ======================================================
-   SECCIÓN MAPA
-====================================================== */
-.mapa-section {
-    text-align: center;
-    margin: 40px auto 60px;
-    max-width: 850px;
-    width: 90%;
-}
-
-.mapa-titulo {
-    font-size: 2rem;  /* Ajusto el tamaño del título */
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 14px;
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
-}
-
-.mapa-descripcion {
-    font-size: 1.2rem;  /* Ajusto el tamaño de la descripción */
-    color: #ffffff;
-    font-weight: 500;
-    margin-bottom: 24px;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
-}
-
-.mapa-externa {
-    display: flex;
-    justify-content: center;
-}
-
-.mapa-externa img {
+/* Entradas disponibles centrado */
+.detalles .disponibles {
     width: 100%;
-    max-width: 500px;
-    border-radius: 18px;
-    box-shadow: 0 6px 22px rgba(0,0,0,0.65);
-    filter: contrast(1.15) brightness(1.1);
+    font-weight: 700;
+    margin-top: 10px;
 }
 
 /* ======================================================
-   ESTADOS
+   ESTADO
 ====================================================== */
 .estado.disponible {
     color: #4caf50;
     font-weight: 700;
     font-size: 1.3rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
 .estado.agotado {
     color: #ff5252;
     font-weight: 700;
     font-size: 1.3rem;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
 /* ======================================================
@@ -188,73 +180,63 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    margin-top: 22px;
+    gap: 14px;
 }
 
 .texto-login {
-    color: #ffffff;
     font-size: 1.15rem;
-    font-weight: 500;
-    text-align: center;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.75);
+    color: #ffffff;
 }
 
 .boton-login {
     padding: 12px 30px;
-    font-size: 1.1rem;  /* Ajusto el tamaño del botón */
+    font-size: 1.1rem;
     font-weight: 700;
     color: #fff;
     border-radius: 30px;
     text-decoration: none;
     background: linear-gradient(135deg, #00cfff, #0077ff);
-    transition: all 0.3s ease;
     box-shadow: 0 6px 18px rgba(0,0,0,0.55);
+    transition: all 0.3s ease;
 }
 
 .boton-login:hover {
     background: linear-gradient(135deg, #33d9ff, #3399ff);
     transform: scale(1.08);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
 }
 
 /* ======================================================
-   RESPONSIVE
+   MAPA Y TEXTO DEBAJO
 ====================================================== */
-@media (max-width: 768px) {
-    .tarjeta-espectaculo {
-        width: 90%;
-        padding: 20px 18px;
-        gap: 18px;
-    }
+.mapa-section {
+    text-align: center;
+    margin: 40px auto 60px;
+    width: 90%;
+    max-width: 850px;
+}
 
-    .imagen-espectaculo {
-        width: 140px;
-        height: 140px;
-    }
+.mapa-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
 
-    .detalles li, .texto-login {
-        font-size: 1.1rem;
-    }
+.mapa-descripcion {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
 
-    .boton-login {
-        font-size: 1.1rem;
-        padding: 10px 24px;
-    }
+.mapa-externa img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 18px;
+}
 
-    .mapa-section {
-        width: 95%;
-    }
-
-    .mapa-externa img {
-        max-width: 380px;
-    }
-
-    .intro-text h1 {
-        font-size: 2.4rem;
-    }
-
-    .intro-text p {
-        font-size: 1.4rem;  /* Ajusto para dispositivos móviles */
-    }
+.texto-debajo-mapa {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
 }

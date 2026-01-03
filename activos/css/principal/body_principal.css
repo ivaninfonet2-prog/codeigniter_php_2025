@@ -55,13 +55,14 @@ body {
 
 .mensaje-bienvenida {
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 900; /* Más fuerte */
     margin-bottom: 20px;
     color: #ffffff;
 }
 
 .mensaje-sub {
     font-size: 1.25rem;
+    font-weight: 700; /* Más fuerte */
     line-height: 1.7;
     color: #f2f2f2;
 }
@@ -78,18 +79,18 @@ body {
 ====================================================== */
 .tarjetas-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Más pequeñas */
+    gap: 25px;
+    max-width: 1300px;
     margin: 0 auto 50px;
     padding: 0 20px;
 }
 
 .tarjeta {
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.2); /* Reducir la opacidad del fondo negro */
     backdrop-filter: blur(6px);
-    border-radius: 18px;
-    padding-bottom: 28px;
+    border-radius: 10px; /* Tarjetas más pequeñas */
+    padding-bottom: 16px; /* Reducir aún más el espacio inferior */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -102,11 +103,11 @@ body {
    IMAGEN ARTISTA
 ====================================================== */
 .tarjeta .imagen {
-    width: 200px;
-    height: 200px;
+    width: 160px; /* Imagen más pequeña */
+    height: 160px;
     object-fit: cover;
-    border-radius: 16px;
-    margin: 30px auto 18px;
+    border-radius: 10px; /* Bordes más suaves */
+    margin: 18px auto;
     display: block;
 }
 
@@ -114,7 +115,7 @@ body {
    CONTENIDO TARJETA
 ====================================================== */
 .tarjeta .contenido {
-    padding: 16px 26px;
+    padding: 16px 20px; /* Reducir espacio de padding */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,14 +123,15 @@ body {
 }
 
 .tarjeta h3 {
-    font-size: 1.45rem;
-    font-weight: 800;
+    font-size: 1.4rem; /* Título más grande */
+    font-weight: 900; /* Más fuerte */
     margin-bottom: 12px;
     color: #ffffff;
 }
 
 .descripcion {
     font-size: 1.1rem;
+    font-weight: 600; /* Más fuerte */
     line-height: 1.6;
     color: #e6e6e6;
     margin-bottom: 16px;
@@ -137,7 +139,7 @@ body {
 
 .precio {
     font-size: 1.3rem;
-    font-weight: 800;
+    font-weight: 900; /* Más fuerte */
     margin-bottom: 16px;
     color: #4da3ff;
 }
@@ -146,13 +148,13 @@ body {
    BOTÓN
 ====================================================== */
 .boton-ver {
-    padding: 10px 26px;
+    padding: 8px 18px; /* Botón más pequeño */
     font-size: 1rem;
     background-color: #0d6efd;
     color: #ffffff;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 26px;
+    border-radius: 6px; /* Bordes más suaves */
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
@@ -167,6 +169,7 @@ body {
 .texto-general {
     text-align: center;
     font-size: 1.2rem;
+    font-weight: 600; /* Más fuerte */
     color: #f0f0f0;
     margin-top: 30px;
 }
@@ -189,8 +192,8 @@ body {
     }
 
     .tarjeta .imagen {
-        width: 160px;
-        height: 160px;
+        width: 140px; /* Imagen aún más pequeña */
+        height: 140px;
     }
 
     .tarjeta h3 {

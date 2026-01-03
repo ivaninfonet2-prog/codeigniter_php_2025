@@ -5,8 +5,8 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* contenido arriba */
-  padding: 40px 20px 60px; /* ⬆ título más arriba */
+  align-items: flex-start; /* Contenido arriba */
+  padding: 100px 20px 60px; /* Baja más el título */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,45 +26,47 @@
    ENCABEZADO (TÍTULO + DESCRIPCIÓN)
 ===================================================== */
 .login-header {
-  margin-bottom: 16px; /* espacio hasta la tarjeta */
+  margin-bottom: 40px; /* Más espacio entre el título y la tarjeta */
 }
 
 .login-header h1 {
-  font-size: 3rem; /* más grande */
-  font-weight: 700;
+  font-size: 2.8rem;  /* Título más grande */
+  font-weight: 500;   /* Menos grosor */
   color: #ffffff;
-  margin-bottom: 6px;
-  text-shadow: 0 0 16px rgba(0,0,0,0.7);
+  margin-bottom: 12px; /* Separación con la descripción */
+  text-shadow: 0 0 16px rgba(0,0,0,0.6);
+  white-space: normal; /* Permite que el título no se corte */
+  overflow-wrap: break-word; /* Evita que se corte y permite que el título haga salto de línea */
+  word-wrap: break-word;
 }
 
 .login-header p {
-  font-size: 1.25rem;
-  color: #f0f0f0; /* más claro y fuerte */
-  margin-bottom: 20px; /* separa un poco de la tarjeta */
-  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  font-size: 1.2rem;   /* Tamaño ajustado */
+  color: #ffffff;     /* Blanco fuerte */
+  margin-bottom: 30px; /* Espacio mayor antes de la tarjeta */
+  text-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
 /* =====================================================
    TARJETA LOGIN
 ===================================================== */
 .login-card {
-  margin-top: 0px; /* tarjeta pegada justo debajo de header */
   padding: 38px;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0,0,0,0.1);  /* Más transparente */
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,0.35);
-  box-shadow: 0 14px 38px rgba(0,0,0,0.3);
+  box-shadow: 0 14px 38px rgba(0,0,0,0.2); /* Menos sombra */
   color: #f5f5f5;
+  width: 100%;
 }
 
 /* =====================================================
    TEXTOS INTERNOS
 ===================================================== */
 .login-text {
-  font-size: 18px;
-  margin-bottom: 24px; /* espacio extra dentro de la tarjeta */
+  font-size: 20px;  /* Aumentado */
+  margin-bottom: 24px; /* Espacio extra dentro de la tarjeta */
   color: #f5f5f5;
 }
 
@@ -72,18 +74,18 @@
    TEXTO FUERA DE LA TARJETA
 ===================================================== */
 .login-extra {
-  margin-top: 36px; /* más separado de la tarjeta */
-  color: #ffffff;   /* muy claro */
-  font-size: 17px;  /* más grande y legible */
-  font-weight: 600; /* fuerte */
+  margin-top: 36px; /* Más separado de la tarjeta */
+  color: #e0e0e0;    /* Blanco claro fuerte */
+  font-size: 18px;   /* Aumentado */
+  font-weight: 700;  /* Fuerte */
 }
 
 .login-extra span {
   display: block;
   margin-top: 6px;
-  color: #a0d4ff; /* azul claro y destacable */
-  font-weight: 700;
-  font-size: 17px;
+  color: #a0d4ff;  /* Azul claro */
+  font-weight: 800; /* Fuerte */
+  font-size: 18px;  /* Aumentado */
 }
 
 /* =====================================================
@@ -91,15 +93,15 @@
 ===================================================== */
 .login-card label {
   display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: #f5f5f5;
-  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 700;  /* Fuerte */
+  color: #ffffff;    /* Blanco fuerte */
+  font-size: 18px;   /* Aumentado */
 }
 
 .login-card .form-control {
   padding: 14px;
-  font-size: 16px;
+  font-size: 18px;   /* Aumentado */
   border-radius: 6px;
   border: 1px solid #ccc;
   color: #333;
@@ -126,8 +128,8 @@
 
 .login-actions .btn {
   padding: 14px 28px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;   /* Aumentado */
+  font-weight: 700;  /* Fuerte */
   border-radius: 12px;
 }
 
@@ -136,7 +138,7 @@
 ===================================================== */
 .login-card .alert {
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 18px;   /* Aumentado */
 }
 
 /* =====================================================
@@ -161,14 +163,14 @@
   }
 
   .login-text {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .login-extra {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .login-extra span {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
