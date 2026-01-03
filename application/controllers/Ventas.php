@@ -17,11 +17,13 @@ class Ventas extends CI_Controller
     public function crear_venta($id_espectaculo, $cantidad_entradas)
     {
         // Obtener el precio del espectáculo desde el modelo
+
         $precio_espectaculo = $this->Espectaculo_modelo->obtener_precio($id_espectaculo);
 
         if ( ! $precio_espectaculo) 
         {
             $this->session->set_flashdata('mensaje', 'Error: El precio del espectáculo no se pudo obtener.');
+            
             redirect('espectaculos/ver/' . $id_espectaculo);
             return;
         }
@@ -42,6 +44,7 @@ class Ventas extends CI_Controller
         if ($resultado_venta) 
         {
             // Redirigir tras éxito
+           
             $this->session->set_flashdata('mensaje', 'Venta registrada exitosamente y cliente creado.');
             redirect('reservar/generar_pdf/' . $id_espectaculo);
         } 
@@ -63,9 +66,9 @@ class Ventas extends CI_Controller
         ];
 
         // Cargar vistas
-        $this->load->view('ventas/header_ventas', $data);
+        $this->load->view('header_footer/header_footer_administrador', $data);
         $this->load->view('ventas/body_ventas', $data);
-        $this->load->view('ventas/footer_ventas', $data); // si tienes un footer, recomendable
+        $this->load->view('footer_footer/footer_footer_administrador', $data); // si tienes un footer, recomendable
     }
 }
 

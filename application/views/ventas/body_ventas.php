@@ -13,13 +13,9 @@
         <!-- Título principal -->
         <h1 class="titulo">Ventas</h1>
 
-        <!-- Subtítulo -->
-        <h2 class="subtitulo">Resumen de transacciones recientes</h2>
-
         <!-- Descripción -->
         <p class="descripcion">
             A continuación puedes visualizar todas las ventas registradas en el sistema. 
-            Usa esta información para llevar un control eficiente de los ingresos y de los espectáculos vendidos.
         </p>
 
         <?php if (!empty($ventas)): ?>
@@ -46,13 +42,12 @@
                 </table>
             </div>
 
-            <div class="acciones">
-                <a href="<?= base_url('administrador'); ?>" class="btn volver">Ir a la vista Administrador</a>
-                <a href="<?= base_url('login/logout'); ?>" class="btn cerrar">Cerrar sesión</a>
-            </div>
         <?php else: ?>
             <p class="no-datos">No hay ventas disponibles.</p>
         <?php endif; ?>
+
+        <!-- Texto adicional fuera de la tarjeta -->
+        <p class="info-adicional">Si tienes alguna duda sobre las ventas, no dudes en ponerte en contacto con nosotros.</p>
     </main>
 </body>
 </html>

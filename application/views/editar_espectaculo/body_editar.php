@@ -16,7 +16,7 @@
 
     <?php if ($this->session->flashdata('success')): ?>
         <div class="alert success">
-            ✅ <?= $this->session->flashdata('success') ?>
+             <?= $this->session->flashdata('success') ?>
         </div>
     <?php endif; ?>
 
@@ -80,17 +80,20 @@
 </main>
 
 <script>
-document.getElementById('imagenNueva').addEventListener('change', function(e) {
+document.getElementById('imagenNueva').addEventListener('change', function(e) 
+{
     const file = e.target.files[0];
     const preview = document.getElementById('previewNueva');
     const img = document.getElementById('imgNueva');
 
-    if (!file) {
+    if (!file) 
+    {
         preview.classList.add('oculto');
         return;
     }
 
-    if (!file.type.startsWith('image/')) {
+    if (!file.type.startsWith('image/')) 
+    {
         alert('El archivo NO es una imagen válida');
         e.target.value = '';
         preview.classList.add('oculto');

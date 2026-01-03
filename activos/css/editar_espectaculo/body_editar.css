@@ -21,6 +21,7 @@
 .encabezado-editar {
     text-align: center;
     margin-bottom: 30px;
+    margin-top: 50px; /* Ajustado para bajar más el encabezado */
     color: #fff;
     text-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }

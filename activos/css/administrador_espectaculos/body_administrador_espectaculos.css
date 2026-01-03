@@ -12,7 +12,7 @@ body {
 ================================ */
 .main-content {
     min-height: 100vh;
-    padding: 60px 30px 60px; /* 🔥 sube aún más */
+    padding: 120px 30px 60px; /* Mayor espacio arriba para bajar aún más */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,21 +25,21 @@ body {
 .encabezado-seccion {
     text-align: center;
     max-width: 900px;
-    margin: 0 auto 18px; /* 🔥 más pegado al header */
+    margin: 0 auto 80px; /* Aumenté la separación para que baje más */
 }
 
 .titulo-principal {
-    font-size: 2.4rem;
+    font-size: 3.2rem; /* Título más grande */
     font-weight: 700;
-    margin: 0 0 4px; /* 🔥 menos separación */
-    color: #ffffff;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    margin: 0 0 30px; /* Más separación abajo */
+    color: #ffffff; /* Blanco más fuerte */
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
 }
 
 .descripcion-principal {
-    font-size: 1.2rem; /* 🔥 un poco más grande */
-    color: #eaeaea;
-    line-height: 1.55;
+    font-size: 1.6rem; /* Descripción más grande */
+    color: #f2f2f2; /* Color más claro y legible */
+    line-height: 1.6;
     margin: 0;
 }
 
@@ -73,14 +73,15 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    margin-top: 40px;
 }
 
 .tarjeta {
-    width: 300px;
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(6px);
+    width: 350px; /* Aumenté el ancho de las tarjetas */
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro con mayor transparencia */
+    backdrop-filter: blur(10px); /* Suavizado del fondo con más desenfoque */
     border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.45); /* Sombra más pronunciada */
     overflow: hidden;
     transition: transform 0.25s ease;
 }
@@ -91,8 +92,8 @@ body {
 
 /* Imagen */
 .imagen {
-    width: 160px;
-    height: 160px;
+    width: 170px; /* Aumenté el tamaño de la imagen */
+    height: 170px;
     object-fit: cover;
     margin: 18px auto 10px;
     display: block;
@@ -110,13 +111,13 @@ body {
 
 .contenido h3 {
     margin: 8px 0 12px;
-    font-size: 1.35rem;
-    color: #ffffff;
+    font-size: 1.8rem; /* Títulos dentro de las tarjetas más grandes */
+    color: #ffffff; /* Blanco más fuerte */
 }
 
 .contenido p {
     margin: 6px 0;
-    font-size: 0.95rem;
+    font-size: 1.1rem; /* Tamaño de fuente mayor */
     color: #f0f0f0;
 }
 
@@ -124,10 +125,13 @@ body {
     color: #ffc107;
 }
 
-.detalle {
+/* ================================
+   Descripción (nuevo estilo)
+================================ */
+.contenido p strong + p {
     margin-top: 10px;
-    font-size: 0.9rem;
-    color: #dddddd;
+    font-size: 1.1rem;
+    color: #d3d3d3; /* Color suave para la descripción */
 }
 
 /* ================================
@@ -143,9 +147,9 @@ body {
 /* Botones */
 .boton {
     flex: 1;
-    padding: 8px 0;
+    padding: 10px 0;
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 1.1rem; /* Botones más grandes */
     font-weight: 600;
     text-decoration: none;
     color: #fff;
@@ -165,9 +169,20 @@ body {
 ================================ */
 .mensaje-vacio {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Texto vacío más grande */
     color: #ffffff;
     margin-top: 50px;
+}
+
+/* ================================
+   Texto adicional fuera de tarjetas
+================================ */
+.texto-adicional {
+    text-align: center;
+    font-size: 1.3rem; /* Aumenté el tamaño del texto adicional */
+    color: #ffffff; /* Blanco fuerte */
+    margin-top: 60px;
+    line-height: 1.8;
 }
 
 /* ================================
@@ -176,18 +191,22 @@ body {
 @media (max-width: 768px) {
 
     .main-content {
-        padding-top: 55px; /* 🔥 más arriba en mobile */
+        padding-top: 90px;
     }
 
     .titulo-principal {
-        font-size: 2rem;
+        font-size: 2.7rem; /* Ajusté el tamaño en dispositivos móviles */
     }
 
     .descripcion-principal {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
     }
 
     .tarjeta {
         width: 90%;
+    }
+
+    .texto-adicional {
+        font-size: 1.2rem; /* Texto adicional más pequeño en móviles */
     }
 }

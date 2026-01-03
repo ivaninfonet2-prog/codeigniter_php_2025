@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?></title>
-
     <link rel="stylesheet" href="<?= base_url('activos/css/administrador_espectaculos/body_administrador_espectaculos.css'); ?>">
 </head>
 <body>
@@ -31,7 +30,7 @@
         </div>
     <?php endif; ?>
 
-    <!-- Listado -->
+    <!-- Listado de espectáculos -->
     <?php if (!empty($espectaculos)): ?>
         <div class="contenedor-tarjetas">
             <?php foreach ($espectaculos as $espectaculo): ?>
@@ -58,10 +57,11 @@
                                 : 'No definido'; ?>
                         </p>
 
-                        <p class="detalle">
-                            <?= isset($espectaculo['detalles'])
-                                ? htmlspecialchars($espectaculo['detalles'], ENT_QUOTES, 'UTF-8')
-                                : 'Sin detalles'; ?>
+                        <!-- Agregamos la descripción -->
+                        <p><strong>Descripción:</strong> 
+                            <?= isset($espectaculo['descripcion'])
+                                ? htmlspecialchars($espectaculo['descripcion'], ENT_QUOTES, 'UTF-8')
+                                : 'Sin descripción disponible'; ?>
                         </p>
 
                         <div class="acciones-tarjeta">
@@ -83,11 +83,15 @@
         <p class="mensaje-vacio">No hay espectáculos disponibles en este momento.</p>
     <?php endif; ?>
 
+    <!-- Texto fuera de las tarjetas -->
+    <section class="texto-adicional">
+        <p>Este es un texto adicional que se encuentra fuera de las tarjetas. Aquí puedes agregar información relevante o instrucciones.</p>
+    </section>
+
 </main>
 
 <script>
-    setTimeout(function () 
-    {
+    setTimeout(function () {
         const alerta = document.getElementById('mensaje-alerta');
         if (alerta) alerta.style.display = 'none';
     }, 5000);
