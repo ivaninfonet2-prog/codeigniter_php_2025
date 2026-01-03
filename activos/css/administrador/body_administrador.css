@@ -10,6 +10,7 @@
 
 body {
     color: #ffffff;
+    background-color: #f1f1f1;
 }
 
 /* ===============================
@@ -20,16 +21,18 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    background-filter: brightness(0.7) blur(6px); /* Filtro de brillo y desenfoque */
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     padding: 120px 20px 60px;
+    color: #f1f1f1;
 }
 
 /* ===============================
-   BIENVENIDA
+   TEXTO SUPERIOR
 ================================ */
 .bienvenida-admin {
     max-width: 760px;
@@ -38,53 +41,46 @@ body {
 }
 
 .bienvenida-admin h1 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 14px;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.45);
+    text-shadow: 0 4px 8px rgba(0,0,0,0.45);
+    color: #f1f1f1; /* Blanco claro */
 }
 
 .bienvenida-admin p {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     color: rgba(255,255,255,0.9);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.35);
+    text-shadow: 0 3px 6px rgba(0,0,0,0.35);
 }
 
 /* ===============================
    MENSAJES GLOBALES
 ================================ */
-.mensaje-global-exito {
+.mensaje-exito {
     margin-bottom: 35px;
     padding: 18px 26px;
-
     background: rgba(46, 204, 113, 0.90);
     color: #ffffff;
-
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 600;
-
     border-radius: 14px;
     box-shadow: 0 10px 28px rgba(0,0,0,0.30);
-
     text-align: center;
     max-width: 720px;
     width: 100%;
 }
 
-.mensaje-global-error {
+.mensaje-error {
     margin-bottom: 35px;
     padding: 18px 26px;
-
     background: rgba(231, 76, 60, 0.90);
     color: #ffffff;
-
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 600;
-
     border-radius: 14px;
     box-shadow: 0 10px 28px rgba(0,0,0,0.30);
-
     text-align: center;
     max-width: 720px;
     width: 100%;
@@ -95,19 +91,16 @@ body {
 ================================ */
 .botones-container {
     background: rgba(255, 255, 255, 0.40);
-    backdrop-filter: blur(10px);
-
+    backdrop-filter: blur(12px); /* Más desenfoque */
     padding: 32px 30px 36px;
     border-radius: 18px;
-
     box-shadow: 0 14px 36px rgba(0,0,0,0.30);
-
     width: 100%;
-    max-width: 560px;
-
+    max-width: 600px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px 24px;
+    z-index: 1; /* Para que la tarjeta esté encima del fondo */
 }
 
 /* ===============================
@@ -115,17 +108,17 @@ body {
 ================================ */
 .panel-title {
     grid-column: 1 / -1;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    color: #1f3f66;
+    color: #2c3e50; /* Color oscuro para el título */
     text-align: center;
 }
 
 .panel-descripcion {
     grid-column: 1 / -1;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     text-align: center;
-    color: #2f2f2f;
+    color: #34495e; /* Color oscuro para la descripción */
     margin-bottom: 6px;
 }
 
@@ -134,24 +127,18 @@ body {
 ================================ */
 .boton {
     justify-self: center;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     max-width: 210px;
-
     padding: 14px 12px;
     border-radius: 10px;
-
     color: #ffffff;
     text-decoration: none;
     text-align: center;
-
     font-size: 0.95rem;
     font-weight: 500;
-
     transition: all 0.3s ease;
 }
 
@@ -183,10 +170,27 @@ body {
 }
 
 /* ===============================
+   TEXTO INFERIOR
+================================ */
+.texto-inferior {
+    max-width: 1000px;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #f1f1f1; /* Blanco claro para mayor visibilidad */
+    padding: 10px 20px;
+}
+
+.texto-inferior p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9); /* Blanco con opacidad */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ===============================
    RESPONSIVE
 ================================ */
 @media (max-width: 600px) {
-
     .botones-container {
         grid-template-columns: 1fr;
     }
@@ -196,6 +200,14 @@ body {
     }
 
     .bienvenida-admin h1 {
-        font-size: 1.9rem;
+        font-size: 2rem;
+    }
+
+    .panel-title {
+        font-size: 1.4rem;
+    }
+
+    .texto-inferior p {
+        font-size: 1rem;
     }
 }

@@ -24,7 +24,6 @@
 
     <!-- TARJETA -->
     <section class="botones-container">
-
         <h2 class="panel-title">Panel de Control</h2>
 
         <p class="panel-descripcion">
@@ -52,6 +51,11 @@
         <a href="<?= base_url('administrador/lista_usuarios'); ?>" class="boton">Usuarios</a>
         <a href="<?= base_url('administrador/crear_usuario'); ?>" class="boton">Agregar Usuario</a>
 
+    </section>
+
+    <!-- TEXTO INFERIOR -->
+    <section class="texto-inferior">
+        <p>Gestiona todo el contenido de manera rápida y eficiente desde este panel de control. ¡Explora las opciones disponibles!</p>
     </section>
 
 </main>
