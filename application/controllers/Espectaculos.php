@@ -189,9 +189,9 @@ class Espectaculos extends CI_Controller
             'espectaculo' => $espectaculo
         ];
 
-        $this->load->view('espectaculo_logueado/header_espectaculo_logueado', $data);
+        $this->load->view('header_footer/header_footer_usuario', $data);
         $this->load->view('espectaculo_logueado/body_espectaculo_logueado', $data);
-        $this->load->view('espectaculo_logueado/footer_espectaculo_logueado', $data);
+        $this->load->view('footer_footer/footer_footer_usuario', $data);
     }
 
     // funciones auxiliares privadas
