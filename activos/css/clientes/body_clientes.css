@@ -46,14 +46,14 @@ body {
     margin-bottom: 12px;
     letter-spacing: 0.8px;
     color: #ffffff;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .header-text p {
     font-size: 1.15rem;
     color: #e6e6e6;
     line-height: 1.6;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* ======================================================
@@ -62,40 +62,48 @@ body {
 .table-container {
     width: 100%;
     max-width: 950px;
-    background-color: rgba(255, 255, 255, 0.12);
+    background-color: rgba(0, 0, 0, 0.35); /* Fondo con un mínimo de negro */
     backdrop-filter: blur(8px);
-    padding: 20px;
+    padding: 25px;
     border-radius: 14px;
-    box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
     overflow-x: auto;
+    margin-bottom: 30px; /* Espacio entre la tabla y el texto adicional */
 }
 
+/* Cambié el color de las letras dentro de la tabla */
 .clientes-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.95rem;
+    font-size: 1rem; /* Ajuste del tamaño de la fuente */
     color: #f5f5f5;
 }
 
 .clientes-table thead {
     background-color: rgba(13, 110, 253, 0.9);
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    color: #ffffff; /* Letras claras dentro del encabezado */
 }
 
 .clientes-table th,
 .clientes-table td {
     padding: 12px 14px;
     text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.18);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .clientes-table tbody tr {
     transition: background-color 0.25s ease;
 }
 
+/* Color claro y fuerte en los textos dentro de la tabla */
 .clientes-table tbody tr:hover {
-    background-color: rgba(255,255,255,0.08);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.clientes-table td {
+    color: #f0f8ff; /* Color azul claro para las celdas de la tabla */
 }
 
 .clientes-table th {
@@ -112,7 +120,19 @@ body {
     font-size: 1.05rem;
     font-style: italic;
     color: #eeeeee;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ======================================================
+   TEXTO ADICIONAL FUERA DE LA TARJETA
+====================================================== */
+.info-adicional {
+    font-size: 1.15rem; /* Ajusté el tamaño de la fuente */
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 40px;
+    font-style: italic;
 }
 
 /* ======================================================
@@ -129,5 +149,23 @@ body {
 
     .clientes-table {
         font-size: 0.85rem;
+    }
+
+    .info-adicional {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .header-text p {
+        font-size: 0.95rem;
+    }
+
+    .clientes-table {
+        font-size: 0.9rem;
     }
 }

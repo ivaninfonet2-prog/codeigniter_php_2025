@@ -181,9 +181,9 @@ class Usuario extends CI_Controller
                 'logged_in'  => $this->session->userdata('logged_in')
             ];
 
-            $this->load->view('crear_usuario/header_crear_usuario', $data);
+            $this->load->view('header_footer/header_footer_administrador', $data);
             $this->load->view('crear_usuario/body_crear_usuario', $data);
-            $this->load->view('crear_usuario/footer_crear_usuario', $data);
+            $this->load->view('footer_footer/footer_footer_administrador', $data);
         }
         else
         {
@@ -233,9 +233,9 @@ class Usuario extends CI_Controller
                 'usuario'    => $usuario
             ];
 
-            $this->load->view('editar_usuario/header_editar_usuario', $data);
+            $this->load->view('header_footer/header_footer_administrador', $data);
             $this->load->view('editar_usuario/body_editar_usuario', $data);
-            $this->load->view('editar_usuario/footer_editar_usuario', $data);
+            $this->load->view('footer_footer/footer_footer_administrador', $data);
         }
         else
         {

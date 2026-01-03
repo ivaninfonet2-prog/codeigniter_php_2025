@@ -11,12 +11,16 @@
         </p>
     </section>
 
+    <!-- TEXTO INFORMATIVO FUERA DE LA TARJETA -->
+    <div class="info-bajo-tarjeta">
+        <p>Todos los campos son obligatorios y la contraseña debe ser confirmada.</p>
+    </div>
+
     <!-- TARJETA -->
     <div class="card">
 
         <!-- TEXTO INFORMATIVO -->
         <div class="card-info">
-            Todos los campos son obligatorios.
             La contraseña deberá ser confirmada antes de guardar.
         </div>
 

@@ -10,7 +10,7 @@ body {
 
 .inicio-container {
     min-height: 100vh;
-    padding: 40px 20px 40px; /* 🔼 sube contenido */
+    padding: 110px 20px 40px; /* 🔼 aumento más el padding superior para bajar el contenido */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -21,25 +21,36 @@ body {
    ============================== */
 .encabezado {
     max-width: 900px;
-    margin: 0 auto 12px; /* 🔼 menos espacio abajo */
+    margin: 0 auto 40px; /* 🔼 bajamos más el encabezado */
     text-align: center;
 }
 
 .titulo {
-    font-size: 2.4rem;
+    font-size: 3rem; /* 🔼 agrandamos el título */
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 6px; /* 🔼 más compacto */
+    margin-bottom: 40px; /* 🔼 aumentamos la separación entre el título y la descripción */
     text-shadow: 0 3px 8px rgba(0,0,0,0.85);
 }
 
 .descripcion {
-    font-size: 1.05rem;
+    font-size: 1.3rem; /* 🔼 agrandamos la descripción */
     color: #f1f1f1;
     line-height: 1.6;
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+/* ==============================
+   INFORMACIÓN ADICIONAL (FUERA DE LA TARJETA)
+   ============================== */
+.informacion-adicional {
+    text-align: center;
+    font-size: 1.4rem; /* 🔼 agrandamos el texto */
+    color: #e0ff00; /* 🔼 cambiamos el color a un verde fosforescente */
+    font-weight: 700; /* 🔼 hacemos el texto más fuerte */
+    margin-top: 40px; /* 🔼 lo separamos un poco más del contenido de la tabla */
 }
 
 /* ==============================
@@ -59,6 +70,7 @@ body {
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     overflow-x: auto;
+    margin-top: 20px; /* 🔼 acercamos la tarjeta a la descripción */
 }
 
 /* ==============================
@@ -71,17 +83,17 @@ body {
 
 .tabla-usuarios th,
 .tabla-usuarios td {
-    padding: 12px 14px;
+    padding: 14px 16px; /* 🔼 agrandamos el padding */
     text-align: center;
-    font-size: 0.95rem;
+    font-size: 1rem; /* 🔼 agrandamos la fuente */
     border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .tabla-usuarios th {
     background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+    color: #ffeb3b; /* 🔼 color fuerte para los encabezados */
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 1rem;
     letter-spacing: 0.6px;
 }
 
@@ -98,12 +110,12 @@ body {
 
 .boton {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 8px 14px; /* 🔼 agrandamos un poco el padding */
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.85rem;
-    margin: 2px;
+    font-size: 1rem; /* 🔼 aumentamos la fuente */
+    margin: 4px;
     transition: all 0.25s ease;
 }
 
@@ -137,15 +149,20 @@ body {
    ============================== */
 @media (max-width: 768px) {
     .inicio-container {
-        padding-top: 30px; /* 🔼 también sube en mobile */
+        padding-top: 90px; /* 🔼 también sube en mobile */
     }
 
     .titulo {
-        font-size: 1.9rem;
+        font-size: 2.7rem; /* 🔼 ajustamos un poco en móviles */
     }
 
     .descripcion {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
+    }
+
+    .informacion-adicional {
+        font-size: 1.3rem; /* 🔼 ajustamos el tamaño en mobile */
+        margin-top: 30px;
     }
 
     .tabla-container {
@@ -154,12 +171,12 @@ body {
 
     .tabla-usuarios th,
     .tabla-usuarios td {
-        padding: 10px;
-        font-size: 0.85rem;
+        padding: 12px;
+        font-size: 0.95rem;
     }
 
     .boton {
-        font-size: 0.8rem;
-        padding: 5px 10px;
+        font-size: 0.9rem;
+        padding: 6px 12px;
     }
 }

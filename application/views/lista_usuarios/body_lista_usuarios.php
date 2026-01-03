@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title><?= isset($titulo) ? $titulo : 'Lista de Usuarios' ?></title>
 
-    <!-- CSS específico -->
+    <!-- Enlace al archivo CSS específico -->
     <link rel="stylesheet" href="<?= base_url('activos/css/lista_usuarios/body_lista_usuarios.css'); ?>">
 </head>
 <body>
@@ -63,6 +63,11 @@
                 </tbody>
             </table>
         </div>
+    </section>
+
+    <!-- Texto adicional fuera de la tarjeta -->
+    <section class="informacion-adicional">
+        <p>Aquí puedes gestionar todos los usuarios. Si deseas más detalles o funciones adicionales, por favor, consulta la sección correspondiente en el menú.</p>
     </section>
 
 </main>

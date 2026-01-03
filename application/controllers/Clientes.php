@@ -41,8 +41,8 @@ class Clientes extends CI_Controller
         }
 
         // Cargar vistas con los datos preparados
-        $this->load->view('clientes/header_clientes', $data);
+        $this->load->view('header_footer/header_footer_administrador', $data);
         $this->load->view('clientes/body_clientes', $data);
-        $this->load->view('clientes/footer_clientes', $data);
+        $this->load->view('footer_footer/footer_footer_administrador', $data);
     }
 }
